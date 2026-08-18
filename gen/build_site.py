@@ -179,7 +179,7 @@ CSS = """
   .tip{background:#152219;border:1px solid #25402D;border-radius:14px;padding:12px 16px;color:var(--green);margin:6px 0 0;max-width:720px;font-size:15.5px}
 
   .rows{display:flex;flex-direction:column;gap:22px}
-  .row{display:grid;grid-template-columns:1fr auto;gap:36px;align-items:center;background:var(--panel);border:1px solid var(--stroke);border-radius:26px;padding:30px 34px}
+  .row{display:grid;grid-template-columns:1fr auto;gap:36px;align-items:start;background:var(--panel);border:1px solid var(--stroke);border-radius:26px;padding:30px 34px}
   .row.flip{grid-template-columns:auto 1fr}
   .row.flip .rtext{order:2}
   .row .phone{max-width:250px}
