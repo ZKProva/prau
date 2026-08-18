@@ -38,8 +38,8 @@ def section(code, d, x, active):
                 f'{phone(shot, a[shot])}</div>')
     # HISTORY_ROW: история — полноценный ряд, а не карточка
     rows = (row(f[2],"settings",False) + row(f[1],"face",True) +
-        row(f[5],"summary",False) + row(f[3],"photo",True) +
-        row(f[4],"history",False,x["free_badge"]))
+        row(f[4],"history",False,x["free_badge"]) +
+        row(f[5],"summary",True) + row(f[3],"photo",False))
     def card(feat, badge=None):
         ico,t,p = feat
         b = f'<span class="badge free">{e(badge)}</span>' if badge else ""
