@@ -35,8 +35,8 @@ def section(code, d, x, active):
         return (f'<div class="row{" flip" if flip else ""}">'
                 f'<div class="rtext"><div class="ico" aria-hidden="true">{ico}</div><h3>{e(t)}</h3><p>{e(p)}</p></div>'
                 f'{phone(shot, a[shot])}</div>')
-    rows = (row(f[1],"face",False) + row(f[3],"photo",True) +
-            row(f[2],"settings",False) + row(f[5],"summary",True))
+    rows = (row(f[2],"settings",False) + row(f[1],"face",True) +
+        row(f[5],"summary",False) + row(f[3],"photo",True))
     def card(feat, badge=None):
         ico,t,p = feat
         b = f'<span class="badge free">{e(badge)}</span>' if badge else ""
@@ -137,7 +137,7 @@ CSS = """
   section[data-lang].active{display:block}
 
   .hero{display:grid;grid-template-columns:1.15fr .85fr;gap:36px;align-items:center;padding:36px 0 18px}
-  .kicker{color:var(--muted);text-transform:uppercase;letter-spacing:.14em;font-size:12px;margin:0 0 16px}
+  .kicker{display:inline-flex;align-items:center;gap:10px;color:#e8c48a;background:rgba(232,196,138,.10);border:1px solid rgba(232,196,138,.35);border-radius:999px;padding:8px 16px;text-transform:uppercase;letter-spacing:.14em;font-size:12.5px;font-weight:600;margin:0 0 22px}.kicker::before{content:"";width:8px;height:8px;border-radius:50%;background:#e8c48a;box-shadow:0 0 12px #e8c48a}
   h1{font-family:var(--serif);font-weight:600;font-size:clamp(38px,5.4vw,66px);line-height:1.02;letter-spacing:-.015em;margin:0 0 20px}
   h1 .g{color:var(--gold)}
   .lead{font-size:19px;color:var(--soft);margin:0 0 26px;max-width:560px}
@@ -228,7 +228,9 @@ CSS = """
   @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.bub{animation:none;opacity:1;transform:none}.btn{transition:none}}
 """
 
-btns = "".join(f'<button data-set="{c}"{" aria-pressed=\"true\"" if c=="en" else ""}>{names[c]}</button>' for c in order)
+PRESSED = ' aria-pressed="true"'
+
+btns = "".join(f'<button data-set="{c}"{PRESSED if c=="en" else ""}>{names[c]}</button>' for c in order)
 sections = "".join(section(c, L[c], X[c], c=="en") for c in order)
 en = L["en"]
 
