@@ -16,8 +16,8 @@ def e(s): return html.escape(s, quote=False)
 
 def phone(name, alt, cls=""):
     return (f'<figure class="phone {cls}"><picture>'
-            f'<source srcset="/img/{name}.webp" type="image/webp">'
-            f'<img src="/img/{name}.png" alt="{e(alt)}" width="640" height="1288" loading="lazy" decoding="async">'
+            f'<source srcset="img/{name}.webp" type="image/webp">'
+            f'<img src="img/{name}.png" alt="{e(alt)}" width="640" height="1288" loading="lazy" decoding="async">'
             f'</picture></figure>')
 
 def bubbles(conv):
@@ -94,7 +94,7 @@ def section(code, d, x, active):
   <div class="col leaves"><h3>{e(d["leaves_h"])}</h3><ul>{leaves}</ul></div>
 </div>
 <ul class="plain">{pbul}</ul>
-<p><a href="/privacy.html#{code}">{e(d["priv_link"])} →</a></p>
+<p><a href="privacy.html#{code}">{e(d["priv_link"])} →</a></p>
 
 <h2>{e(d["pro_h"])}</h2>
 <p class="sub">{e(d["pro_lead"])}</p>
@@ -110,7 +110,7 @@ def section(code, d, x, active):
 <p>{e(d["contact_p"])} <a href="mailto:{MAIL}">{MAIL}</a>. {e(d["contact_note"])}</p>
 
 <footer>
-  <a href="/privacy.html#{code}">{e(d["footer_privacy"])}</a> ·
+  <a href="privacy.html#{code}">{e(d["footer_privacy"])}</a> ·
   <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/">{e(d["footer_terms"])}</a> ·
   <span>{e(d["footer_rights"])}</span>
 </footer>
@@ -128,12 +128,13 @@ CSS = """
   header .home{display:flex;align-items:center;gap:10px;color:var(--text);text-decoration:none;font-weight:700;font-size:20px;letter-spacing:.01em}
   header .home img{width:34px;height:34px;border-radius:9px}
   nav{display:flex;flex-wrap:wrap;gap:6px}
-  nav a.lang{text-decoration:none;background:transparent;border:1px solid var(--stroke);color:var(--muted);border-radius:999px;padding:6px 12px;font:14px var(--sans);cursor:pointer}
-  nav a.lang[aria-current="true"]{background:var(--gold);color:#000;border-color:var(--gold)}
-  nav a.lang:focus-visible,a:focus-visible,summary:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+  nav button{background:transparent;border:1px solid var(--stroke);color:var(--muted);border-radius:999px;padding:6px 12px;font:14px var(--sans);cursor:pointer}
+  nav button[aria-pressed="true"]{background:var(--gold);color:#000;border-color:var(--gold)}
+  nav button:focus-visible,a:focus-visible,summary:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
   .navcta{display:none;font-size:14px;color:var(--gold);text-decoration:none;border:1px solid #4A3E29;border-radius:999px;padding:6px 12px}
   @media (min-width:760px){.navcta{display:inline-block}}
-  section[data-lang]{display:block}
+  section[data-lang]{display:none}
+  section[data-lang].active{display:block}
 
   .hero{display:grid;grid-template-columns:1.15fr .85fr;gap:36px;align-items:center;padding:36px 0 18px}
   .kicker{display:inline-flex;align-items:center;gap:10px;color:#e8c48a;background:rgba(232,196,138,.10);border:1px solid rgba(232,196,138,.35);border-radius:999px;padding:8px 16px;text-transform:uppercase;letter-spacing:.14em;font-size:12.5px;font-weight:600;margin:0 0 22px}.kicker::before{content:"";width:8px;height:8px;border-radius:50%;background:#e8c48a;box-shadow:0 0 12px #e8c48a}
@@ -227,124 +228,88 @@ CSS = """
   @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.bub{animation:none;opacity:1;transform:none}.btn{transition:none}}
 """
 
-PAGES_BY_LANG = True   # маркер применённого патча
+PRESSED = ' aria-pressed="true"'
 
-def href_for(code):
-    """Адрес языковой страницы. Английский живёт в корне сайта."""
-    return "/" if code == "en" else "/" + code + "/"
+btns = "".join(f'<button data-set="{c}"{PRESSED if c=="en" else ""}>{names[c]}</button>' for c in order)
+sections = "".join(section(c, L[c], X[c], c=="en") for c in order)
+en = L["en"]
 
-
-def nav_for(active):
-    out = []
-    for c in order:
-        cur = ' aria-current="true"' if c == active else ''
-        out.append('<a class="lang" href="' + href_for(c) + '"' + cur + '>' + names[c] + '</a>')
-    return "".join(out)
-
-
-def alternates(active):
-    """hreflang на все языковые версии, x-default — на английскую."""
-    rows = []
-    for c in order:
-        rows.append('<link rel="alternate" hreflang="' + c + '" href="' + SITE.rstrip("/") + href_for(c) + '">')
-    rows.append('<link rel="alternate" hreflang="x-default" href="' + SITE + '">')
-    return "\n".join(rows)
-
-
-def page(code):
-    d = L[code]
-    x = X[code]
-    canon = SITE.rstrip("/") + href_for(code)
-    alts = alternates(code)
-    nav = nav_for(code)
-    body = section(code, d, x, True)
-    return f"""<!doctype html>
-<html lang="{code}">
+out = f'''<!doctype html>
+<html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>{e(d["title"])}</title>
-<meta name="description" content="{e(d["meta"])}">
-<link rel="canonical" href="{canon}">
-{alts}
+<title>{e(en["title"])}</title>
+<meta name="description" content="{e(en["meta"])}">
+<link rel="canonical" href="{SITE}">
 <meta property="og:type" content="website">
-<meta property="og:url" content="{canon}">
-<meta property="og:locale" content="{code}">
-<meta property="og:title" content="{e(d["title"])}">
-<meta property="og:description" content="{e(d["meta"])}">
+<meta property="og:url" content="{SITE}">
+<meta property="og:title" content="{e(en["title"])}">
+<meta property="og:description" content="{e(en["meta"])}">
 <meta property="og:image" content="{SITE}og.png">
 <meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="{e(d["title"])}">
-<meta name="twitter:description" content="{e(d["meta"])}">
+<meta name="twitter:title" content="{e(en["title"])}">
+<meta name="twitter:description" content="{e(en["meta"])}">
 <meta name="twitter:image" content="{SITE}og.png">
 <meta name="apple-itunes-app" content="app-id=6801931802">
 <meta name="theme-color" content="#0B0C0E">
-<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
-<link rel="icon" type="image/png" sizes="192x192" href="/icon-192.png">
-<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="icon-192.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
 <script>if(/\\.github\\.io$/.test(location.hostname)){{location.replace("{SITE}"+location.search+location.hash);}}</script>
 <style>{CSS}</style>
 </head>
 <body>
 <main>
 <header>
-  <a class="home" href="/"><img src="/icon-64.png" alt="" width="34" height="34">Prau</a>
-  <nav id="langs" aria-label="Language">{nav}</nav>
-  <a class="navcta" href="{APPSTORE}">{e(x["nav_cta"])}</a>
+  <a class="home" href="./"><img src="icon-64.png" alt="" width="34" height="34">Prau</a>
+  <nav id="langs" aria-label="Language">{btns}</nav>
+  <a class="navcta" href="{APPSTORE}" data-i18n="nav_cta">App Store</a>
 </header>
-{body}
+{sections}
 </main>
 <script>
 (function(){{
+  var titles={json.dumps({c:L[c]["title"] for c in order}, ensure_ascii=False)};
+  var navcta={json.dumps({c:X[c]["nav_cta"] for c in order}, ensure_ascii=False)};
+  var metas={json.dumps({c:L[c]["meta"] for c in order}, ensure_ascii=False)};
+  var sections=document.querySelectorAll('section[data-lang]');
+  var buttons=document.querySelectorAll('#langs button');
   var reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var timer=null;
   function esc(s){{return s.replace(/[&<>]/g,function(c){{return {{'&':'&amp;','<':'&lt;','>':'&gt;'}}[c];}});}}
   function render(box,conv){{
     box.innerHTML=conv.map(function(m,i){{return '<div class="bub '+(i%2?'b':'a')+'"><span class="flag" aria-hidden="true">'+m[0]+'</span>'+esc(m[1])+'</div>';}}).join('');
   }}
-  var box=document.querySelector('.demo');
-  if(box){{
+  function startDemo(sec){{
+    if(timer){{clearInterval(timer);timer=null;}}
+    var box=sec.querySelector('.demo'); if(!box) return;
     var demos=JSON.parse(box.getAttribute('data-demos')); var i=0;
     render(box,demos[0]);
-    if(!reduce&&demos.length>1){{
-      setInterval(function(){{ if(document.hidden) return; i=(i+1)%demos.length; render(box,demos[i]); }},6500);
-    }}
+    if(reduce||demos.length<2) return;
+    timer=setInterval(function(){{ if(document.hidden) return; i=(i+1)%demos.length; render(box,demos[i]); }},6500);
   }}
+  function show(l){{
+    var cur=null;
+    sections.forEach(function(s){{var on=s.dataset.lang===l; s.classList.toggle('active',on); if(on) cur=s;}});
+    buttons.forEach(function(b){{b.setAttribute('aria-pressed',b.dataset.set===l?'true':'false');}});
+    document.documentElement.lang=l;
+    document.title=titles[l]||titles.en;
+    var m=document.querySelector('meta[name="description"]'); if(m) m.setAttribute('content',metas[l]||metas.en);
+    var nc=document.querySelector('.navcta'); if(nc) nc.textContent=navcta[l]||'App Store';
+    try{{history.replaceState(null,'','#'+l);}}catch(e){{}}
+    if(cur) startDemo(cur);
+  }}
+  buttons.forEach(function(b){{b.addEventListener('click',function(){{show(b.dataset.set);}});}});
+  var known={json.dumps(order)};
+  var fromHash=location.hash.replace('#','').split('-')[0];
+  var fromNav=(navigator.language||'en').slice(0,2).toLowerCase();
+  show(known.indexOf(fromHash)>=0?fromHash:(known.indexOf(fromNav)>=0?fromNav:'en'));
 }})();
 </script>
 </body>
 </html>
-"""
-
-
-import datetime
-OUT = os.path.dirname(HERE)   # пишем сразу в корень репозитория, без ручного cp
-total = 0
-for code in order:
-    html_out = page(code)
-    if code == "en":
-        path = os.path.join(OUT, "index.html")
-    else:
-        folder = os.path.join(OUT, code)
-        if not os.path.isdir(folder):
-            os.makedirs(folder)
-        path = os.path.join(folder, "index.html")
-    open(path, "w", encoding="utf-8").write(html_out)
-    total += len(html_out)
-    print(code, len(html_out), "bytes")
-
-today = datetime.date.today().isoformat()
-rows = []
-for code in order:
-    rows.append("  <url>\n    <loc>" + SITE.rstrip("/") + href_for(code) +
-                "</loc>\n    <lastmod>" + today +
-                "</lastmod>\n    <changefreq>weekly</changefreq>\n    <priority>" +
-                ("1.0" if code == "en" else "0.8") + "</priority>\n  </url>")
-rows.append("  <url>\n    <loc>" + SITE + "privacy.html</loc>\n    <lastmod>" + today +
-            "</lastmod>\n    <changefreq>monthly</changefreq>\n    <priority>0.3</priority>\n  </url>")
-sm = ('<?xml version="1.0" encoding="UTF-8"?>\n'
-      '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
-      + "\n".join(rows) + "\n</urlset>\n")
-open(os.path.join(OUT, "sitemap.xml"), "w", encoding="utf-8").write(sm)
-print("sitemap.xml:", len(order) + 1, "URL")
-print("ИТОГО", total, "bytes")
+'''
+open(os.path.join(HERE, "index.html"), "w", encoding="utf-8").write(out)
+print(len(out), "bytes")
