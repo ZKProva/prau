@@ -58,7 +58,7 @@ def section(code, d, x, active):
     <p class="kicker">{e(d["hero_kicker"])}</p>
     <h1>{h1}</h1>
     <p class="lead">{e(d["hero_lead"])}</p>
-    <p class="cta"><a class="btn" href="{APPSTORE}"><span class="apple" aria-hidden="true"></span>{e(d["cta"])}</a><span class="ctan">{e(d["cta_note"])}</span></p>
+    {cta_block(code, d)}
     <div class="demo" data-demos="{demos_json}" aria-hidden="true">{bubbles(x["demos"][0])}</div>
   </div>
   <div class="hshot">
@@ -101,7 +101,7 @@ def section(code, d, x, active):
 <div class="plans">{pro}</div>
 <p class="free">{e(d["pro_free"])}</p>
 <p class="note">{e(d["pro_note"])}</p>
-<p class="cta cta2"><a class="btn" href="{APPSTORE}"><span class="apple" aria-hidden="true"></span>{e(d["cta"])}</a><span class="ctan">{e(d["cta_note"])}</span></p>
+{cta_block(code, d, "2")}
 
 <h2 id="support-{code}">{e(d["faq_h"])}</h2>
 <div class="faq">{faq}</div>
@@ -145,6 +145,8 @@ CSS = """
   .btn:hover{filter:brightness(1.05);transform:translateY(-1px)}
   .apple{width:16px;height:19px;background:currentColor;-webkit-mask:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 814 1000'><path d='M788 341c-6 5-109 62-109 190 0 148 130 200 134 202-1 3-21 71-69 141-42 62-87 123-155 123s-86-40-165-40c-77 0-104 41-167 41s-106-57-155-127C46 790 0 668 0 552c0-186 121-285 240-285 63 0 116 42 155 42 38 0 97-44 169-44 27 0 126 2 224 76zM554 174c31-37 53-89 53-141 0-7-1-14-2-20-51 2-111 34-147 76-29 33-56 85-56 137 0 8 1 16 2 19 3 1 8 1 13 1 45 0 102-30 137-72z'/></svg>") center/contain no-repeat;mask:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 814 1000'><path d='M788 341c-6 5-109 62-109 190 0 148 130 200 134 202-1 3-21 71-69 141-42 62-87 123-155 123s-86-40-165-40c-77 0-104 41-167 41s-106-57-155-127C46 790 0 668 0 552c0-186 121-285 240-285 63 0 116 42 155 42 38 0 97-44 169-44 27 0 126 2 224 76zM554 174c31-37 53-89 53-141 0-7-1-14-2-20-51 2-111 34-147 76-29 33-56 85-56 137 0 8 1 16 2 19 3 1 8 1 13 1 45 0 102-30 137-72z'/></svg>") center/contain no-repeat}
   .ctan{color:var(--muted);font-size:14px}
+  .btn.soon{background:transparent;color:var(--gold);border:1px solid #4A3E29;cursor:default}
+  .btn.soon:hover{transform:none;filter:none}
   .demo{display:flex;flex-direction:column;gap:8px;max-width:500px;min-height:200px}
   .bub{background:var(--panel2);border:1px solid var(--stroke);border-radius:16px;padding:10px 14px;max-width:86%;font-size:16px;opacity:0;transform:translateY(6px);animation:pop .45s ease forwards}
   .bub:nth-child(1){animation-delay:.05s}.bub:nth-child(2){animation-delay:.55s}.bub:nth-child(3){animation-delay:1.25s}.bub:nth-child(4){animation-delay:1.75s}
@@ -227,6 +229,33 @@ CSS = """
   @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.bub{animation:none;opacity:1;transform:none}.btn{transition:none}}
 """
 
+LIVE = False   # False = приложение ещё не в App Store: кнопка «скоро», без ссылки.
+               # После одобрения Apple поставить True, пересобрать, запушить.
+
+SOON = {
+ "en": ("Coming to the App Store", "Launching soon \u00b7 iOS 18 or later"),
+ "ru": ("\u0421\u043a\u043e\u0440\u043e \u0432 App Store", "\u0417\u0430\u043f\u0443\u0441\u043a \u0441\u043e\u0432\u0441\u0435\u043c \u0441\u043a\u043e\u0440\u043e \u00b7 iOS 18 \u0438 \u043d\u043e\u0432\u0435\u0435"),
+ "uk": ("\u041d\u0435\u0437\u0430\u0431\u0430\u0440\u043e\u043c \u0432 App Store", "\u0417\u0430\u043f\u0443\u0441\u043a \u043d\u0435\u0432\u0434\u043e\u0432\u0437\u0456 \u00b7 iOS 18 \u0456 \u043d\u043e\u0432\u0456\u0448\u0435"),
+ "fr": ("Bient\u00f4t sur l'App Store", "Lancement imminent \u00b7 iOS 18 ou ult\u00e9rieur"),
+ "es": ("Pr\u00f3ximamente en el App Store", "Lanzamiento muy pronto \u00b7 iOS 18 o posterior"),
+ "de": ("Bald im App Store", "Start in K\u00fcrze \u00b7 iOS 18 oder neuer"),
+}
+
+
+def cta_block(code, d, extra=""):
+    """Кнопка загрузки. До релиза — некликабельный элемент, чтобы не вести в 404."""
+    cls = "cta cta2" if extra else "cta"
+    if LIVE:
+        btn = ('<a class="btn" href="' + APPSTORE + '">'
+               '<span class="apple" aria-hidden="true"></span>' + e(d["cta"]) + '</a>')
+        note = e(d["cta_note"])
+    else:
+        label, note_txt = SOON.get(code, SOON["en"])
+        btn = ('<span class="btn soon" aria-disabled="true">'
+               '<span class="apple" aria-hidden="true"></span>' + e(label) + '</span>')
+        note = e(note_txt)
+    return '<p class="' + cls + '">' + btn + '<span class="ctan">' + note + '</span></p>'
+
 PAGES_BY_LANG = True   # маркер применённого патча
 
 def href_for(code):
@@ -258,6 +287,8 @@ def page(code):
     alts = alternates(code)
     nav = nav_for(code)
     body = section(code, d, x, True)
+    smart_banner = '<meta name="apple-itunes-app" content="app-id=6801931802">' if LIVE else ""
+    navcta = ('  <a class="navcta" href="' + APPSTORE + '">' + e(x["nav_cta"]) + '</a>') if LIVE else ""
     return f"""<!doctype html>
 <html lang="{code}">
 <head>
@@ -278,7 +309,7 @@ def page(code):
 <meta name="twitter:title" content="{e(d["title"])}">
 <meta name="twitter:description" content="{e(d["meta"])}">
 <meta name="twitter:image" content="{SITE}og.png">
-<meta name="apple-itunes-app" content="app-id=6801931802">
+{smart_banner}
 <meta name="theme-color" content="#0B0C0E">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
 <link rel="icon" type="image/png" sizes="192x192" href="/icon-192.png">
@@ -291,7 +322,7 @@ def page(code):
 <header>
   <a class="home" href="/"><img src="/icon-64.png" alt="" width="34" height="34">Prau</a>
   <nav id="langs" aria-label="Language">{nav}</nav>
-  <a class="navcta" href="{APPSTORE}">{e(x["nav_cta"])}</a>
+{navcta}
 </header>
 {body}
 </main>
