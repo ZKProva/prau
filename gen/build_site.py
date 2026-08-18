@@ -30,18 +30,21 @@ def section(code, d, x, active):
     demos_json = html.escape(json.dumps(x["demos"], ensure_ascii=False), quote=True)
     how = "".join(f'<li><b>{e(t)}</b><p>{e(p)}</p></li>' for t,p in d["how"])
     f = d["feats"]; a = x["alts"]
-    def row(feat, shot, flip):
+    def row(feat, shot, flip, badge=None):
         ico,t,p = feat
+        b = f'<span class="badge free">{e(badge)}</span>' if badge else ""
         return (f'<div class="row{" flip" if flip else ""}">'
-                f'<div class="rtext"><div class="ico" aria-hidden="true">{ico}</div><h3>{e(t)}</h3><p>{e(p)}</p></div>'
+                f'<div class="rtext"><div class="ico" aria-hidden="true">{ico}</div><h3>{e(t)}{b}</h3><p>{e(p)}</p></div>'
                 f'{phone(shot, a[shot])}</div>')
+    # HISTORY_ROW: история — полноценный ряд, а не карточка
     rows = (row(f[2],"settings",False) + row(f[1],"face",True) +
-        row(f[5],"summary",False) + row(f[3],"photo",True))
+        row(f[5],"summary",False) + row(f[3],"photo",True) +
+        row(f[4],"history",False,x["free_badge"]))
     def card(feat, badge=None):
         ico,t,p = feat
         b = f'<span class="badge free">{e(badge)}</span>' if badge else ""
         return f'<div class="card"><div class="ico" aria-hidden="true">{ico}</div><h3>{e(t)}{b}</h3><p>{e(p)}</p></div>'
-    cards = card(f[0]) + card(f[4], x["free_badge"]) + card(f[6])
+    cards = card(f[0]) + card(f[6])
     setup = "".join(f'<li><b>{e(t)}</b><p>{e(p)}</p></li>' for t,p in x["setup"])
     stays = "".join(f"<li>{e(s)}</li>" for s in d["stays"])
     leaves = "".join(f"<li>{e(s)}</li>" for s in d["leaves"])
