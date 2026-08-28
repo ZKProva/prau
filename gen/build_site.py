@@ -232,7 +232,7 @@ CSS = """
   @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.bub{animation:none;opacity:1;transform:none}.btn{transition:none}}
 """
 
-LIVE = False   # False = приложение ещё не в App Store: кнопка «скоро», без ссылки.
+LIVE = True   # False = приложение ещё не в App Store: кнопка «скоро», без ссылки.
                # После одобрения Apple поставить True, пересобрать, запушить.
 
 SOON = {
