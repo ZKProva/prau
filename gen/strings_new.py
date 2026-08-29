@@ -193,3 +193,35 @@ X["de"] = dict(
  pro_badge="Pro",
  best_badge="Am günstigsten",
 )
+
+X["nl"] = dict(
+ nav_cta="App Store",
+ hero_note2="Echte schermen uit Prau — niets in scène gezet.",
+ demos=[
+  [("🇳🇱","Waar is de dichtstbijzijnde apotheek?"),("🇪🇸","¿Dónde está la farmacia más cercana?"),("🇪🇸","Al final de la calle, a la izquierda."),("🇳🇱","Aan het einde van de straat, links.")],
+  [("🇳🇱","Heeft u een kamer voor twee nachten?"),("🇫🇷","Avez-vous une chambre pour deux nuits ?"),("🇫🇷","Oui, avec vue sur la mer."),("🇳🇱","Ja, met zeezicht.")],
+  [("🇳🇱","Hoeveel kost het naar het vliegveld?"),("🇩🇪","Wie viel kostet es zum Flughafen?"),("🇩🇪","Etwa dreißig Euro."),("🇳🇱","Ongeveer dertig euro.")],
+ ],
+ see_h="Zien, niet alleen lezen",
+ see_sub="Elk scherm hieronder is Prau 1.0 zoals het vandaag op een iPhone draait.",
+ alts={
+  "main":"Hoofdscherm van Prau: paar Frans–Duits, microfoonknop, schakelaar voor voorlezen",
+  "face":"Face-to-face-modus: het scherm in tweeën gedeeld, elke helft naar zijn spreker gedraaid",
+  "history":"Geschiedenis: een gesprek met de actie Hernoemen zichtbaar na een veeg naar rechts",
+  "summary":"Gesprekssamenvatting geschreven door Apple Intelligence op de iPhone",
+  "photo":"Vertalen van een foto of pdf: scannen, kiezen uit de bibliotheek, een pdf kiezen",
+  "settings":"Instellingen: mijn taal, spreektempo, vertaalstem, talen",
+  "picker":"Talenkiezer: Engels, Oekraïens, Duits, Spaans, Italiaans en meer",
+ },
+ setup_h="Eén keer instellen, vóór de reis",
+ setup_sub="Twee dingen zitten in iOS, niet in Prau. Doe ze thuis op wifi — daarna werkt alles helemaal zonder netwerk.",
+ setup=[
+  ("Taalpakketten voor vertaling","Open Prau en kies je paar. iOS toont het venster ‘Vereiste downloads’ — tik op de pijl naast elke taal. Ongeveer 50–100 MB per taal, eenmalig. Later kun je pakketten toevoegen in Prau → Instellingen → Talen."),
+  ("Offline dicteren voor je stem","iPhone-instellingen → Algemeen → Toetsenbord → Dicteertalen. Voeg elke taal toe die je gaat spreken. Ontbreekt een taal in die lijst, voeg dan eenmalig het toetsenbord voor die taal toe (Toetsenbord → Toetsenborden → Voeg toetsenbord toe) — dicteren volgt automatisch. iOS downloadt het model op de achtergrond, meestal binnen een dag, het snelst op wifi tijdens het opladen. In Prau → Instellingen → Talen betekent een groene microfoon dat de taal klaar is."),
+  ("Koptelefoon — optioneel","Verbind AirPods of een andere koptelefoon en kies ‘Mijn taal’ in de instellingen van Prau. Jouw vertaling klinkt zachtjes in je oor; de ander hoort de zijne uit de luidspreker van de telefoon."),
+ ],
+ setup_tip="Tekst- en fotovertaling hebben dicteren helemaal niet nodig — ze werken zodra de pakketten er zijn.",
+ free_badge="Gratis, altijd",
+ pro_badge="Pro",
+ best_badge="Voordeligst",
+)
