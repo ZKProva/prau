@@ -1,0 +1,241 @@
+<!doctype html>
+<html lang="pt">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Prau — Tradutor de voz offline para iPhone</title>
+<meta name="description" content="O Prau traduz conversas, fotos e PDFs inteiramente no seu iPhone. 19 idiomas, sem internet, sem contas: nada sai do aparelho.">
+<link rel="canonical" href="https://getprau.com/pt/">
+<link rel="alternate" hreflang="en" href="https://getprau.com/">
+<link rel="alternate" hreflang="ru" href="https://getprau.com/ru/">
+<link rel="alternate" hreflang="uk" href="https://getprau.com/uk/">
+<link rel="alternate" hreflang="fr" href="https://getprau.com/fr/">
+<link rel="alternate" hreflang="es" href="https://getprau.com/es/">
+<link rel="alternate" hreflang="de" href="https://getprau.com/de/">
+<link rel="alternate" hreflang="nl" href="https://getprau.com/nl/">
+<link rel="alternate" hreflang="it" href="https://getprau.com/it/">
+<link rel="alternate" hreflang="pt" href="https://getprau.com/pt/">
+<link rel="alternate" hreflang="pl" href="https://getprau.com/pl/">
+<link rel="alternate" hreflang="tr" href="https://getprau.com/tr/">
+<link rel="alternate" hreflang="x-default" href="https://getprau.com/">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://getprau.com/pt/">
+<meta property="og:locale" content="pt">
+<meta property="og:title" content="Prau — Tradutor de voz offline para iPhone">
+<meta property="og:description" content="O Prau traduz conversas, fotos e PDFs inteiramente no seu iPhone. 19 idiomas, sem internet, sem contas: nada sai do aparelho.">
+<meta property="og:image" content="https://getprau.com/og.png">
+<meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Prau — Tradutor de voz offline para iPhone">
+<meta name="twitter:description" content="O Prau traduz conversas, fotos e PDFs inteiramente no seu iPhone. 19 idiomas, sem internet, sem contas: nada sai do aparelho.">
+<meta name="twitter:image" content="https://getprau.com/og.png">
+<meta name="apple-itunes-app" content="app-id=6801931802">
+<meta name="theme-color" content="#0B0C0E">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="/icon-192.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<script>if(/\.github\.io$/.test(location.hostname)){location.replace("https://getprau.com/"+location.search+location.hash);}</script>
+<style>
+  :root{--bg:#0B0C0E;--panel:#161B21;--panel2:#1B222A;--stroke:#262D36;--muted:#8A94A0;--gold:#EABE7A;--gold2:#F3D9A9;--text:#F2F4F7;--soft:#C9D0D8;--green:#7ED9A0;
+        --serif:"New York","Iowan Old Style",ui-serif,Georgia,"Times New Roman",serif;
+        --sans:-apple-system,BlinkMacSystemFont,"SF Pro Text",Inter,"Segoe UI",Roboto,sans-serif}
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+  body{margin:0;background:var(--bg);color:var(--text);font:17px/1.6 var(--sans)}
+  main{max-width:1060px;margin:0 auto;padding:22px 24px 72px}
+  header{display:flex;flex-wrap:wrap;gap:12px 18px;align-items:center;justify-content:space-between;margin-bottom:6px}
+  header .home{display:flex;align-items:center;gap:10px;color:var(--text);text-decoration:none;font-weight:700;font-size:20px;letter-spacing:.01em}
+  header .home img{width:34px;height:34px;border-radius:9px}
+  nav{display:flex;flex-wrap:wrap;gap:6px}
+  nav a.lang{text-decoration:none;background:transparent;border:1px solid var(--stroke);color:var(--muted);border-radius:999px;padding:6px 12px;font:14px var(--sans);cursor:pointer}
+  nav a.lang[aria-current="true"]{background:var(--gold);color:#000;border-color:var(--gold)}
+  nav a.lang:focus-visible,a:focus-visible,summary:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+  .navcta{display:none;font-size:14px;color:var(--gold);text-decoration:none;border:1px solid #4A3E29;border-radius:999px;padding:6px 12px}
+  @media (min-width:760px){.navcta{display:inline-block}}
+  section[data-lang]{display:block}
+
+  .hero{display:grid;grid-template-columns:1.15fr .85fr;gap:36px;align-items:center;padding:36px 0 18px}
+  .kicker{display:inline-flex;align-items:center;gap:10px;color:#e8c48a;background:rgba(232,196,138,.10);border:1px solid rgba(232,196,138,.35);border-radius:999px;padding:8px 16px;text-transform:uppercase;letter-spacing:.14em;font-size:12.5px;font-weight:600;margin:0 0 22px}.kicker::before{content:"";width:8px;height:8px;border-radius:50%;background:#e8c48a;box-shadow:0 0 12px #e8c48a}
+  h1{font-family:var(--serif);font-weight:600;font-size:clamp(38px,5.4vw,66px);line-height:1.02;letter-spacing:-.015em;margin:0 0 20px}
+  h1 .g{color:var(--gold)}
+  .lead{font-size:19px;color:var(--soft);margin:0 0 26px;max-width:560px}
+  .cta{display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin:0 0 30px}
+  .btn{display:inline-flex;align-items:center;gap:10px;background:var(--gold);color:#000;font-weight:700;text-decoration:none;padding:14px 22px;border-radius:14px;transition:transform .15s,filter .15s}
+  .btn:hover{filter:brightness(1.05);transform:translateY(-1px)}
+  .apple{width:16px;height:19px;background:currentColor;-webkit-mask:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 814 1000'><path d='M788 341c-6 5-109 62-109 190 0 148 130 200 134 202-1 3-21 71-69 141-42 62-87 123-155 123s-86-40-165-40c-77 0-104 41-167 41s-106-57-155-127C46 790 0 668 0 552c0-186 121-285 240-285 63 0 116 42 155 42 38 0 97-44 169-44 27 0 126 2 224 76zM554 174c31-37 53-89 53-141 0-7-1-14-2-20-51 2-111 34-147 76-29 33-56 85-56 137 0 8 1 16 2 19 3 1 8 1 13 1 45 0 102-30 137-72z'/></svg>") center/contain no-repeat;mask:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 814 1000'><path d='M788 341c-6 5-109 62-109 190 0 148 130 200 134 202-1 3-21 71-69 141-42 62-87 123-155 123s-86-40-165-40c-77 0-104 41-167 41s-106-57-155-127C46 790 0 668 0 552c0-186 121-285 240-285 63 0 116 42 155 42 38 0 97-44 169-44 27 0 126 2 224 76zM554 174c31-37 53-89 53-141 0-7-1-14-2-20-51 2-111 34-147 76-29 33-56 85-56 137 0 8 1 16 2 19 3 1 8 1 13 1 45 0 102-30 137-72z'/></svg>") center/contain no-repeat}
+  .ctan{color:var(--muted);font-size:14px}
+  .btn.soon{background:transparent;color:var(--gold);border:1px solid #4A3E29;cursor:default}
+  .btn.soon:hover{transform:none;filter:none}
+  .demo{display:flex;flex-direction:column;gap:8px;max-width:500px;min-height:200px}
+  .bub{background:var(--panel2);border:1px solid var(--stroke);border-radius:16px;padding:10px 14px;max-width:86%;font-size:16px;opacity:0;transform:translateY(6px);animation:pop .45s ease forwards}
+  .bub:nth-child(1){animation-delay:.05s}.bub:nth-child(2){animation-delay:.55s}.bub:nth-child(3){animation-delay:1.25s}.bub:nth-child(4){animation-delay:1.75s}
+  @keyframes pop{to{opacity:1;transform:none}}
+  .bub.a{align-self:flex-start;border-bottom-left-radius:4px}
+  .bub.b{align-self:flex-end;border-bottom-right-radius:4px;background:#26211A;border-color:#4A3E29}
+  .bub .flag{margin-right:8px}
+  .hshot{display:flex;flex-direction:column;align-items:center;gap:12px}
+  .shotnote{margin:0;color:var(--muted);font-size:13px;text-align:center}
+
+  .phone{margin:0;width:100%;max-width:300px;background:#0F1114;border:1px solid #2A313A;border-radius:44px;padding:11px;box-shadow:0 30px 60px -30px rgba(0,0,0,.9),0 0 0 1px rgba(234,190,122,.06) inset}
+  .phone img{display:block;width:100%;height:auto;border-radius:34px;background:#000}
+  .hero-phone{max-width:320px}
+
+  h2{font-family:var(--serif);font-weight:600;font-size:clamp(28px,3.4vw,40px);line-height:1.1;letter-spacing:-.01em;margin:64px 0 8px;color:var(--gold)}
+  h3{font-size:19px;margin:0 0 6px;font-weight:700}
+  .sub{color:var(--muted);margin:0 0 20px;font-size:17px;max-width:680px}
+  p,li{color:#D8DDE3}
+  a{color:var(--gold)}
+  .how{counter-reset:s;list-style:none;padding:0;margin:0}
+  .how li{position:relative;padding:0 0 22px 56px}
+  .how li:before{counter-increment:s;content:counter(s);position:absolute;left:0;top:0;width:38px;height:38px;border-radius:50%;background:var(--gold);color:#000;font:700 17px var(--sans);display:flex;align-items:center;justify-content:center}
+  .how li:not(:last-child):after{content:"";position:absolute;left:18px;top:44px;bottom:0;width:2px;background:var(--stroke)}
+  .how b{display:block;font-size:19px;margin-bottom:3px}
+  .how p{margin:0;max-width:720px}
+  .setup li:before{background:var(--panel2);color:var(--gold);border:1px solid #4A3E29}
+  .tip{background:#152219;border:1px solid #25402D;border-radius:14px;padding:12px 16px;color:var(--green);margin:6px 0 0;max-width:720px;font-size:15.5px}
+
+  .rows{display:flex;flex-direction:column;gap:22px}
+  .row{display:grid;grid-template-columns:1fr auto;gap:36px;align-items:start;background:var(--panel);border:1px solid var(--stroke);border-radius:26px;padding:30px 34px}
+  .row.flip{grid-template-columns:auto 1fr}
+  .row.flip .rtext{order:2}
+  .row .phone{max-width:250px}
+  .rtext .ico{font-size:28px;margin-bottom:10px}
+  .rtext p{margin:0;font-size:17px;color:var(--soft);max-width:520px}
+  .rtext .big{font-size:18px;color:var(--text)}
+  .langrow{margin-top:8px}
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px;margin-top:22px}
+  .card{background:var(--panel);border:1px solid var(--stroke);border-radius:20px;padding:20px 22px}
+  .card .ico{font-size:26px;margin-bottom:8px}
+  .card p{margin:0;font-size:15.5px;color:var(--soft)}
+  .badge{display:inline-block;font:600 11px/1 var(--sans);letter-spacing:.08em;text-transform:uppercase;border-radius:999px;padding:5px 9px;vertical-align:middle;margin-left:8px}
+  .badge.free{background:#152219;color:var(--green);border:1px solid #25402D}
+  .badge.best{background:#26211A;color:var(--gold);border:1px solid #4A3E29;position:absolute;top:-12px;right:16px;margin:0}
+  .note{color:var(--muted);font-size:15px}
+  .two{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:0 0 14px}
+  .col{border-radius:20px;padding:18px 20px;border:1px solid var(--stroke)}
+  .col ul{margin:0;padding-left:20px}
+  .col li{margin:4px 0;font-size:15.5px}
+  .stays{background:#152219;border-color:#25402D}
+  .stays h3{color:var(--green)}
+  .leaves{background:var(--panel)}
+  .leaves h3{color:var(--gold)}
+  .plain{padding-left:20px}
+  .plans{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:14px;margin-top:6px}
+  .plan{position:relative;background:var(--panel);border:1px solid var(--stroke);border-radius:20px;padding:20px 22px}
+  .plan.hi{border-color:#4A3E29;background:#1A1712}
+  .pn{font-weight:700;font-size:18px}
+  .pp{font-family:var(--serif);color:var(--gold);font-size:30px;margin:4px 0 8px;letter-spacing:-.01em}
+  .plan p{margin:0;color:var(--muted);font-size:15px}
+  .free{margin-top:16px;font-weight:600}
+  .cta2{margin-top:22px}
+  .faq details{border-bottom:1px solid var(--stroke);padding:12px 0}
+  .faq summary{cursor:pointer;font-weight:600;list-style:none;display:flex;justify-content:space-between;gap:12px}
+  .faq summary::-webkit-details-marker{display:none}
+  .faq summary:after{content:"+";color:var(--gold);font-size:22px;line-height:1}
+  .faq details[open] summary:after{content:"–"}
+  .faq p{margin:10px 0 0;color:var(--soft);font-size:15.5px;max-width:760px}
+  footer{margin-top:56px;color:var(--muted);font-size:14px}
+
+  @media (max-width:860px){
+    .hero{grid-template-columns:1fr;gap:26px;padding-top:22px}
+    .hero-phone{max-width:240px}
+    .demo{min-height:0}
+    .row,.row.flip{grid-template-columns:1fr;gap:20px;padding:22px}
+    .row.flip .rtext{order:0}
+    .row .phone{max-width:210px;justify-self:center}
+  }
+  @media (max-width:560px){.two{grid-template-columns:1fr}main{padding:16px 16px 56px}}
+  @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.bub{animation:none;opacity:1;transform:none}.btn{transition:none}}
+</style>
+</head>
+<body>
+<main>
+<header>
+  <a class="home" href="/"><img src="/icon-64.png" alt="" width="34" height="34">Prau</a>
+  <nav id="langs" aria-label="Language"><a class="lang" href="/">English</a><a class="lang" href="/ru/">Русский</a><a class="lang" href="/uk/">Українська</a><a class="lang" href="/fr/">Français</a><a class="lang" href="/es/">Español</a><a class="lang" href="/de/">Deutsch</a><a class="lang" href="/nl/">Nederlands</a><a class="lang" href="/it/">Italiano</a><a class="lang" href="/pt/" aria-current="true">Português</a><a class="lang" href="/pl/">Polski</a><a class="lang" href="/tr/">Türkçe</a></nav>
+  <a class="navcta" href="https://apps.apple.com/app/id6801931802">App Store</a>
+</header>
+
+<section data-lang="pt" class="active">
+<div class="hero">
+  <div class="htext">
+    <p class="kicker">Tradutor de voz offline para iPhone</p>
+    <h1>Fale no seu idioma.<br><span class="g">Seja entendido no deles.</span></h1>
+    <p class="lead">O Prau reconhece, traduz e fala em 19 idiomas — inteiramente no seu iPhone. Sem internet, sem contas, sem servidores. Nada do que você diz é enviado para lugar nenhum.</p>
+    <p class="cta"><a class="btn" href="https://apps.apple.com/app/id6801931802"><span class="apple" aria-hidden="true"></span>Baixar na App Store</a><span class="ctan">3 dias de teste grátis · iOS 18 ou posterior</span></p>
+    <div class="demo" data-demos="[[[&quot;🇧🇷&quot;, &quot;Onde fica a farmácia mais próxima?&quot;], [&quot;🇬🇧&quot;, &quot;Where is the nearest pharmacy?&quot;], [&quot;🇬🇧&quot;, &quot;At the end of the street, on the left.&quot;], [&quot;🇧🇷&quot;, &quot;No fim da rua, à esquerda.&quot;]], [[&quot;🇧🇷&quot;, &quot;Vocês têm um quarto para duas noites?&quot;], [&quot;🇫🇷&quot;, &quot;Avez-vous une chambre pour deux nuits ?&quot;], [&quot;🇫🇷&quot;, &quot;Oui, avec vue sur la mer.&quot;], [&quot;🇧🇷&quot;, &quot;Sim, com vista para o mar.&quot;]], [[&quot;🇧🇷&quot;, &quot;Quanto custa até o aeroporto?&quot;], [&quot;🇩🇪&quot;, &quot;Wie viel kostet es zum Flughafen?&quot;], [&quot;🇩🇪&quot;, &quot;Etwa dreißig Euro.&quot;], [&quot;🇧🇷&quot;, &quot;Uns trinta euros.&quot;]]]" aria-hidden="true"><div class="bub a"><span class="flag" aria-hidden="true">🇧🇷</span>Onde fica a farmácia mais próxima?</div><div class="bub b"><span class="flag" aria-hidden="true">🇬🇧</span>Where is the nearest pharmacy?</div><div class="bub a"><span class="flag" aria-hidden="true">🇬🇧</span>At the end of the street, on the left.</div><div class="bub b"><span class="flag" aria-hidden="true">🇧🇷</span>No fim da rua, à esquerda.</div></div>
+  </div>
+  <div class="hshot">
+    <figure class="phone hero-phone"><picture><source srcset="/img/main.webp" type="image/webp"><img src="/img/main.png" alt="Tela principal do Prau: par francês–alemão, botão do microfone, chave de leitura em voz alta" width="640" height="1288" loading="lazy" decoding="async"></picture></figure>
+    <p class="shotnote">Telas reais do Prau — nada montado.</p>
+  </div>
+</div>
+
+<h2>Como funciona</h2>
+<p class="sub">Três passos, e depois simplesmente funciona — em qualquer lugar.</p>
+<ol class="how"><li><b>Escolha um par de idiomas</b><p>Toque nos botões de idioma no topo. Na primeira vez, o iOS oferece baixar os pacotes de idioma — confirme, e a partir daí a tradução nunca mais precisa de rede.</p></li><li><b>Toque no microfone e fale</b><p>O Prau reconhece suas palavras no aparelho, traduz e lê a tradução em voz alta. A outra pessoa responde — e ouve a resposta no próprio idioma.</p></li><li><b>Guarde a conversa</b><p>Cada conversa é salva automaticamente. Pesquise, reabra, exporte em TXT ou PDF, compartilhe. Essa parte é grátis, para sempre.</p></li></ol>
+
+<h2>Ver, e não só ler a respeito</h2>
+<p class="sub">Cada tela abaixo é o Prau 1.0 como ele roda hoje em um iPhone.</p>
+<div class="rows"><div class="row"><div class="rtext"><div class="ico" aria-hidden="true">🎧</div><h3>A tradução nos seus fones</h3><p>Conecte AirPods ou qualquer fone. A tradução no seu idioma toca baixinho no seu ouvido; a outra pessoa ouve o idioma dela no alto-falante do telefone.</p></div><figure class="phone "><picture><source srcset="/img/settings.webp" type="image/webp"><img src="/img/settings.png" alt="Ajustes: meu idioma, velocidade da fala, voz da tradução, idiomas" width="640" height="1288" loading="lazy" decoding="async"></picture></figure></div><div class="row flip"><div class="rtext"><div class="ico" aria-hidden="true">👥</div><h3>Modo frente a frente</h3><p>Coloque o telefone entre vocês. Cada lado vê a tela na posição certa, no próprio idioma, e fala na sua vez. Feito para a recepção do hotel, a farmácia, o táxi ou a loja.</p></div><figure class="phone "><picture><source srcset="/img/face.webp" type="image/webp"><img src="/img/face.png" alt="Modo frente a frente: a tela dividida em duas, cada metade voltada para o seu falante" width="640" height="1288" loading="lazy" decoding="async"></picture></figure></div><div class="row"><div class="rtext"><div class="ico" aria-hidden="true">🕘</div><h3>Uma conversa por pessoa — voz, fotos e PDFs juntos</h3><p>Cada conversa fica no seu iPhone. Deslize uma conversa para a direita para renomeá-la — ‘Hotel em Lisboa’, ‘Proprietário’. Abra e toque em ‘Continuar esta conversa’: nova fala, fotos e páginas de PDF entram no mesmo fio, então um interlocutor significa um dossiê, um resumo, uma exportação. Pesquise em tudo, exporte qualquer conversa em TXT ou PDF. E segure em qualquer cartão para selecionar e copiar uma palavra ou trecho. Histórico, busca, exportação e cópia nunca exigem assinatura — nem agora, nem depois.</p></div><figure class="phone "><picture><source srcset="/img/history.webp" type="image/webp"><img src="/img/history.png" alt="Histórico: uma conversa com a ação Renomear visível após deslizar para a direita" width="640" height="1288" loading="lazy" decoding="async"></picture></figure></div><div class="row flip"><div class="rtext"><div class="ico" aria-hidden="true">✨</div><h3>Resumo escrito no seu iPhone</h3><p>Nos iPhones com Apple Intelligence, você recebe um resumo curto da conversa inteira — o essencial em poucas linhas, escrito no aparelho e nunca enviado a lugar nenhum.</p></div><figure class="phone "><picture><source srcset="/img/summary.webp" type="image/webp"><img src="/img/summary.png" alt="Resumo da conversa escrito pela Apple Intelligence no iPhone" width="640" height="1288" loading="lazy" decoding="async"></picture></figure></div><div class="row"><div class="rtext"><div class="ico" aria-hidden="true">📷</div><h3>Fotos e PDFs</h3><p>Aponte a câmera para um cardápio, uma placa, um documento — ou importe um PDF. O texto é reconhecido e traduzido no aparelho, organizado em parágrafos legíveis e exportável como PDF.</p></div><figure class="phone "><picture><source srcset="/img/photo.webp" type="image/webp"><img src="/img/photo.png" alt="Tradução de foto ou PDF: escanear, escolher da fototeca, escolher um PDF" width="640" height="1288" loading="lazy" decoding="async"></picture></figure></div></div>
+<div class="grid"><div class="card"><div class="ico" aria-hidden="true">🎙</div><h3>Conversas por voz, offline</h3><p>Reconhecimento de fala, tradução e voz rodam no iPhone. Funciona no avião, na montanha, no exterior sem chip e em qualquer lugar com conexão ruim.</p></div><div class="card"><div class="ico" aria-hidden="true">⌨️</div><h3>Texto e velocidade da fala</h3><p>Digite em vez de falar quando for preciso silêncio. Deixe a tradução falada mais lenta se a outra pessoa tiver dificuldade de acompanhar. Escolha a voz quando o sistema oferecer mais de uma.</p></div></div>
+
+<h2 id="setup-pt">Configure uma vez, antes da viagem</h2>
+<p class="sub">Duas coisas ficam no iOS, não no Prau. Faça em casa no Wi-Fi — depois tudo funciona totalmente sem rede.</p>
+<ol class="how setup"><li><b>Pacotes de idioma para a tradução</b><p>Abra o Prau e escolha o seu par. O iOS mostra a janela ‘Downloads necessários’ — toque na seta ao lado de cada idioma. Cerca de 50–100 MB por idioma, uma única vez. Depois você pode adicionar pacotes em Prau → Ajustes → Idiomas.</p></li><li><b>Ditado offline para a sua voz</b><p>Ajustes do iPhone → Geral → Teclado → Idiomas de Ditado. Adicione cada idioma que você vai falar. Se um idioma não estiver na lista, adicione uma vez o teclado dele (Teclado → Teclados → Adicionar Novo Teclado) — o ditado vem junto sozinho. O iOS baixa o modelo em segundo plano, geralmente em um dia, mais rápido no Wi-Fi e carregando. Em Prau → Ajustes → Idiomas, um microfone verde significa que o idioma está pronto.</p></li><li><b>Fones — opcional</b><p>Conecte AirPods ou outro fone e escolha ‘Meu idioma’ nos ajustes do Prau. Sua tradução toca baixinho no seu ouvido; a outra pessoa ouve a dela pelo alto-falante do telefone.</p></li></ol>
+<p class="tip">A tradução de texto e fotos não precisa de ditado nenhum — funciona assim que os pacotes chegam.</p>
+
+<h2>19 idiomas, totalmente offline</h2>
+<div class="row langrow">
+  <div class="rtext"><p class="big">Inglês, francês, alemão, espanhol, italiano, português, holandês, polonês, ucraniano, russo, turco, árabe, chinês (simplificado e tradicional), japonês, coreano, indonésio, tailandês e vietnamita. Qualquer par entre eles.</p><p class="note">A entrada por voz funciona para os idiomas cujo modelo de ditado offline o iOS instalou — um microfone verde na tela Idiomas mostra quais estão prontos. A tradução de texto e fotos funciona de qualquer forma para todos os 19.</p></div>
+  <figure class="phone "><picture><source srcset="/img/picker.webp" type="image/webp"><img src="/img/picker.png" alt="Seletor de idiomas: inglês, ucraniano, alemão, espanhol, italiano e mais" width="640" height="1288" loading="lazy" decoding="async"></picture></figure>
+</div>
+
+<h2 id="privacy-pt">Privacidade é o projeto, não um ajuste</h2>
+<p class="sub">A maioria dos tradutores manda sua voz para um servidor. O Prau não tem nenhum.</p>
+<div class="two">
+  <div class="col stays"><h3>Fica no seu iPhone</h3><ul><li>Tudo o que você diz e ouve</li><li>Tudo o que você digita</li><li>Fotos, PDFs e o texto reconhecido</li><li>Seu histórico de conversas e as buscas</li><li>Resumos de conversas (Apple Intelligence, no aparelho)</li></ul></div>
+  <div class="col leaves"><h3>Sai do seu iPhone</h3><ul><li>O status da sua assinatura — um ID anônimo e o recibo da App Store, verificados via RevenueCat para o app saber que o Pro está ativo. Nada mais.</li></ul></div>
+</div>
+<ul class="plain"><li>Sem contas, sem login.</li><li>Sem analytics, sem anúncios, sem SDKs de rastreamento.</li><li>Sem servidores próprios — não há para onde enviar.</li><li>Construído apenas sobre os frameworks on-device da Apple: Speech, Translation, Vision, AVFoundation.</li><li>Apague uma conversa, ou todas, quando quiser. Apague o app — o histórico vai junto.</li></ul>
+<p><a href="/privacy.html#pt">Leia a política de privacidade completa →</a></p>
+
+<h2>Prau Pro</h2>
+<p class="sub">Experimente tudo grátis por 3 dias. Depois escolha o que combina com você.</p>
+<div class="plans"><div class="plan"><div class="pn">Mensal</div><div class="pp">US$ 4,99 / mês</div><p>3 dias grátis, depois mensal. Cancele quando quiser.</p></div><div class="plan hi"><span class="badge best">Mais vantajoso</span><div class="pn">Anual</div><div class="pp">US$ 34,99 / ano</div><p>3 dias grátis, depois anual. Mais vantajoso.</p></div><div class="plan"><div class="pn">Vitalício</div><div class="pp">US$ 59,99 uma vez</div><p>Compra única, seu para sempre.</p></div></div>
+<p class="free">Histórico, busca e exportação em TXT/PDF são grátis para todos, sempre.</p>
+<p class="note">Preços em USD; seu preço local está na App Store. As assinaturas são renovadas automaticamente, a menos que canceladas pelo menos 24 horas antes do fim do período atual. Gerencie ou cancele nos ajustes da sua Conta Apple. Restaurar compras: tela de pagamento → Restaurar, ou Ajustes → Restaurar compras.</p>
+<p class="cta cta2"><a class="btn" href="https://apps.apple.com/app/id6801931802"><span class="apple" aria-hidden="true"></span>Baixar na App Store</a><span class="ctan">3 dias de teste grátis · iOS 18 ou posterior</span></p>
+
+<h2 id="support-pt">Suporte</h2>
+<div class="faq"><details><summary>O microfone aparece riscado em um idioma</summary><p>A entrada por voz precisa do modelo de ditado offline que o iOS instala para aquele idioma. Abra Ajustes → Geral → Teclado → Idiomas de Ditado: se o idioma está na lista, o iOS já está baixando o modelo em segundo plano (geralmente em um dia, mais rápido no Wi-Fi e carregando). Se o idioma não está lá, adicione uma vez o teclado daquele idioma — o ditado liga sozinho. Enquanto isso, a tradução de texto e fotos funciona plenamente.</p></details><details><summary>A janela do sistema ‘Downloads necessários’ aparece</summary><p>É o framework Translation da Apple pedindo os pacotes de idioma. Toque na seta ao lado de cada idioma; o download só começa quando você toca. Depois disso, a tradução funciona offline para sempre.</p></details><details><summary>A tradução está lenta ou o tradutor não responde</summary><p>Isso acontece do lado do iOS, geralmente logo depois da instalação de um pacote de idioma, e passa em um minuto. Se continuar, reinicie o iPhone.</p></details><details><summary>Paguei, mas o Pro não está ativo</summary><p>Abra a tela de pagamento ou os Ajustes e toque em Restaurar compras. As compras ficam vinculadas à sua Conta Apple e são restauradas em qualquer um dos seus iPhones. Se ainda assim não funcionar, escreva para nós com o recibo da App Store.</p></details><details><summary>Como cancelo a assinatura?</summary><p>Ajustes do iPhone → seu nome → Assinaturas → Prau. Depois de cancelar, o Pro continua ativo até o fim do período pago.</p></details><details><summary>Quais iPhones são compatíveis?</summary><p>Qualquer iPhone com iOS 18 ou posterior. Os resumos de conversas exigem também Apple Intelligence (iPhone 15 Pro e posteriores) e um idioma de sistema compatível.</p></details></div>
+
+<h2>Fale com a gente</h2>
+<p>Dúvidas, bugs, ideias — escreva para <a href="mailto:alexpan77705@gmail.com">alexpan77705@gmail.com</a>. Respondemos pessoalmente, geralmente em um dia.</p>
+
+<footer>
+  <a href="/privacy.html#pt">Política de Privacidade</a> ·
+  <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/">Termos de Uso</a> ·
+  <span>© 2026 Prau</span>
+</footer>
+</section>
+</main>
+<script>
+(function(){
+  var reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function esc(s){return s.replace(/[&<>]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;'}[c];});}
+  function render(box,conv){
+    box.innerHTML=conv.map(function(m,i){return '<div class="bub '+(i%2?'b':'a')+'"><span class="flag" aria-hidden="true">'+m[0]+'</span>'+esc(m[1])+'</div>';}).join('');
+  }
+  var box=document.querySelector('.demo');
+  if(box){
+    var demos=JSON.parse(box.getAttribute('data-demos')); var i=0;
+    render(box,demos[0]);
+    if(!reduce&&demos.length>1){
+      setInterval(function(){ if(document.hidden) return; i=(i+1)%demos.length; render(box,demos[i]); },6500);
+    }
+  }
+})();
+</script>
+</body>
+</html>

@@ -225,3 +225,131 @@ X["nl"] = dict(
  pro_badge="Pro",
  best_badge="Voordeligst",
 )
+
+X["it"] = dict(
+ nav_cta="App Store",
+ hero_note2="Schermate vere di Prau — niente di costruito.",
+ demos=[
+  [("🇮🇹","Dov'è la farmacia più vicina?"),("🇬🇧","Where is the nearest pharmacy?"),("🇬🇧","At the end of the street, on the left."),("🇮🇹","In fondo alla strada, a sinistra.")],
+  [("🇮🇹","Avete una camera per due notti?"),("🇫🇷","Avez-vous une chambre pour deux nuits ?"),("🇫🇷","Oui, avec vue sur la mer."),("🇮🇹","Sì, con vista sul mare.")],
+  [("🇮🇹","Quanto costa fino all'aeroporto?"),("🇩🇪","Wie viel kostet es zum Flughafen?"),("🇩🇪","Etwa dreißig Euro."),("🇮🇹","Circa trenta euro.")],
+ ],
+ see_h="Vederlo, non solo leggerne",
+ see_sub="Ogni schermata qui sotto è Prau 1.0 così come gira oggi su un iPhone.",
+ alts={
+  "main":"Schermata principale di Prau: coppia francese–tedesco, pulsante del microfono, interruttore di lettura ad alta voce",
+  "face":"Modalità faccia a faccia: lo schermo diviso in due, ogni metà rivolta al proprio parlante",
+  "history":"Cronologia: una conversazione con l'azione Rinomina visibile dopo uno scorrimento a destra",
+  "summary":"Riassunto della conversazione scritto da Apple Intelligence sull'iPhone",
+  "photo":"Traduzione da foto o PDF: scansiona, scegli dalla libreria, scegli un PDF",
+  "settings":"Impostazioni: la mia lingua, velocità della voce, voce della traduzione, lingue",
+  "picker":"Selettore delle lingue: inglese, ucraino, tedesco, spagnolo, italiano e altre",
+ },
+ setup_h="Da configurare una volta, prima del viaggio",
+ setup_sub="Due cose stanno in iOS, non in Prau. Falle a casa col Wi-Fi — poi tutto funziona del tutto senza rete.",
+ setup=[
+  ("Pacchetti lingua per la traduzione","Apri Prau e scegli la tua coppia. iOS mostra la finestra ‘Download richiesti’ — tocca la freccia accanto a ogni lingua. Circa 50–100 MB per lingua, una sola volta. Più avanti puoi aggiungere pacchetti in Prau → Impostazioni → Lingue."),
+  ("Dettatura offline per la tua voce","Impostazioni dell'iPhone → Generali → Tastiera → Lingue di dettatura. Aggiungi ogni lingua che parlerai. Se una lingua manca dall'elenco, aggiungi una volta la sua tastiera (Tastiera → Tastiere → Aggiungi nuova tastiera) — la dettatura segue da sola. iOS scarica il modello in background, di solito entro un giorno, più in fretta con Wi-Fi e in carica. In Prau → Impostazioni → Lingue un microfono verde significa che la lingua è pronta."),
+  ("Cuffie — facoltative","Collega AirPods o un'altra cuffia e scegli ‘La mia lingua’ nelle impostazioni di Prau. La tua traduzione suona piano nel tuo orecchio; l'altra persona sente la propria dall'altoparlante del telefono."),
+ ],
+ setup_tip="La traduzione di testo e foto non ha affatto bisogno della dettatura — funziona appena ci sono i pacchetti.",
+ free_badge="Gratis, per sempre",
+ pro_badge="Pro",
+ best_badge="Più conveniente",
+)
+
+X["pt"] = dict(
+ nav_cta="App Store",
+ hero_note2="Telas reais do Prau — nada montado.",
+ demos=[
+  [("🇧🇷","Onde fica a farmácia mais próxima?"),("🇬🇧","Where is the nearest pharmacy?"),("🇬🇧","At the end of the street, on the left."),("🇧🇷","No fim da rua, à esquerda.")],
+  [("🇧🇷","Vocês têm um quarto para duas noites?"),("🇫🇷","Avez-vous une chambre pour deux nuits ?"),("🇫🇷","Oui, avec vue sur la mer."),("🇧🇷","Sim, com vista para o mar.")],
+  [("🇧🇷","Quanto custa até o aeroporto?"),("🇩🇪","Wie viel kostet es zum Flughafen?"),("🇩🇪","Etwa dreißig Euro."),("🇧🇷","Uns trinta euros.")],
+ ],
+ see_h="Ver, e não só ler a respeito",
+ see_sub="Cada tela abaixo é o Prau 1.0 como ele roda hoje em um iPhone.",
+ alts={
+  "main":"Tela principal do Prau: par francês–alemão, botão do microfone, chave de leitura em voz alta",
+  "face":"Modo frente a frente: a tela dividida em duas, cada metade voltada para o seu falante",
+  "history":"Histórico: uma conversa com a ação Renomear visível após deslizar para a direita",
+  "summary":"Resumo da conversa escrito pela Apple Intelligence no iPhone",
+  "photo":"Tradução de foto ou PDF: escanear, escolher da fototeca, escolher um PDF",
+  "settings":"Ajustes: meu idioma, velocidade da fala, voz da tradução, idiomas",
+  "picker":"Seletor de idiomas: inglês, ucraniano, alemão, espanhol, italiano e mais",
+ },
+ setup_h="Configure uma vez, antes da viagem",
+ setup_sub="Duas coisas ficam no iOS, não no Prau. Faça em casa no Wi-Fi — depois tudo funciona totalmente sem rede.",
+ setup=[
+  ("Pacotes de idioma para a tradução","Abra o Prau e escolha o seu par. O iOS mostra a janela ‘Downloads necessários’ — toque na seta ao lado de cada idioma. Cerca de 50–100 MB por idioma, uma única vez. Depois você pode adicionar pacotes em Prau → Ajustes → Idiomas."),
+  ("Ditado offline para a sua voz","Ajustes do iPhone → Geral → Teclado → Idiomas de Ditado. Adicione cada idioma que você vai falar. Se um idioma não estiver na lista, adicione uma vez o teclado dele (Teclado → Teclados → Adicionar Novo Teclado) — o ditado vem junto sozinho. O iOS baixa o modelo em segundo plano, geralmente em um dia, mais rápido no Wi-Fi e carregando. Em Prau → Ajustes → Idiomas, um microfone verde significa que o idioma está pronto."),
+  ("Fones — opcional","Conecte AirPods ou outro fone e escolha ‘Meu idioma’ nos ajustes do Prau. Sua tradução toca baixinho no seu ouvido; a outra pessoa ouve a dela pelo alto-falante do telefone."),
+ ],
+ setup_tip="A tradução de texto e fotos não precisa de ditado nenhum — funciona assim que os pacotes chegam.",
+ free_badge="Grátis, sempre",
+ pro_badge="Pro",
+ best_badge="Mais vantajoso",
+)
+
+X["pl"] = dict(
+ nav_cta="App Store",
+ hero_note2="Prawdziwe ekrany z Prau — nic nie jest zainscenizowane.",
+ demos=[
+  [("🇵🇱","Gdzie jest najbliższa apteka?"),("🇬🇧","Where is the nearest pharmacy?"),("🇬🇧","At the end of the street, on the left."),("🇵🇱","Na końcu ulicy, po lewej.")],
+  [("🇵🇱","Czy mają państwo pokój na dwie noce?"),("🇩🇪","Haben Sie ein Zimmer für zwei Nächte?"),("🇩🇪","Ja, mit Meerblick."),("🇵🇱","Tak, z widokiem na morze.")],
+  [("🇵🇱","Ile kosztuje dojazd na lotnisko?"),("🇪🇸","¿Cuánto cuesta hasta el aeropuerto?"),("🇪🇸","Unos treinta euros."),("🇵🇱","Około trzydziestu euro.")],
+ ],
+ see_h="Zobacz, zamiast tylko czytać",
+ see_sub="Każdy ekran poniżej to Prau 1.0 — tak, jak działa dziś na iPhonie.",
+ alts={
+  "main":"Ekran główny Prau: para francuski–niemiecki, przycisk mikrofonu, przełącznik czytania na głos",
+  "face":"Tryb twarzą w twarz: ekran podzielony na pół, każda połowa zwrócona do swojego mówcy",
+  "history":"Historia: rozmowa z akcją Zmień nazwę widoczną po przesunięciu w prawo",
+  "summary":"Podsumowanie rozmowy napisane przez Apple Intelligence na iPhonie",
+  "photo":"Tłumaczenie ze zdjęcia lub PDF-a: skanuj, wybierz z biblioteki, wybierz PDF",
+  "settings":"Ustawienia: mój język, tempo mowy, głos tłumaczenia, języki",
+  "picker":"Wybór języków: angielski, ukraiński, niemiecki, hiszpański, włoski i inne",
+ },
+ setup_h="Skonfiguruj raz, przed podróżą",
+ setup_sub="Dwie rzeczy siedzą w iOS, nie w Prau. Zrób je w domu na Wi-Fi — potem wszystko działa całkiem bez sieci.",
+ setup=[
+  ("Pakiety językowe do tłumaczenia","Otwórz Prau i wybierz swoją parę. iOS pokaże okno ‘Wymagane pobrania’ — dotknij strzałki obok każdego języka. Około 50–100 MB na język, jednorazowo. Później możesz dodawać pakiety w Prau → Ustawienia → Języki."),
+  ("Dyktowanie offline dla Twojego głosu","Ustawienia iPhone'a → Ogólne → Klawiatura → Języki dyktowania. Dodaj każdy język, którym będziesz mówić. Jeśli języka nie ma na liście, dodaj raz jego klawiaturę (Klawiatura → Klawiatury → Dodaj nową klawiaturę) — dyktowanie dołączy samo. iOS pobiera model w tle, zwykle w ciągu doby, najszybciej na Wi-Fi i podczas ładowania. W Prau → Ustawienia → Języki zielony mikrofon oznacza, że język jest gotowy."),
+  ("Słuchawki — opcjonalnie","Podłącz AirPods lub inne słuchawki i wybierz ‘Mój język’ w ustawieniach Prau. Twoje tłumaczenie cicho brzmi w Twoim uchu; rozmówca słyszy swoje z głośnika telefonu."),
+ ],
+ setup_tip="Tłumaczenie tekstu i zdjęć w ogóle nie potrzebuje dyktowania — działa, gdy tylko są pakiety.",
+ free_badge="Za darmo, zawsze",
+ pro_badge="Pro",
+ best_badge="Najkorzystniej",
+)
+
+X["tr"] = dict(
+ nav_cta="App Store",
+ hero_note2="Prau'dan gerçek ekranlar — hiçbir şey kurgulanmadı.",
+ demos=[
+  [("🇹🇷","En yakın eczane nerede?"),("🇬🇧","Where is the nearest pharmacy?"),("🇬🇧","At the end of the street, on the left."),("🇹🇷","Sokağın sonunda, solda.")],
+  [("🇹🇷","İki gecelik odanız var mı?"),("🇩🇪","Haben Sie ein Zimmer für zwei Nächte?"),("🇩🇪","Ja, mit Meerblick."),("🇹🇷","Evet, deniz manzaralı.")],
+  [("🇹🇷","Havalimanına ne kadar?"),("🇫🇷","Combien coûte la course jusqu'à l'aéroport ?"),("🇫🇷","Environ trente euros."),("🇹🇷","Yaklaşık otuz euro.")],
+ ],
+ see_h="Sadece okumak yerine gör",
+ see_sub="Aşağıdaki her ekran, bugün bir iPhone'da çalışan haliyle Prau 1.0.",
+ alts={
+  "main":"Prau ana ekranı: Fransızca–Almanca çifti, mikrofon düğmesi, sesli okuma anahtarı",
+  "face":"Yüz yüze modu: ekran ikiye bölünmüş, her yarı kendi konuşanına dönük",
+  "history":"Geçmiş: sağa kaydırınca Yeniden adlandır eylemi görünen bir konuşma",
+  "summary":"Apple Intelligence'ın iPhone'da yazdığı konuşma özeti",
+  "photo":"Fotoğraftan veya PDF'ten çeviri: tara, arşivden seç, bir PDF seç",
+  "settings":"Ayarlar: dilim, konuşma hızı, çeviri sesi, diller",
+  "picker":"Dil seçici: İngilizce, Ukraynaca, Almanca, İspanyolca, İtalyanca ve daha fazlası",
+ },
+ setup_h="Yolculuktan önce bir kez kur",
+ setup_sub="İki şey Prau'da değil, iOS'te durur. İkisini de evde Wi-Fi'deyken yap — sonrası tamamen ağsız çalışır.",
+ setup=[
+  ("Çeviri için dil paketleri","Prau'yu aç ve çiftini seç. iOS ‘Gerekli indirmeler’ penceresini gösterir — her dilin yanındaki oka dokun. Dil başına yaklaşık 50–100 MB, tek seferlik. Daha sonra Prau → Ayarlar → Diller'den paket ekleyebilirsin."),
+  ("Sesin için çevrimdışı dikte","iPhone Ayarları → Genel → Klavye → Dikte Dilleri. Konuşacağın her dili ekle. Bir dil listede yoksa o dilin klavyesini bir kez ekle (Klavye → Klavyeler → Yeni Klavye Ekle) — dikte kendiliğinden gelir. iOS modeli arka planda indirir, genelde bir gün içinde; en hızlısı Wi-Fi'de ve şarjdayken. Prau → Ayarlar → Diller'de yeşil mikrofon, dilin hazır olduğu anlamına gelir."),
+  ("Kulaklık — isteğe bağlı","AirPods veya başka bir kulaklık bağla ve Prau ayarlarından ‘Dilim'i seç. Senin çevirin kulağında sessizce çalar; karşındaki kendi çevirisini telefonun hoparlöründen duyar."),
+ ],
+ setup_tip="Metin ve fotoğraf çevirisinin dikteye hiç ihtiyacı yok — paketler iner inmez çalışır.",
+ free_badge="Her zaman ücretsiz",
+ pro_badge="Pro",
+ best_badge="En avantajlı",
+)

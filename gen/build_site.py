@@ -9,8 +9,8 @@ exec(open(os.path.join(HERE, "strings_base.py"), encoding="utf-8").read())   # �
 from strings_new import X
 
 SITE = "https://getprau.com/"
-order = ["en","ru","uk","fr","es","de","nl"]
-names = {"en":"English","ru":"Русский","uk":"Українська","fr":"Français","es":"Español","de":"Deutsch","nl":"Nederlands"}
+order = ["en","ru","uk","fr","es","de","nl","it","pt","pl","tr"]
+names = {"en":"English","ru":"Русский","uk":"Українська","fr":"Français","es":"Español","de":"Deutsch","nl":"Nederlands","it":"Italiano","pt":"Português","pl":"Polski","tr":"Türkçe"}
 
 def e(s): return html.escape(s, quote=False)
 
