@@ -36,10 +36,19 @@ def section(code, d, x, active):
         return (f'<div class="row{" flip" if flip else ""}">'
                 f'<div class="rtext"><div class="ico" aria-hidden="true">{ico}</div><h3>{e(t)}{b}</h3><p>{e(p)}</p></div>'
                 f'{phone(shot, a[shot])}</div>')
+    def row_video(feat, shot, flip):
+        """Ряд как row(), но в рамке телефона — зацикленный немой ролик."""
+        ico,t,p = feat
+        vid = (f'<figure class="phone vidrow"><video src="/img/{shot}.mp4" poster="/img/{shot}-poster.jpg" '
+               f'width="480" height="1042" autoplay muted loop playsinline preload="metadata" '
+               f'aria-label="{e(a[shot])}"></video></figure>')
+        return (f'<div class="row{" flip" if flip else ""}">'
+                f'<div class="rtext"><div class="ico" aria-hidden="true">{ico}</div><h3>{e(t)}</h3><p>{e(p)}</p></div>'
+                f'{vid}</div>')
     # HISTORY_ROW: история — полноценный ряд, а не карточка
     rows = (row(f[2],"settings",False) + row(f[1],"face",True) +
         row(f[4],"history",False) +
-        row(f[5],"summary",True) + row(f[3],"photo",False))
+        row_video(f[5],"summary",True) + row(f[3],"photo",False))
     def card(feat, badge=None):
         ico,t,p = feat
         b = f'<span class="badge free">{e(badge)}</span>' if badge else ""
