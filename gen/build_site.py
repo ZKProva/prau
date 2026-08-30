@@ -71,7 +71,7 @@ def section(code, d, x, active):
 </div>
 
 <div class="vidsec">
-  <figure class="phone vid"><video src="/img/demo.mp4" poster="/img/demo-poster.jpg" width="480" height="1042" autoplay muted loop playsinline preload="metadata" aria-label="{e(x["video_cap"])}"></video></figure>
+  <figure class="phone vid"><video src="/img/demo.mp4" poster="/img/demo-poster.jpg" width="480" height="1042" autoplay muted loop playsinline preload="metadata" aria-label="{e(x["video_cap"])}"></video><button class="vsound" type="button" aria-label="{e(x["video_sound"])}" aria-pressed="false">🔇</button></figure>
   <p class="shotnote vidcap">{e(x["video_cap"])}</p>
 </div>
 
@@ -172,6 +172,10 @@ CSS = """
   .phone.vid{max-width:280px}
   .phone video{display:block;width:100%;height:auto;border-radius:34px;background:#000}
   .vidcap{max-width:460px}
+  .phone.vid{position:relative}
+  .vsound{position:absolute;right:22px;bottom:24px;width:44px;height:44px;border-radius:50%;border:1px solid var(--stroke);background:rgba(11,12,14,.72);backdrop-filter:blur(6px);color:var(--text);font-size:19px;line-height:1;cursor:pointer;display:flex;align-items:center;justify-content:center;padding:0}
+  .vsound:hover{border-color:#4A3E29;color:var(--gold)}
+  .vsound:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
 
   h2{font-family:var(--serif);font-weight:600;font-size:clamp(28px,3.4vw,40px);line-height:1.1;letter-spacing:-.01em;margin:64px 0 8px;color:var(--gold)}
   h3{font-size:19px;margin:0 0 6px;font-weight:700}
@@ -352,6 +356,13 @@ def page(code):
     if(!reduce&&demos.length>1){{
       setInterval(function(){{ if(document.hidden) return; i=(i+1)%demos.length; render(box,demos[i]); }},6500);
     }}
+  }}
+  var v=document.querySelector('.vidsec video'), sb=document.querySelector('.vsound');
+  if(v&&sb){{
+    sb.addEventListener('click',function(){{
+      if(v.muted){{ v.muted=false; v.currentTime=0; var p=v.play(); if(p&&p.catch)p.catch(function(){{}}); sb.textContent='🔊'; sb.setAttribute('aria-pressed','true'); }}
+      else {{ v.muted=true; sb.textContent='🔇'; sb.setAttribute('aria-pressed','false'); }}
+    }});
   }}
 }})();
 </script>
