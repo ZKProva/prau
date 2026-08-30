@@ -102,7 +102,7 @@ def section(code, d, x, active):
 <h2>{e(d["lang_h"])}</h2>
 <div class="row langrow">
   <div class="rtext"><p class="big">{e(d["lang_p"])}</p><p class="note">{e(d["lang_note"])}</p></div>
-  {phone("picker", a["picker"])}
+  <figure class="phone vidrow"><video src="/img/picker.mp4" poster="/img/picker-poster.jpg" width="480" height="1042" autoplay muted loop playsinline preload="metadata" aria-label="{e(a["picker"])}"></video></figure>
 </div>
 
 <h2 id="privacy-{code}">{e(d["priv_h"])}</h2>
