@@ -83,8 +83,8 @@
   .phone.vid{max-width:280px}
   .phone video{display:block;width:100%;height:auto;border-radius:34px;background:#000}
   .vidcap{max-width:460px}
-  .phone.vid{position:relative}
-  .vsound{position:absolute;right:22px;bottom:24px;width:44px;height:44px;border-radius:50%;border:1px solid var(--stroke);background:rgba(11,12,14,.72);backdrop-filter:blur(6px);color:var(--text);font-size:19px;line-height:1;cursor:pointer;display:flex;align-items:center;justify-content:center;padding:0}
+  /* vsound-out */
+  .vsound{width:46px;height:46px;border-radius:50%;border:1px solid var(--stroke);background:var(--panel);color:var(--text);font-size:19px;line-height:1;cursor:pointer;display:flex;align-items:center;justify-content:center;padding:0;margin-top:-2px}
   .vsound:hover{border-color:#4A3E29;color:var(--gold)}
   .vsound:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
 
@@ -180,7 +180,8 @@
 </div>
 
 <div class="vidsec">
-  <figure class="phone vid"><video src="/img/demo.mp4" poster="/img/demo-poster.jpg" width="480" height="1042" autoplay muted loop playsinline preload="metadata" aria-label="Airplane mode on — the phrase is translated and voiced entirely on the iPhone. One continuous take, no cuts."></video><button class="vsound" type="button" aria-label="Sound on/off" aria-pressed="false">🔇</button></figure>
+  <figure class="phone vid"><video src="/img/demo.mp4" poster="/img/demo-poster.jpg" width="480" height="1042" autoplay muted loop playsinline preload="metadata" aria-label="Airplane mode on — the phrase is translated and voiced entirely on the iPhone. One continuous take, no cuts."></video></figure>
+  <button class="vsound" type="button" aria-label="Sound on/off" aria-pressed="false">🔇</button>
   <p class="shotnote vidcap">Airplane mode on — the phrase is translated and voiced entirely on the iPhone. One continuous take, no cuts.</p>
 </div>
 
