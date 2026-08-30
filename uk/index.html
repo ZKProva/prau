@@ -79,6 +79,10 @@
   .phone{margin:0;width:100%;max-width:300px;background:#0F1114;border:1px solid #2A313A;border-radius:44px;padding:11px;box-shadow:0 30px 60px -30px rgba(0,0,0,.9),0 0 0 1px rgba(234,190,122,.06) inset}
   .phone img{display:block;width:100%;height:auto;border-radius:34px;background:#000}
   .hero-phone{max-width:320px}
+  .vidsec{display:flex;flex-direction:column;align-items:center;gap:12px;margin:30px 0 0}
+  .phone.vid{max-width:280px}
+  .phone video{display:block;width:100%;height:auto;border-radius:34px;background:#000}
+  .vidcap{max-width:460px}
 
   h2{font-family:var(--serif);font-weight:600;font-size:clamp(28px,3.4vw,40px);line-height:1.1;letter-spacing:-.01em;margin:64px 0 8px;color:var(--gold)}
   h3{font-size:19px;margin:0 0 6px;font-weight:700}
@@ -169,6 +173,11 @@
     <figure class="phone hero-phone"><picture><source srcset="/img/main.webp" type="image/webp"><img src="/img/main.png" alt="Головний екран Prau: пара французька → німецька, кнопка мікрофона, перемикач озвучення" width="640" height="1288" loading="lazy" decoding="async"></picture></figure>
     <p class="shotnote">Справжні екрани Prau — нічого не намальовано.</p>
   </div>
+</div>
+
+<div class="vidsec">
+  <figure class="phone vid"><video src="/img/demo.mp4" poster="/img/demo-poster.jpg" width="480" height="1042" autoplay muted loop playsinline preload="metadata" aria-label="Авіарежим увімкнено — фразу перекладено й озвучено повністю на iPhone. Один дубль, без склейок."></video></figure>
+  <p class="shotnote vidcap">Авіарежим увімкнено — фразу перекладено й озвучено повністю на iPhone. Один дубль, без склейок.</p>
 </div>
 
 <h2>Як це працює</h2>

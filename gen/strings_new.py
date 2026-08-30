@@ -353,3 +353,8 @@ X["tr"] = dict(
  pro_badge="Pro",
  best_badge="En avantajlı",
 )
+
+# --- Подпись к видео-демо (patch_video_demo) ---
+_VIDEO_CAP = {'en': 'Airplane mode on — the phrase is translated and voiced entirely on the iPhone. One continuous take, no cuts.', 'ru': 'Авиарежим включён — фраза переведена и озвучена целиком на iPhone. Один дубль, без склеек.', 'uk': 'Авіарежим увімкнено — фразу перекладено й озвучено повністю на iPhone. Один дубль, без склейок.', 'fr': 'Mode avion activé — la phrase est traduite et lue entièrement sur l’iPhone. Une seule prise, sans montage.', 'es': 'Modo avión activado: la frase se traduce y se lee por completo en el iPhone. Una sola toma, sin cortes.', 'de': 'Flugmodus an — der Satz wird vollständig auf dem iPhone übersetzt und vorgelesen. Eine Aufnahme, ohne Schnitt.', 'nl': 'Vliegtuigmodus aan — de zin wordt volledig op de iPhone vertaald en voorgelezen. Eén opname, zonder montage.', 'it': 'Modalità aereo attiva: la frase viene tradotta e letta interamente sull’iPhone. Una sola ripresa, senza tagli.', 'pt': 'Modo de avião ativado — a frase é traduzida e lida por inteiro no iPhone. Uma única gravação, sem cortes.', 'pl': 'Tryb samolotowy włączony — zdanie jest tłumaczone i odczytywane w całości na iPhonie. Jedno ujęcie, bez cięć.', 'tr': 'Uçak modu açık — cümle tamamen iPhone’da çevrilip seslendiriliyor. Tek çekim, kesintisiz.'}
+for _c, _s in _VIDEO_CAP.items():
+    X[_c]["video_cap"] = _s
