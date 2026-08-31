@@ -7,10 +7,17 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)
 exec(open(os.path.join(HERE, "strings_base.py"), encoding="utf-8").read())   # даёт L, APPSTORE, MAIL
 from strings_new import X
+from strings_intl import INTL_L, INTL_X
+L.update(INTL_L); X.update(INTL_X)
 
 SITE = "https://getprau.com/"
-order = ["en","ru","uk","fr","es","de","nl","it","pt","pl","tr"]
-names = {"en":"English","ru":"Русский","uk":"Українська","fr":"Français","es":"Español","de":"Deutsch","nl":"Nederlands","it":"Italiano","pt":"Português","pl":"Polski","tr":"Türkçe"}
+order = ["en","ru","uk","fr","es","de","nl","it","pt","pl","tr","ar","zh","zh-hant","ja","ko","id","th","vi"]
+names = {"en":"English","ru":"Русский","uk":"Українська","fr":"Français","es":"Español","de":"Deutsch","nl":"Nederlands","it":"Italiano","pt":"Português","pl":"Polski","tr":"Türkçe",
+         "ar":"العربية","zh":"简体中文","zh-hant":"繁體中文","ja":"日本語","ko":"한국어","id":"Bahasa Indonesia","th":"ไทย","vi":"Tiếng Việt"}
+
+HREFLANG = {"zh": "zh-Hans", "zh-hant": "zh-Hant"}
+def hl(code): return HREFLANG.get(code, code)
+RTL = {"ar"}
 
 def e(s): return html.escape(s, quote=False)
 
@@ -252,6 +259,13 @@ CSS = """
     .row .phone{max-width:210px;justify-self:center}
   }
   @media (max-width:560px){.two{grid-template-columns:1fr}main{padding:16px 16px 56px}}
+  [dir="rtl"] .how li{padding:0 56px 22px 0}
+  [dir="rtl"] .how li:before{left:auto;right:0}
+  [dir="rtl"] .how li:not(:last-child):after{left:auto;right:18px}
+  [dir="rtl"] .bub .flag{margin-right:0;margin-left:8px}
+  [dir="rtl"] .badge{margin-left:0;margin-right:8px}
+  [dir="rtl"] .badge.best{right:auto;left:16px}
+  [dir="rtl"] .col ul,[dir="rtl"] .plain{padding-left:0;padding-right:20px}
   @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.bub{animation:none;opacity:1;transform:none}.btn{transition:none}}
 """
 
@@ -301,7 +315,7 @@ def alternates(active):
     """hreflang на все языковые версии, x-default — на английскую."""
     rows = []
     for c in order:
-        rows.append('<link rel="alternate" hreflang="' + c + '" href="' + SITE.rstrip("/") + href_for(c) + '">')
+        rows.append('<link rel="alternate" hreflang="' + hl(c) + '" href="' + SITE.rstrip("/") + href_for(c) + '">')
     rows.append('<link rel="alternate" hreflang="x-default" href="' + SITE + '">')
     return "\n".join(rows)
 
@@ -316,7 +330,7 @@ def page(code):
     smart_banner = '<meta name="apple-itunes-app" content="app-id=6801931802">' if LIVE else ""
     navcta = ('  <a class="navcta" href="' + APPSTORE + '">' + e(x["nav_cta"]) + '</a>') if LIVE else ""
     return f"""<!doctype html>
-<html lang="{code}">
+<html lang="{hl(code)}"{' dir="rtl"' if code in RTL else ''}>
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -326,7 +340,7 @@ def page(code):
 {alts}
 <meta property="og:type" content="website">
 <meta property="og:url" content="{canon}">
-<meta property="og:locale" content="{code}">
+<meta property="og:locale" content="{hl(code)}">
 <meta property="og:title" content="{e(d["title"])}">
 <meta property="og:description" content="{e(d["meta"])}">
 <meta property="og:image" content="{SITE}og.png">

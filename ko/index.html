@@ -1,0 +1,277 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Prau — iPhone용 오프라인 음성 번역기</title>
+<meta name="description" content="Prau는 대화·사진·PDF를 전부 iPhone에서 번역합니다. 19개 언어, 인터넷 불필요, 계정 불필요 — 어떤 것도 기기를 떠나지 않습니다.">
+<link rel="canonical" href="https://getprau.com/ko/">
+<link rel="alternate" hreflang="en" href="https://getprau.com/">
+<link rel="alternate" hreflang="ru" href="https://getprau.com/ru/">
+<link rel="alternate" hreflang="uk" href="https://getprau.com/uk/">
+<link rel="alternate" hreflang="fr" href="https://getprau.com/fr/">
+<link rel="alternate" hreflang="es" href="https://getprau.com/es/">
+<link rel="alternate" hreflang="de" href="https://getprau.com/de/">
+<link rel="alternate" hreflang="nl" href="https://getprau.com/nl/">
+<link rel="alternate" hreflang="it" href="https://getprau.com/it/">
+<link rel="alternate" hreflang="pt" href="https://getprau.com/pt/">
+<link rel="alternate" hreflang="pl" href="https://getprau.com/pl/">
+<link rel="alternate" hreflang="tr" href="https://getprau.com/tr/">
+<link rel="alternate" hreflang="ar" href="https://getprau.com/ar/">
+<link rel="alternate" hreflang="zh-Hans" href="https://getprau.com/zh/">
+<link rel="alternate" hreflang="zh-Hant" href="https://getprau.com/zh-hant/">
+<link rel="alternate" hreflang="ja" href="https://getprau.com/ja/">
+<link rel="alternate" hreflang="ko" href="https://getprau.com/ko/">
+<link rel="alternate" hreflang="id" href="https://getprau.com/id/">
+<link rel="alternate" hreflang="th" href="https://getprau.com/th/">
+<link rel="alternate" hreflang="vi" href="https://getprau.com/vi/">
+<link rel="alternate" hreflang="x-default" href="https://getprau.com/">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://getprau.com/ko/">
+<meta property="og:locale" content="ko">
+<meta property="og:title" content="Prau — iPhone용 오프라인 음성 번역기">
+<meta property="og:description" content="Prau는 대화·사진·PDF를 전부 iPhone에서 번역합니다. 19개 언어, 인터넷 불필요, 계정 불필요 — 어떤 것도 기기를 떠나지 않습니다.">
+<meta property="og:image" content="https://getprau.com/og.png">
+<meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Prau — iPhone용 오프라인 음성 번역기">
+<meta name="twitter:description" content="Prau는 대화·사진·PDF를 전부 iPhone에서 번역합니다. 19개 언어, 인터넷 불필요, 계정 불필요 — 어떤 것도 기기를 떠나지 않습니다.">
+<meta name="twitter:image" content="https://getprau.com/og.png">
+<meta name="apple-itunes-app" content="app-id=6801931802">
+<meta name="theme-color" content="#0B0C0E">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="/icon-192.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<script>if(/\.github\.io$/.test(location.hostname)){location.replace("https://getprau.com/"+location.search+location.hash);}</script>
+<style>
+  :root{--bg:#0B0C0E;--panel:#161B21;--panel2:#1B222A;--stroke:#262D36;--muted:#8A94A0;--gold:#EABE7A;--gold2:#F3D9A9;--text:#F2F4F7;--soft:#C9D0D8;--green:#7ED9A0;
+        --serif:"New York","Iowan Old Style",ui-serif,Georgia,"Times New Roman",serif;
+        --sans:-apple-system,BlinkMacSystemFont,"SF Pro Text",Inter,"Segoe UI",Roboto,sans-serif}
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+  body{margin:0;background:var(--bg);color:var(--text);font:17px/1.6 var(--sans)}
+  main{max-width:1060px;margin:0 auto;padding:22px 24px 72px}
+  header{display:flex;flex-wrap:wrap;gap:12px 18px;align-items:center;justify-content:space-between;margin-bottom:6px}
+  header .home{display:flex;align-items:center;gap:10px;color:var(--text);text-decoration:none;font-weight:700;font-size:20px;letter-spacing:.01em}
+  header .home img{width:34px;height:34px;border-radius:9px}
+  nav{display:flex;flex-wrap:wrap;gap:6px}
+  nav a.lang{text-decoration:none;background:transparent;border:1px solid var(--stroke);color:var(--muted);border-radius:999px;padding:6px 12px;font:14px var(--sans);cursor:pointer}
+  nav a.lang[aria-current="true"]{background:var(--gold);color:#000;border-color:var(--gold)}
+  nav a.lang:focus-visible,a:focus-visible,summary:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+  .navcta{display:none;font-size:14px;color:var(--gold);text-decoration:none;border:1px solid #4A3E29;border-radius:999px;padding:6px 12px}
+  @media (min-width:760px){.navcta{display:inline-block}}
+  section[data-lang]{display:block}
+
+  .hero{display:grid;grid-template-columns:1.15fr .85fr;gap:36px;align-items:center;padding:36px 0 18px}
+  .kicker{display:inline-flex;align-items:center;gap:10px;color:#e8c48a;background:rgba(232,196,138,.10);border:1px solid rgba(232,196,138,.35);border-radius:999px;padding:8px 16px;text-transform:uppercase;letter-spacing:.14em;font-size:12.5px;font-weight:600;margin:0 0 22px}.kicker::before{content:"";width:8px;height:8px;border-radius:50%;background:#e8c48a;box-shadow:0 0 12px #e8c48a}
+  h1{font-family:var(--serif);font-weight:600;font-size:clamp(38px,5.4vw,66px);line-height:1.02;letter-spacing:-.015em;margin:0 0 20px}
+  h1 .g{color:var(--gold)}
+  .lead{font-size:19px;color:var(--soft);margin:0 0 26px;max-width:560px}
+  .cta{display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin:0 0 30px}
+  .btn{display:inline-flex;align-items:center;gap:10px;background:var(--gold);color:#000;font-weight:700;text-decoration:none;padding:14px 22px;border-radius:14px;transition:transform .15s,filter .15s}
+  .btn:hover{filter:brightness(1.05);transform:translateY(-1px)}
+  .apple{width:16px;height:19px;background:currentColor;-webkit-mask:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 814 1000'><path d='M788 341c-6 5-109 62-109 190 0 148 130 200 134 202-1 3-21 71-69 141-42 62-87 123-155 123s-86-40-165-40c-77 0-104 41-167 41s-106-57-155-127C46 790 0 668 0 552c0-186 121-285 240-285 63 0 116 42 155 42 38 0 97-44 169-44 27 0 126 2 224 76zM554 174c31-37 53-89 53-141 0-7-1-14-2-20-51 2-111 34-147 76-29 33-56 85-56 137 0 8 1 16 2 19 3 1 8 1 13 1 45 0 102-30 137-72z'/></svg>") center/contain no-repeat;mask:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 814 1000'><path d='M788 341c-6 5-109 62-109 190 0 148 130 200 134 202-1 3-21 71-69 141-42 62-87 123-155 123s-86-40-165-40c-77 0-104 41-167 41s-106-57-155-127C46 790 0 668 0 552c0-186 121-285 240-285 63 0 116 42 155 42 38 0 97-44 169-44 27 0 126 2 224 76zM554 174c31-37 53-89 53-141 0-7-1-14-2-20-51 2-111 34-147 76-29 33-56 85-56 137 0 8 1 16 2 19 3 1 8 1 13 1 45 0 102-30 137-72z'/></svg>") center/contain no-repeat}
+  .ctan{color:var(--muted);font-size:14px}
+  .btn.soon{background:transparent;color:var(--gold);border:1px solid #4A3E29;cursor:default}
+  .btn.soon:hover{transform:none;filter:none}
+  .demo{display:flex;flex-direction:column;gap:8px;max-width:500px;min-height:200px}
+  .bub{background:var(--panel2);border:1px solid var(--stroke);border-radius:16px;padding:10px 14px;max-width:86%;font-size:16px;opacity:0;transform:translateY(6px);animation:pop .45s ease forwards}
+  .bub:nth-child(1){animation-delay:.05s}.bub:nth-child(2){animation-delay:.55s}.bub:nth-child(3){animation-delay:1.25s}.bub:nth-child(4){animation-delay:1.75s}
+  @keyframes pop{to{opacity:1;transform:none}}
+  .bub.a{align-self:flex-start;border-bottom-left-radius:4px}
+  .bub.b{align-self:flex-end;border-bottom-right-radius:4px;background:#26211A;border-color:#4A3E29}
+  .bub .flag{margin-right:8px}
+  .hshot{display:flex;flex-direction:column;align-items:center;gap:12px}
+  .shotnote{margin:0;color:var(--muted);font-size:13px;text-align:center}
+
+  .phone{margin:0;width:100%;max-width:300px;background:#0F1114;border:1px solid #2A313A;border-radius:44px;padding:11px;box-shadow:0 30px 60px -30px rgba(0,0,0,.9),0 0 0 1px rgba(234,190,122,.06) inset}
+  .phone img{display:block;width:100%;height:auto;border-radius:34px;background:#000}
+  .hero-phone{max-width:320px}
+  .vidsec{display:flex;flex-direction:column;align-items:center;gap:12px;margin:30px 0 0}
+  .phone.vid{max-width:280px}
+  .phone video{display:block;width:100%;height:auto;border-radius:34px;background:#000}
+  .vidcap{max-width:460px}
+  /* vsound-out */
+  .vsound{width:46px;height:46px;border-radius:50%;border:1px solid var(--stroke);background:var(--panel);color:var(--text);font-size:19px;line-height:1;cursor:pointer;display:flex;align-items:center;justify-content:center;padding:0;margin-top:-2px}
+  .vsound:hover{border-color:#4A3E29;color:var(--gold)}
+  .vsound:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+
+  h2{font-family:var(--serif);font-weight:600;font-size:clamp(28px,3.4vw,40px);line-height:1.1;letter-spacing:-.01em;margin:64px 0 8px;color:var(--gold)}
+  h3{font-size:19px;margin:0 0 6px;font-weight:700}
+  .sub{color:var(--muted);margin:0 0 20px;font-size:17px;max-width:680px}
+  p,li{color:#D8DDE3}
+  a{color:var(--gold)}
+  .how{counter-reset:s;list-style:none;padding:0;margin:0}
+  .how li{position:relative;padding:0 0 22px 56px}
+  .how li:before{counter-increment:s;content:counter(s);position:absolute;left:0;top:0;width:38px;height:38px;border-radius:50%;background:var(--gold);color:#000;font:700 17px var(--sans);display:flex;align-items:center;justify-content:center}
+  .how li:not(:last-child):after{content:"";position:absolute;left:18px;top:44px;bottom:0;width:2px;background:var(--stroke)}
+  .how b{display:block;font-size:19px;margin-bottom:3px}
+  .how p{margin:0;max-width:720px}
+  .setup li:before{background:var(--panel2);color:var(--gold);border:1px solid #4A3E29}
+  .tip{background:#152219;border:1px solid #25402D;border-radius:14px;padding:12px 16px;color:var(--green);margin:6px 0 0;max-width:720px;font-size:15.5px}
+
+  .rows{display:flex;flex-direction:column;gap:22px}
+  .row{display:grid;grid-template-columns:1fr auto;gap:36px;align-items:start;background:var(--panel);border:1px solid var(--stroke);border-radius:26px;padding:30px 34px}
+  .row.flip{grid-template-columns:auto 1fr}
+  .row.flip .rtext{order:2}
+  .row .phone{max-width:250px}
+  .rtext .ico{font-size:28px;margin-bottom:10px}
+  .rtext p{margin:0;font-size:17px;color:var(--soft);max-width:520px}
+  .rtext .big{font-size:18px;color:var(--text)}
+  .langrow{margin-top:8px}
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px;margin-top:22px}
+  .card{background:var(--panel);border:1px solid var(--stroke);border-radius:20px;padding:20px 22px}
+  .card .ico{font-size:26px;margin-bottom:8px}
+  .card p{margin:0;font-size:15.5px;color:var(--soft)}
+  .badge{display:inline-block;font:600 11px/1 var(--sans);letter-spacing:.08em;text-transform:uppercase;border-radius:999px;padding:5px 9px;vertical-align:middle;margin-left:8px}
+  .badge.free{background:#152219;color:var(--green);border:1px solid #25402D}
+  .badge.best{background:#26211A;color:var(--gold);border:1px solid #4A3E29;position:absolute;top:-12px;right:16px;margin:0}
+  .note{color:var(--muted);font-size:15px}
+  .two{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:0 0 14px}
+  .col{border-radius:20px;padding:18px 20px;border:1px solid var(--stroke)}
+  .col ul{margin:0;padding-left:20px}
+  .col li{margin:4px 0;font-size:15.5px}
+  .stays{background:#152219;border-color:#25402D}
+  .stays h3{color:var(--green)}
+  .leaves{background:var(--panel)}
+  .leaves h3{color:var(--gold)}
+  .plain{padding-left:20px}
+  .plans{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:14px;margin-top:6px}
+  .plan{position:relative;background:var(--panel);border:1px solid var(--stroke);border-radius:20px;padding:20px 22px}
+  .plan.hi{border-color:#4A3E29;background:#1A1712}
+  .pn{font-weight:700;font-size:18px}
+  .pp{font-family:var(--serif);color:var(--gold);font-size:30px;margin:4px 0 8px;letter-spacing:-.01em}
+  .plan p{margin:0;color:var(--muted);font-size:15px}
+  .free{margin-top:16px;font-weight:600}
+  .cta2{margin-top:22px}
+  .faq details{border-bottom:1px solid var(--stroke);padding:12px 0}
+  .faq summary{cursor:pointer;font-weight:600;list-style:none;display:flex;justify-content:space-between;gap:12px}
+  .faq summary::-webkit-details-marker{display:none}
+  .faq summary:after{content:"+";color:var(--gold);font-size:22px;line-height:1}
+  .faq details[open] summary:after{content:"–"}
+  .faq p{margin:10px 0 0;color:var(--soft);font-size:15.5px;max-width:760px}
+  footer{margin-top:56px;color:var(--muted);font-size:14px}
+
+  @media (max-width:860px){
+    .hero{grid-template-columns:1fr;gap:26px;padding-top:22px}
+    .hero-phone{max-width:240px}
+    .demo{min-height:0}
+    .row,.row.flip{grid-template-columns:1fr;gap:20px;padding:22px}
+    .row.flip .rtext{order:0}
+    .row .phone{max-width:210px;justify-self:center}
+  }
+  @media (max-width:560px){.two{grid-template-columns:1fr}main{padding:16px 16px 56px}}
+  [dir="rtl"] .how li{padding:0 56px 22px 0}
+  [dir="rtl"] .how li:before{left:auto;right:0}
+  [dir="rtl"] .how li:not(:last-child):after{left:auto;right:18px}
+  [dir="rtl"] .bub .flag{margin-right:0;margin-left:8px}
+  [dir="rtl"] .badge{margin-left:0;margin-right:8px}
+  [dir="rtl"] .badge.best{right:auto;left:16px}
+  [dir="rtl"] .col ul,[dir="rtl"] .plain{padding-left:0;padding-right:20px}
+  @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.bub{animation:none;opacity:1;transform:none}.btn{transition:none}}
+</style>
+</head>
+<body>
+<main>
+<header>
+  <a class="home" href="/"><img src="/icon-64.png" alt="" width="34" height="34">Prau</a>
+  <nav id="langs" aria-label="Language"><a class="lang" href="/">English</a><a class="lang" href="/ru/">Русский</a><a class="lang" href="/uk/">Українська</a><a class="lang" href="/fr/">Français</a><a class="lang" href="/es/">Español</a><a class="lang" href="/de/">Deutsch</a><a class="lang" href="/nl/">Nederlands</a><a class="lang" href="/it/">Italiano</a><a class="lang" href="/pt/">Português</a><a class="lang" href="/pl/">Polski</a><a class="lang" href="/tr/">Türkçe</a><a class="lang" href="/ar/">العربية</a><a class="lang" href="/zh/">简体中文</a><a class="lang" href="/zh-hant/">繁體中文</a><a class="lang" href="/ja/">日本語</a><a class="lang" href="/ko/" aria-current="true">한국어</a><a class="lang" href="/id/">Bahasa Indonesia</a><a class="lang" href="/th/">ไทย</a><a class="lang" href="/vi/">Tiếng Việt</a></nav>
+  <a class="navcta" href="https://apps.apple.com/app/id6801931802">App Store</a>
+</header>
+
+<section data-lang="ko" class="active">
+<div class="hero">
+  <div class="htext">
+    <p class="kicker">iPhone용 오프라인 음성 번역기</p>
+    <h1>내 언어로 말하세요.<br><span class="g">상대의 언어로 전해집니다.</span></h1>
+    <p class="lead">Prau는 19개 언어를 인식하고 번역하고 소리 내어 읽습니다 — 전부 iPhone 안에서. 인터넷도, 계정도, 서버도 없습니다. 당신이 말한 어떤 것도 어디로도 전송되지 않습니다.</p>
+    <p class="cta"><a class="btn" href="https://apps.apple.com/app/id6801931802"><span class="apple" aria-hidden="true"></span>App Store에서 다운로드</a><span class="ctan">3일 무료 체험 · iOS 18 이상</span></p>
+    <div class="demo" data-demos="[[[&quot;🇰🇷&quot;, &quot;가장 가까운 약국이 어디예요?&quot;], [&quot;🇬🇧&quot;, &quot;Where is the nearest pharmacy?&quot;], [&quot;🇬🇧&quot;, &quot;At the end of the street, on the left.&quot;], [&quot;🇰🇷&quot;, &quot;길 끝에서 왼쪽이에요.&quot;]], [[&quot;🇰🇷&quot;, &quot;이틀 묵을 방 있나요?&quot;], [&quot;🇫🇷&quot;, &quot;Avez-vous une chambre pour deux nuits ?&quot;], [&quot;🇫🇷&quot;, &quot;Oui, avec vue sur la mer.&quot;], [&quot;🇰🇷&quot;, &quot;네, 바다가 보이는 방입니다.&quot;]], [[&quot;🇰🇷&quot;, &quot;공항까지 얼마예요?&quot;], [&quot;🇩🇪&quot;, &quot;Wie viel kostet es zum Flughafen?&quot;], [&quot;🇩🇪&quot;, &quot;Etwa dreißig Euro.&quot;], [&quot;🇰🇷&quot;, &quot;삼십 유로쯤입니다.&quot;]]]" aria-hidden="true"><div class="bub a"><span class="flag" aria-hidden="true">🇰🇷</span>가장 가까운 약국이 어디예요?</div><div class="bub b"><span class="flag" aria-hidden="true">🇬🇧</span>Where is the nearest pharmacy?</div><div class="bub a"><span class="flag" aria-hidden="true">🇬🇧</span>At the end of the street, on the left.</div><div class="bub b"><span class="flag" aria-hidden="true">🇰🇷</span>길 끝에서 왼쪽이에요.</div></div>
+  </div>
+  <div class="hshot">
+    <figure class="phone hero-phone"><picture><source srcset="/img/main.webp" type="image/webp"><img src="/img/main.png" alt="Prau 메인 화면: 프랑스어→독일어 쌍, 마이크 버튼, 읽어 주기 스위치" width="640" height="1288" loading="lazy" decoding="async"></picture></figure>
+    <p class="shotnote">Prau의 실제 화면입니다 — 연출은 없습니다.</p>
+  </div>
+</div>
+
+<div class="vidsec">
+  <figure class="phone vid"><video src="/img/demo.mp4" poster="/img/demo-poster.jpg" width="480" height="1042" autoplay muted loop playsinline preload="metadata" aria-label="비행기 모드 켜짐 — 문장이 iPhone 안에서만 번역되고 재생됩니다. 컷 없이 한 번에 찍은 영상입니다."></video></figure>
+  <button class="vsound" type="button" aria-label="소리 켜기/끄기" aria-pressed="false">🔇</button>
+  <p class="shotnote vidcap">비행기 모드 켜짐 — 문장이 iPhone 안에서만 번역되고 재생됩니다. 컷 없이 한 번에 찍은 영상입니다.</p>
+</div>
+
+<h2>작동 방식</h2>
+<p class="sub">세 단계면 끝 — 그다음은 어디서든 그냥 됩니다.</p>
+<ol class="how"><li><b>언어 쌍 선택</b><p>상단의 언어 버튼을 탭하세요. 처음에는 iOS가 언어 팩 다운로드를 제안합니다 — 확인하면, 이후 번역에 네트워크가 전혀 필요 없습니다.</p></li><li><b>마이크를 탭하고 말하기</b><p>Prau가 기기에서 말을 인식해 번역하고 소리 내어 읽어 줍니다. 상대가 대답하면, 그 답을 자기 언어로 듣게 됩니다.</p></li><li><b>대화 보관</b><p>모든 대화가 자동으로 저장됩니다. 검색하고, 다시 열고, TXT나 PDF로 내보내고, 공유하세요. 이 기능은 언제나 무료입니다.</p></li></ol>
+
+<h2>글로 읽지 말고, 눈으로 확인하세요</h2>
+<p class="sub">아래 모든 화면은 오늘 iPhone에서 돌아가는 Prau 1.0 그대로입니다.</p>
+<div class="rows"><div class="row"><div class="rtext"><div class="ico" aria-hidden="true">🎧</div><h3>이어폰으로 듣는 번역</h3><p>AirPods 등 아무 이어폰이나 연결하세요. 내 언어로 된 번역은 귓가에서 조용히 재생되고, 상대는 스피커로 자기 언어를 듣습니다.</p></div><figure class="phone "><picture><source srcset="/img/settings.webp" type="image/webp"><img src="/img/settings.png" alt="설정: 내 언어, 말하기 속도, 번역 음성, 언어" width="640" height="1288" loading="lazy" decoding="async"></picture></figure></div><div class="row flip"><div class="rtext"><div class="ico" aria-hidden="true">👥</div><h3>마주 보기 모드</h3><p>휴대폰을 두 사람 사이에 놓으세요. 화면이 둘로 나뉘어 각자 바른 방향, 자기 언어로 보이고, 번갈아 말하면 됩니다. 호텔 프런트, 약국, 택시, 상점을 위해 만들었습니다.</p></div><figure class="phone "><picture><source srcset="/img/face.webp" type="image/webp"><img src="/img/face.png" alt="마주 보기 모드: 화면이 반으로 나뉘어 각자 말하는 사람 쪽을 향한 모습" width="640" height="1288" loading="lazy" decoding="async"></picture></figure></div><div class="row"><div class="rtext"><div class="ico" aria-hidden="true">🕘</div><h3>상대별로 하나의 대화 — 음성·사진·PDF를 한곳에</h3><p>모든 대화가 iPhone에 저장됩니다. 대화를 오른쪽으로 쓸어 이름을 바꾸세요 — ‘리스본 호텔’, ‘집주인’. 열어서 ‘이 대화 이어가기’를 탭하면 새 음성·사진·PDF 페이지가 같은 스레드에 쌓입니다. 상대 한 명이면 기록 하나, 요약 하나, 내보내기 하나. 전체 검색이 되고, 어떤 대화든 TXT/PDF로 내보낼 수 있습니다. 카드에서 길게 눌러 단어나 문구를 선택·복사하세요. 번역 기록·검색·내보내기·복사에는 구독이 필요 없습니다 — 지금도, 앞으로도.</p></div><figure class="phone "><picture><source srcset="/img/history.webp" type="image/webp"><img src="/img/history.png" alt="기록: 오른쪽 스와이프로 ‘이름 변경’ 버튼이 드러난 대화" width="640" height="1288" loading="lazy" decoding="async"></picture></figure></div><div class="row flip"><div class="rtext"><div class="ico" aria-hidden="true">✨</div><h3>iPhone에서 작성되는 요약</h3><p>Apple Intelligence를 지원하는 iPhone이라면 대화 전체의 짧은 요약을 받아 보세요 — 핵심만 몇 줄로, 기기에서 작성되며 어디로도 전송되지 않습니다.</p></div><figure class="phone vidrow"><video src="/img/summary.mp4" poster="/img/summary-poster.jpg" width="480" height="1042" autoplay muted loop playsinline preload="metadata" aria-label="iPhone의 Apple Intelligence가 작성한 대화 요약"></video></figure></div><div class="row"><div class="rtext"><div class="ico" aria-hidden="true">📷</div><h3>사진과 PDF</h3><p>메뉴판·표지판·문서에 카메라를 대거나 PDF를 불러오세요. 텍스트가 기기에서 인식·번역되어 읽기 좋은 문단으로 정리되고, PDF로 내보낼 수 있습니다.</p></div><figure class="phone "><picture><source srcset="/img/photo.webp" type="image/webp"><img src="/img/photo.png" alt="사진·PDF 번역: 스캔, 보관함에서 선택, PDF 선택" width="640" height="1288" loading="lazy" decoding="async"></picture></figure></div></div>
+<div class="grid"><div class="card"><div class="ico" aria-hidden="true">🎙</div><h3>오프라인 음성 대화</h3><p>음성 인식·번역·음성 출력이 모두 iPhone에서 실행됩니다. 비행기에서, 산에서, 유심 없는 해외에서, 신호가 약한 어디서든 사용할 수 있습니다.</p></div><div class="card"><div class="ico" aria-hidden="true">⌨️</div><h3>텍스트 입력과 말하기 속도</h3><p>조용해야 할 때는 말하는 대신 입력하세요. 상대가 따라오기 어려우면 번역 음성을 느리게. 시스템에 여러 음성이 있으면 목소리도 고를 수 있습니다.</p></div></div>
+
+<h2 id="setup-ko">여행 전에 한 번만 설정</h2>
+<p class="sub">두 가지는 Prau가 아니라 iOS 안에 있습니다. 집에서 Wi-Fi로 끝내 두면 — 이후에는 네트워크가 전혀 없어도 모든 것이 동작합니다.</p>
+<ol class="how setup"><li><b>번역용 언어 팩</b><p>Prau를 열고 언어 쌍을 고르세요. iOS가 ‘필수 다운로드’ 시트를 띄웁니다 — 각 언어 옆 화살표를 탭하세요. 언어당 약 50–100MB, 한 번이면 됩니다. 나중에 Prau → 설정 → 언어에서도 추가할 수 있습니다.</p></li><li><b>내 목소리를 위한 오프라인 받아쓰기</b><p>iPhone 설정 → 일반 → 키보드 → 받아쓰기 언어. 말할 언어를 모두 추가하세요. 목록에 없는 언어는 키보드를 한 번 추가하면 됩니다(키보드 → 키보드 → 새로운 키보드 추가) — 받아쓰기가 자동으로 따라옵니다. 모델은 iOS가 백그라운드에서 내려받으며 보통 하루 안, Wi-Fi·충전 중일 때 가장 빠릅니다. Prau → 설정 → 언어에서 초록 마이크가 보이면 준비 완료입니다.</p></li><li><b>이어폰 — 선택 사항</b><p>AirPods 등 아무 이어폰이나 연결하고 Prau 설정에서 ‘내 언어’를 고르세요. 내 번역은 귓가에서 조용히, 상대 번역은 폰 스피커로 나옵니다.</p></li></ol>
+<p class="tip">텍스트·사진 번역에는 받아쓰기가 전혀 필요 없습니다 — 언어 팩만 들어 있으면 바로 됩니다.</p>
+
+<h2>19개 언어, 완전 오프라인</h2>
+<div class="row langrow">
+  <div class="rtext"><p class="big">영어, 프랑스어, 독일어, 스페인어, 이탈리아어, 포르투갈어, 네덜란드어, 폴란드어, 우크라이나어, 러시아어, 튀르키예어, 아랍어, 중국어(간체·번체), 일본어, 한국어, 인도네시아어, 태국어, 베트남어. 이 중 어떤 조합이든.</p><p class="note">음성 입력은 iOS가 해당 언어의 오프라인 받아쓰기 모델을 설치한 언어에서 동작합니다 — 언어 화면의 초록 마이크가 준비된 언어를 표시합니다. 텍스트·사진 번역은 어떤 경우든 19개 언어 모두 지원합니다.</p></div>
+  <figure class="phone vidrow"><video src="/img/picker.mp4" poster="/img/picker-poster.jpg" width="480" height="1042" autoplay muted loop playsinline preload="metadata" aria-label="언어 선택: 영어, 우크라이나어, 독일어, 스페인어, 이탈리아어 등"></video></figure>
+</div>
+
+<h2 id="privacy-ko">프라이버시는 설정이 아니라 설계입니다</h2>
+<p class="sub">대부분의 번역기는 당신의 음성을 서버로 보냅니다. Prau에는 서버 자체가 없습니다.</p>
+<div class="two">
+  <div class="col stays"><h3>iPhone에 남는 것</h3><ul><li>말하고 들은 모든 것</li><li>입력한 모든 것</li><li>사진·PDF와 인식된 텍스트</li><li>대화 기록과 검색</li><li>대화 요약(Apple Intelligence, 온디바이스)</li></ul></div>
+  <div class="col leaves"><h3>iPhone을 떠나는 것</h3><ul><li>구독 상태 — 익명 ID와 App Store 영수증뿐입니다. RevenueCat을 통해 확인되어 앱이 Pro 활성 여부를 알게 됩니다. 그 외에는 아무것도 없습니다.</li></ul></div>
+</div>
+<ul class="plain"><li>계정 없음, 로그인 없음.</li><li>분석 없음, 광고 없음, 추적 SDK 없음.</li><li>자체 서버 없음 — 애초에 업로드할 곳이 없습니다.</li><li>Apple의 온디바이스 프레임워크만 사용: Speech, Translation, Vision, AVFoundation.</li><li>대화를 하나든 전부든 언제든 삭제하세요. 앱을 지우면 기록도 함께 사라집니다.</li></ul>
+<p><a href="/privacy.html#ko">개인정보 처리방침 전문 보기 →</a></p>
+
+<h2>Prau Pro</h2>
+<p class="sub">3일 동안 전부 무료로 써 보고, 맞는 쪽을 고르세요.</p>
+<div class="plans"><div class="plan"><div class="pn">월간</div><div class="pp">$4.99 / 월</div><p>3일 무료 후 월 단위 갱신. 언제든 해지 가능.</p></div><div class="plan hi"><span class="badge best">가장 알뜰</span><div class="pn">연간</div><div class="pp">$34.99 / 년</div><p>3일 무료 후 연 단위 갱신. 가장 알뜰.</p></div><div class="plan"><div class="pn">평생</div><div class="pp">$59.99 한 번</div><p>한 번 결제로 영원히 소유.</p></div></div>
+<p class="free">기록·검색·TXT/PDF 내보내기는 모두에게 언제나 무료입니다.</p>
+<p class="note">가격은 미국 달러 기준이며, 현지 가격은 App Store에 표시됩니다. 구독은 현재 기간 종료 24시간 전까지 해지하지 않으면 자동 갱신됩니다. Apple 계정 설정에서 관리·해지할 수 있습니다. 구매 복원: 결제 화면 → 복원, 또는 설정 → 구매 복원.</p>
+<p class="cta cta2"><a class="btn" href="https://apps.apple.com/app/id6801931802"><span class="apple" aria-hidden="true"></span>App Store에서 다운로드</a><span class="ctan">3일 무료 체험 · iOS 18 이상</span></p>
+
+<h2 id="support-ko">지원</h2>
+<div class="faq"><details><summary>특정 언어의 마이크에 사선이 그어져 있어요</summary><p>음성 입력에는 iOS가 그 언어용으로 설치하는 오프라인 받아쓰기 모델이 필요합니다. 설정 → 일반 → 키보드 → 받아쓰기 언어를 열어 보세요. 언어가 목록에 있다면 iOS가 백그라운드에서 모델을 내려받는 중입니다(보통 하루 안, Wi-Fi 연결·충전 중일 때 가장 빠름). 목록에 없다면 그 언어의 키보드를 한 번 추가하세요 — 받아쓰기는 자동으로 켜집니다. 그때까지도 텍스트·사진 번역은 전부 사용할 수 있습니다.</p></details><details><summary>시스템 ‘필수 다운로드’ 시트가 떠요</summary><p>Apple 번역 프레임워크가 언어 팩을 요청하는 것입니다. 각 언어 옆 화살표를 탭하세요. 탭하기 전에는 다운로드가 시작되지 않습니다. 완료되면 번역은 영구히 오프라인으로 동작합니다.</p></details><details><summary>번역이 느리거나 번역기가 반응하지 않아요</summary><p>iOS 쪽 현상으로, 보통 언어 팩 설치 직후에 나타나며 1분 안에 사라집니다. 반복되면 iPhone을 재시동하세요.</p></details><details><summary>결제했는데 Pro가 활성화되지 않아요</summary><p>결제 화면이나 설정에서 ‘구매 복원’을 탭하세요. 구매는 Apple 계정에 묶여 있어 어떤 iPhone에서도 복원됩니다. 그래도 안 되면 App Store 영수증과 함께 메일 주세요.</p></details><details><summary>구독은 어떻게 해지하나요?</summary><p>iPhone 설정 → 내 이름 → 구독 → Prau. 해지해도 결제한 기간이 끝날 때까지 Pro가 유지됩니다.</p></details><details><summary>어떤 iPhone을 지원하나요?</summary><p>iOS 18 이상이 구동되는 모든 iPhone. 대화 요약에는 추가로 Apple Intelligence(iPhone 15 Pro 이상)와 지원되는 시스템 언어가 필요합니다.</p></details></div>
+
+<h2>문의하기</h2>
+<p>질문·버그·아이디어는 이곳으로: <a href="mailto:alexpan77705@gmail.com">alexpan77705@gmail.com</a>. 보통 하루 안에 개발자가 직접 답장합니다.</p>
+
+<footer>
+  <a href="/privacy.html#ko">개인정보 처리방침</a> ·
+  <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/">이용 약관</a> ·
+  <span>© 2026 Prau</span>
+</footer>
+</section>
+</main>
+<script>
+(function(){
+  var reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function esc(s){return s.replace(/[&<>]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;'}[c];});}
+  function render(box,conv){
+    box.innerHTML=conv.map(function(m,i){return '<div class="bub '+(i%2?'b':'a')+'"><span class="flag" aria-hidden="true">'+m[0]+'</span>'+esc(m[1])+'</div>';}).join('');
+  }
+  var box=document.querySelector('.demo');
+  if(box){
+    var demos=JSON.parse(box.getAttribute('data-demos')); var i=0;
+    render(box,demos[0]);
+    if(!reduce&&demos.length>1){
+      setInterval(function(){ if(document.hidden) return; i=(i+1)%demos.length; render(box,demos[i]); },6500);
+    }
+  }
+  var v=document.querySelector('.vidsec video'), sb=document.querySelector('.vsound');
+  if(v&&sb){
+    sb.addEventListener('click',function(){
+      if(v.muted){ v.muted=false; v.currentTime=0; var p=v.play(); if(p&&p.catch)p.catch(function(){}); sb.textContent='🔊'; sb.setAttribute('aria-pressed','true'); }
+      else { v.muted=true; sb.textContent='🔇'; sb.setAttribute('aria-pressed','false'); }
+    });
+  }
+})();
+</script>
+</body>
+</html>
