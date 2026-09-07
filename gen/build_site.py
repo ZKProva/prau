@@ -8,7 +8,7 @@ sys.path.insert(0, HERE)
 exec(open(os.path.join(HERE, "strings_base.py"), encoding="utf-8").read())   # даёт L, APPSTORE, MAIL
 from strings_new import X
 from strings_intl import INTL_L, INTL_X
-from strings_compare import CMP
+from strings_compare import CMP, PRICE_NOTE
 L.update(INTL_L); X.update(INTL_X)
 
 SITE = "https://getprau.com/"
@@ -31,6 +31,27 @@ def phone(name, alt, cls=""):
 def bubbles(conv):
     return "".join(f'<div class="bub {"a" if i%2==0 else "b"}"><span class="flag" aria-hidden="true">{f}</span>{e(t)}</div>'
                    for i,(f,t) in enumerate(conv))
+
+# Страницы еврозоны показывают евро-тиры Apple (как на пейволле), остальные — базовые USD.
+# При смене цен в ASC править ОБЕ таблицы: USD в strings_base/strings_intl (pro), EUR здесь.
+EUR_LOCALES = {"de", "fr", "es", "it", "nl"}
+EUR_PRICES = {"9,99": "9,99", "34,99": "39,99", "59,99": "69,99"}
+
+def pro_for(code, d):
+    """Список тарифов и подпись под ними с учётом валюты страницы."""
+    pro = d["pro"]; note = d["pro_note"]; kind = "usd"
+    if code in EUR_LOCALES:
+        kind = "eur"; out = []
+        for n, p, t in pro:
+            for a, b in EUR_PRICES.items(): p = p.replace(a, b)
+            p = p.replace("$ ", "€ ").replace(" $", " €")
+            out.append((n, p, t))
+        pro = out
+        # первое предложение pro_note («Цены в USD; …App Store.») на евро-страницах лишнее
+        i = note.find(". ")
+        if 0 < i < 120: note = note[i+2:]
+    base = (PRICE_NOTE.get(code) or PRICE_NOTE["en"])[kind]
+    return pro, note, base
 
 CMP_SOON_ROWS = (2, 4)   # строки со Stream и Siri — помечены «1.1», пока версия не вышла. После релиза: CMP_SOON_ROWS = ()
 CMP_SOON_LABEL = "1.1"
@@ -95,7 +116,8 @@ def section(code, d, x, active):
     leaves = "".join(f"<li>{e(s)}</li>" for s in d["leaves"])
     pbul = "".join(f"<li>{e(s)}</li>" for s in d["priv_bul"])
     pro = ""
-    for i,(n,p,t) in enumerate(d["pro"]):
+    pro_list, pro_note, pro_base = pro_for(code, d)
+    for i,(n,p,t) in enumerate(pro_list):
         best = f'<span class="badge best">{e(x["best_badge"])}</span>' if i==1 else ""
         pro += f'<div class="plan{" hi" if i==1 else ""}">{best}<div class="pn">{e(n)}</div><div class="pp">{e(p)}</div><p>{e(t)}</p></div>'
     faq = "".join(f'<details><summary>{e(q)}</summary><p>{e(a_)}</p></details>' for q,a_ in d["faq"])
@@ -121,6 +143,16 @@ def section(code, d, x, active):
   <p class="shotnote vidcap">{e(x["video_cap"])}</p>
 </div>
 
+<h2 id="privacy-{code}">{e(d["priv_h"])}</h2>
+<p class="sub">{e(d["priv_lead"])}</p>
+<div class="two">
+  <div class="col stays"><h3>{e(d["stays_h"])}</h3><ul>{stays}</ul></div>
+  <div class="col leaves"><h3>{e(d["leaves_h"])}</h3><ul>{leaves}</ul></div>
+</div>
+<ul class="plain">{pbul}</ul>
+<p><a href="/privacy.html#{code}">{e(d["priv_link"])} →</a></p>
+{compare_block(code)}
+
 <h2>{e(d["how_h"])}</h2>
 <p class="sub">{e(d["how_sub"])}</p>
 <ol class="how">{how}</ol>
@@ -141,21 +173,12 @@ def section(code, d, x, active):
   <figure class="phone vidrow"><video src="/img/picker.mp4" poster="/img/picker-poster.jpg" width="480" height="1042" autoplay muted loop playsinline preload="metadata" aria-label="{e(a["picker"])}"></video></figure>
 </div>
 
-<h2 id="privacy-{code}">{e(d["priv_h"])}</h2>
-<p class="sub">{e(d["priv_lead"])}</p>
-<div class="two">
-  <div class="col stays"><h3>{e(d["stays_h"])}</h3><ul>{stays}</ul></div>
-  <div class="col leaves"><h3>{e(d["leaves_h"])}</h3><ul>{leaves}</ul></div>
-</div>
-<ul class="plain">{pbul}</ul>
-<p><a href="/privacy.html#{code}">{e(d["priv_link"])} →</a></p>
-{compare_block(code)}
-
 <h2>{e(d["pro_h"])}</h2>
 <p class="sub">{e(d["pro_lead"])}</p>
 <div class="plans">{pro}</div>
+<p class="base">{e(pro_base)}</p>
 <p class="free">{e(d["pro_free"])}</p>
-<p class="note">{e(d["pro_note"])}</p>
+<p class="note">{e(pro_note)}</p>
 {cta_block(code, d, "2")}
 
 <h2 id="support-{code}">{e(d["faq_h"])}</h2>
@@ -270,7 +293,8 @@ CSS = """
   .pn{font-weight:700;font-size:18px}
   .pp{font-family:var(--serif);color:var(--gold);font-size:30px;margin:4px 0 8px;letter-spacing:-.01em}
   .plan p{margin:0;color:var(--muted);font-size:15px}
-  .free{margin-top:16px;font-weight:600}
+  .base{margin:14px 0 0;color:var(--soft);font-size:15.5px}
+  .free{margin-top:10px;font-weight:600}
   .cta2{margin-top:22px}
   .faq details{border-bottom:1px solid var(--stroke);padding:12px 0}
   .faq summary{cursor:pointer;font-weight:600;list-style:none;display:flex;justify-content:space-between;gap:12px}
