@@ -320,6 +320,30 @@ def alternates(active):
     return "\n".join(rows)
 
 
+def jsonld(code, d, canon):
+    """Структурированные данные SoftwareApplication для Google (расширенный сниппет)."""
+    data = {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "Prau",
+        "alternateName": "Prau: Offline Voice Translator",
+        "url": canon,
+        "installUrl": APPSTORE,
+        "downloadUrl": APPSTORE,
+        "sameAs": [APPSTORE, "https://x.com/getprau"],
+        "description": d["meta"],
+        "inLanguage": hl(code),
+        "applicationCategory": "TravelApplication",
+        "operatingSystem": "iOS 18",
+        "offers": [
+            {"@type": "Offer", "name": "Prau Pro Monthly",  "price": "9.99",  "priceCurrency": "USD", "url": APPSTORE},
+            {"@type": "Offer", "name": "Prau Pro Annual",   "price": "34.99", "priceCurrency": "USD", "url": APPSTORE},
+            {"@type": "Offer", "name": "Prau Pro Lifetime", "price": "59.99", "priceCurrency": "USD", "url": APPSTORE},
+        ],
+        "publisher": {"@type": "Organization", "name": "Prau", "url": SITE},
+    }
+    return '<script type="application/ld+json">' + json.dumps(data, ensure_ascii=False) + '</script>'
+
 def page(code):
     d = L[code]
     x = X[code]
@@ -329,6 +353,7 @@ def page(code):
     body = section(code, d, x, True)
     smart_banner = '<meta name="apple-itunes-app" content="app-id=6801931802">' if LIVE else ""
     navcta = ('  <a class="navcta" href="' + APPSTORE + '">' + e(x["nav_cta"]) + '</a>') if LIVE else ""
+    ld = jsonld(code, d, canon) if LIVE else ""
     return f"""<!doctype html>
 <html lang="{hl(code)}"{' dir="rtl"' if code in RTL else ''}>
 <head>
@@ -350,6 +375,7 @@ def page(code):
 <meta name="twitter:description" content="{e(d["meta"])}">
 <meta name="twitter:image" content="{SITE}og.png">
 {smart_banner}
+{ld}
 <meta name="theme-color" content="#0B0C0E">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
 <link rel="icon" type="image/png" sizes="192x192" href="/icon-192.png">
