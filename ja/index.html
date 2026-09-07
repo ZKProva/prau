@@ -162,6 +162,36 @@
     .row .phone{max-width:210px;justify-self:center}
   }
   @media (max-width:560px){.two{grid-template-columns:1fr}main{padding:16px 16px 56px}}
+
+  /* compare */
+  .cmp{display:flex;flex-direction:column;gap:8px;margin-top:6px}
+  .crow{display:grid;grid-template-columns:1.1fr 1.3fr 1.6fr;gap:14px;align-items:start;background:var(--panel);border:1px solid var(--stroke);border-radius:18px;padding:16px 20px}
+  .crow.chead{background:transparent;border:0;padding:4px 20px 0;color:var(--muted);font:600 12px/1 var(--sans);letter-spacing:.12em;text-transform:uppercase}
+  .crow.chead .cus{color:var(--gold)}
+  .clabel{font-weight:700;color:var(--text);font-size:16px}
+  .cthem{color:var(--muted);font-size:15.5px}
+  .cthem .dash{display:inline-block;color:#4A525C;font-size:20px;line-height:1}
+  .cus{color:var(--text);font-size:15.5px;position:relative;padding-left:26px}
+  .cus .chk{position:absolute;left:0;top:1px;width:18px;height:18px;border-radius:50%;background:rgba(126,217,160,.15);color:var(--green);font:700 12px/18px var(--sans);text-align:center}
+  .badge.v11{background:#26211A;color:var(--gold);border:1px solid #4A3E29;margin-left:6px}
+  .cfoot{margin-top:12px;font-size:13.5px;max-width:760px}
+  .next{margin-top:26px;background:linear-gradient(180deg,#1A1712,var(--panel));border:1px solid #4A3E29;border-radius:22px;padding:24px 28px;max-width:860px}
+  .next h3{color:var(--gold);font-family:var(--serif);font-weight:600;font-size:24px;margin:0 0 8px}
+  .next p{margin:0 0 10px;color:var(--soft)}
+  .next .nextv{color:var(--text)}
+  .next .nextw{margin:0;color:var(--muted);font-size:15px}
+  @media (max-width:760px){
+    .crow{grid-template-columns:1fr;gap:8px;padding:16px 18px}
+    .crow.chead{display:none}
+    .clabel{margin-bottom:2px}
+    .cthem::before{content:attr(data-h);display:block;color:#5C6570;font:600 11px/1 var(--sans);letter-spacing:.1em;text-transform:uppercase;margin-bottom:4px}
+    .cus{padding-left:0}
+    .cus .chk{position:static;display:inline-block;margin-right:8px;vertical-align:-3px}
+    .cus::before{content:attr(data-h);display:block;color:var(--gold);font:600 11px/1 var(--sans);letter-spacing:.1em;text-transform:uppercase;margin-bottom:4px}
+  }
+  [dir="rtl"] .cus{padding-left:0;padding-right:26px}
+  [dir="rtl"] .cus .chk{left:auto;right:0}
+  [dir="rtl"] .cus .chk{margin-right:0;margin-left:8px}
   [dir="rtl"] .how li{padding:0 56px 22px 0}
   [dir="rtl"] .how li:before{left:auto;right:0}
   [dir="rtl"] .how li:not(:last-child):after{left:auto;right:18px}
@@ -229,6 +259,20 @@
 </div>
 <ul class="plain"><li>アカウントなし、ログインなし。</li><li>解析なし、広告なし、トラッキングSDKなし。</li><li>自前のサーバーなし——そもそも送り先が存在しません。</li><li>Appleのオンデバイスフレームワークのみで構築：Speech、Translation、Vision、AVFoundation。</li><li>会話は1件でも全件でもいつでも削除可能。アプリを削除すれば履歴も一緒に消えます。</li></ul>
 <p><a href="/privacy.html#ja">プライバシーポリシー全文を読む →</a></p>
+
+<h2 id="why-ja">Prau がその先へ進むところ</h2>
+<p class="sub">「何でも訳せる」翻訳アプリの一つではありません。役目は一つ。電波がなくても成り立ち、スマホの外に出ない会話です。</p>
+<div class="cmp">
+  <div class="crow chead"><div class="clabel"></div><div class="cthem">市場のリーダー*</div><div class="cus">Prau</div></div>
+  <div class="crow"><div class="clabel">インターネットなしで</div><div class="cthem" data-h="市場のリーダー*">オフラインは有料オプション。テキストは数十言語、音声はごく少数。</div><div class="cus" data-h="Prau"><span class="chk" aria-hidden="true">✓</span>オフラインこそが製品。19言語、音声もテキストも、いつでも。</div></div><div class="crow"><div class="clabel">あなたの声の行き先</div><div class="cthem" data-h="市場のリーダー*">音声や写真はサーバーで処理され、プライバシーラベルにはトラッキングの記載。</div><div class="cus" data-h="Prau"><span class="chk" aria-hidden="true">✓</span>何も iPhone の外に出ません。サーバーなし、アカウントなし、トラッキングなし。</div></div><div class="crow"><div class="clabel">打つのではなく、話す <span class="badge v11">1.1</span></div><div class="cthem" data-h="市場のリーダー*">基本的な音声⇄音声の翻訳。</div><div class="cus" data-h="Prau"><span class="chk" aria-hidden="true">✓</span>画面を分けた対面モード、それぞれが自分の言語で聞くイヤホンモード、講義やテレビ向けの Stream モード。</div></div><div class="crow"><div class="clabel">会話のあとに</div><div class="cthem" data-h="市場のリーダー*"><span class="dash" aria-label="—">—</span></div><div class="cus" data-h="Prau"><span class="chk" aria-hidden="true">✓</span>会話全体の要約を Apple Intelligence が端末上で作成。</div></div><div class="crow"><div class="clabel">ハンズフリー <span class="badge v11">1.1</span></div><div class="cthem" data-h="市場のリーダー*"><span class="dash" aria-label="—">—</span></div><div class="cus" data-h="Prau"><span class="chk" aria-hidden="true">✓</span>Siri やアクションボタンから会話を開始。</div></div><div class="crow"><div class="clabel">アプリのサイズ</div><div class="cthem" data-h="市場のリーダー*">最大 270 MB。</div><div class="cus" data-h="Prau"><span class="chk" aria-hidden="true">✓</span>8.9 MB。</div></div><div class="crow"><div class="clabel">何に対価を払うか</div><div class="cthem" data-h="市場のリーダー*">週額サブスクリプション。オフラインのオプションは年およそ 80〜100 ユーロ。</div><div class="cus" data-h="Prau"><span class="chk" aria-hidden="true">✓</span>すべて込みの一つの価格、買い切りの選択肢。履歴・検索・書き出しはずっと無料。</div></div>
+</div>
+<p class="note cfoot">* 主要な有料翻訳アプリの App Store ページと公式サイトに基づく（2026年9月）。</p>
+<div class="next">
+  <h3>長く使えるように</h3>
+  <p>Prau の目的は一つ。電波のない場所でも会話ができ、その会話が端末に残ること。どのバージョンも、その方向へ進みます。</p>
+  <p class="nextv">バージョン 1.1 ── 講義やテレビにライブ字幕を出す Stream モード、そして Siri とアクションボタン ── は現在 App Store 審査中で、さらに開発が続いています。</p>
+  <p class="nextw">アイデア、不具合、要望はページ下部のアドレスまで。私たち自身が返信します。最新情報は X の @getprau で。</p>
+</div>
 
 <h2>Prau Pro</h2>
 <p class="sub">3日間すべて無料で試して、合うプランを選んでください。</p>

@@ -162,6 +162,36 @@
     .row .phone{max-width:210px;justify-self:center}
   }
   @media (max-width:560px){.two{grid-template-columns:1fr}main{padding:16px 16px 56px}}
+
+  /* compare */
+  .cmp{display:flex;flex-direction:column;gap:8px;margin-top:6px}
+  .crow{display:grid;grid-template-columns:1.1fr 1.3fr 1.6fr;gap:14px;align-items:start;background:var(--panel);border:1px solid var(--stroke);border-radius:18px;padding:16px 20px}
+  .crow.chead{background:transparent;border:0;padding:4px 20px 0;color:var(--muted);font:600 12px/1 var(--sans);letter-spacing:.12em;text-transform:uppercase}
+  .crow.chead .cus{color:var(--gold)}
+  .clabel{font-weight:700;color:var(--text);font-size:16px}
+  .cthem{color:var(--muted);font-size:15.5px}
+  .cthem .dash{display:inline-block;color:#4A525C;font-size:20px;line-height:1}
+  .cus{color:var(--text);font-size:15.5px;position:relative;padding-left:26px}
+  .cus .chk{position:absolute;left:0;top:1px;width:18px;height:18px;border-radius:50%;background:rgba(126,217,160,.15);color:var(--green);font:700 12px/18px var(--sans);text-align:center}
+  .badge.v11{background:#26211A;color:var(--gold);border:1px solid #4A3E29;margin-left:6px}
+  .cfoot{margin-top:12px;font-size:13.5px;max-width:760px}
+  .next{margin-top:26px;background:linear-gradient(180deg,#1A1712,var(--panel));border:1px solid #4A3E29;border-radius:22px;padding:24px 28px;max-width:860px}
+  .next h3{color:var(--gold);font-family:var(--serif);font-weight:600;font-size:24px;margin:0 0 8px}
+  .next p{margin:0 0 10px;color:var(--soft)}
+  .next .nextv{color:var(--text)}
+  .next .nextw{margin:0;color:var(--muted);font-size:15px}
+  @media (max-width:760px){
+    .crow{grid-template-columns:1fr;gap:8px;padding:16px 18px}
+    .crow.chead{display:none}
+    .clabel{margin-bottom:2px}
+    .cthem::before{content:attr(data-h);display:block;color:#5C6570;font:600 11px/1 var(--sans);letter-spacing:.1em;text-transform:uppercase;margin-bottom:4px}
+    .cus{padding-left:0}
+    .cus .chk{position:static;display:inline-block;margin-right:8px;vertical-align:-3px}
+    .cus::before{content:attr(data-h);display:block;color:var(--gold);font:600 11px/1 var(--sans);letter-spacing:.1em;text-transform:uppercase;margin-bottom:4px}
+  }
+  [dir="rtl"] .cus{padding-left:0;padding-right:26px}
+  [dir="rtl"] .cus .chk{left:auto;right:0}
+  [dir="rtl"] .cus .chk{margin-right:0;margin-left:8px}
   [dir="rtl"] .how li{padding:0 56px 22px 0}
   [dir="rtl"] .how li:before{left:auto;right:0}
   [dir="rtl"] .how li:not(:last-child):after{left:auto;right:18px}
@@ -229,6 +259,20 @@
 </div>
 <ul class="plain"><li>Không tài khoản, không đăng nhập.</li><li>Không phân tích, không quảng cáo, không SDK theo dõi.</li><li>Không có máy chủ riêng — chẳng có nơi nào để tải lên.</li><li>Chỉ dùng các framework chạy trên máy của Apple: Speech, Translation, Vision, AVFoundation.</li><li>Xóa một hay tất cả cuộc trò chuyện bất cứ lúc nào. Xóa ứng dụng — lịch sử biến mất theo.</li></ul>
 <p><a href="/privacy.html#vi">Đọc toàn văn Chính sách quyền riêng tư →</a></p>
+
+<h2 id="why-vi">Nơi Prau đi xa hơn</h2>
+<p class="sub">Không phải thêm một ứng dụng dịch mọi thứ. Một nhiệm vụ duy nhất: cuộc trò chuyện hoạt động không cần mạng và không bao giờ rời khỏi điện thoại của bạn.</p>
+<div class="cmp">
+  <div class="crow chead"><div class="clabel"></div><div class="cthem">Các ứng dụng dẫn đầu*</div><div class="cus">Prau</div></div>
+  <div class="crow"><div class="clabel">Không cần internet</div><div class="cthem" data-h="Các ứng dụng dẫn đầu*">Ngoại tuyến là tính năng trả phí thêm: văn bản hàng chục ngôn ngữ, giọng nói chỉ vài ngôn ngữ.</div><div class="cus" data-h="Prau"><span class="chk" aria-hidden="true">✓</span>Ngoại tuyến chính là sản phẩm: 19 ngôn ngữ, giọng nói và văn bản, luôn luôn.</div></div><div class="crow"><div class="clabel">Giọng nói của bạn đi đâu</div><div class="cthem" data-h="Các ứng dụng dẫn đầu*">Giọng nói và ảnh được xử lý trên máy chủ; nhãn quyền riêng tư ghi có theo dõi.</div><div class="cus" data-h="Prau"><span class="chk" aria-hidden="true">✓</span>Không gì rời khỏi iPhone của bạn. Không máy chủ, không tài khoản, không theo dõi.</div></div><div class="crow"><div class="clabel">Nói, không phải gõ <span class="badge v11">1.1</span></div><div class="cthem" data-h="Các ứng dụng dẫn đầu*">Dịch giọng nói sang giọng nói cơ bản.</div><div class="cus" data-h="Prau"><span class="chk" aria-hidden="true">✓</span>Mặt đối mặt với màn hình chia đôi, tai nghe để mỗi bên nghe ngôn ngữ của mình, chế độ Stream cho bài giảng và TV.</div></div><div class="crow"><div class="clabel">Sau cuộc trò chuyện</div><div class="cthem" data-h="Các ứng dụng dẫn đầu*"><span class="dash" aria-label="—">—</span></div><div class="cus" data-h="Prau"><span class="chk" aria-hidden="true">✓</span>Bản tóm tắt toàn bộ cuộc trò chuyện do Apple Intelligence viết ngay trên điện thoại.</div></div><div class="crow"><div class="clabel">Rảnh tay <span class="badge v11">1.1</span></div><div class="cthem" data-h="Các ứng dụng dẫn đầu*"><span class="dash" aria-label="—">—</span></div><div class="cus" data-h="Prau"><span class="chk" aria-hidden="true">✓</span>Bắt đầu trò chuyện bằng Siri hoặc nút Tác vụ.</div></div><div class="crow"><div class="clabel">Dung lượng ứng dụng</div><div class="cthem" data-h="Các ứng dụng dẫn đầu*">Tới 270 MB.</div><div class="cus" data-h="Prau"><span class="chk" aria-hidden="true">✓</span>8,9 MB.</div></div><div class="crow"><div class="clabel">Bạn trả tiền cho điều gì</div><div class="cthem" data-h="Các ứng dụng dẫn đầu*">Gói tuần; tính năng ngoại tuyến thêm khoảng 80–100 € mỗi năm.</div><div class="cus" data-h="Prau"><span class="chk" aria-hidden="true">✓</span>Một giá cho tất cả, tùy chọn trọn đời; lịch sử, tìm kiếm và xuất miễn phí mãi mãi.</div></div>
+</div>
+<p class="note cfoot">* Dựa trên trang App Store và website của các ứng dụng dịch trả phí hàng đầu, tháng 9/2026.</p>
+<div class="next">
+  <h3>Được xây dựng để đi đường dài</h3>
+  <p>Prau được làm vì một điều: cuộc trò chuyện có thể diễn ra nơi không có mạng và ở lại trên điện thoại của bạn. Mỗi phiên bản đều tiến thêm theo hướng đó.</p>
+  <p class="nextv">Phiên bản 1.1 — chế độ Stream với phụ đề trực tiếp cho bài giảng và TV, cùng Siri và nút Tác vụ — đang được App Store xét duyệt, và còn nhiều điều nữa đang làm.</p>
+  <p class="nextw">Ý tưởng, lỗi, mong muốn: hãy viết cho chúng tôi, địa chỉ ở cuối trang; chúng tôi trả lời trực tiếp. Cập nhật: @getprau trên X.</p>
+</div>
 
 <h2>Prau Pro</h2>
 <p class="sub">Dùng thử mọi thứ miễn phí 3 ngày. Rồi chọn gói hợp với bạn.</p>

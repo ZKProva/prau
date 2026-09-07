@@ -162,6 +162,36 @@
     .row .phone{max-width:210px;justify-self:center}
   }
   @media (max-width:560px){.two{grid-template-columns:1fr}main{padding:16px 16px 56px}}
+
+  /* compare */
+  .cmp{display:flex;flex-direction:column;gap:8px;margin-top:6px}
+  .crow{display:grid;grid-template-columns:1.1fr 1.3fr 1.6fr;gap:14px;align-items:start;background:var(--panel);border:1px solid var(--stroke);border-radius:18px;padding:16px 20px}
+  .crow.chead{background:transparent;border:0;padding:4px 20px 0;color:var(--muted);font:600 12px/1 var(--sans);letter-spacing:.12em;text-transform:uppercase}
+  .crow.chead .cus{color:var(--gold)}
+  .clabel{font-weight:700;color:var(--text);font-size:16px}
+  .cthem{color:var(--muted);font-size:15.5px}
+  .cthem .dash{display:inline-block;color:#4A525C;font-size:20px;line-height:1}
+  .cus{color:var(--text);font-size:15.5px;position:relative;padding-left:26px}
+  .cus .chk{position:absolute;left:0;top:1px;width:18px;height:18px;border-radius:50%;background:rgba(126,217,160,.15);color:var(--green);font:700 12px/18px var(--sans);text-align:center}
+  .badge.v11{background:#26211A;color:var(--gold);border:1px solid #4A3E29;margin-left:6px}
+  .cfoot{margin-top:12px;font-size:13.5px;max-width:760px}
+  .next{margin-top:26px;background:linear-gradient(180deg,#1A1712,var(--panel));border:1px solid #4A3E29;border-radius:22px;padding:24px 28px;max-width:860px}
+  .next h3{color:var(--gold);font-family:var(--serif);font-weight:600;font-size:24px;margin:0 0 8px}
+  .next p{margin:0 0 10px;color:var(--soft)}
+  .next .nextv{color:var(--text)}
+  .next .nextw{margin:0;color:var(--muted);font-size:15px}
+  @media (max-width:760px){
+    .crow{grid-template-columns:1fr;gap:8px;padding:16px 18px}
+    .crow.chead{display:none}
+    .clabel{margin-bottom:2px}
+    .cthem::before{content:attr(data-h);display:block;color:#5C6570;font:600 11px/1 var(--sans);letter-spacing:.1em;text-transform:uppercase;margin-bottom:4px}
+    .cus{padding-left:0}
+    .cus .chk{position:static;display:inline-block;margin-right:8px;vertical-align:-3px}
+    .cus::before{content:attr(data-h);display:block;color:var(--gold);font:600 11px/1 var(--sans);letter-spacing:.1em;text-transform:uppercase;margin-bottom:4px}
+  }
+  [dir="rtl"] .cus{padding-left:0;padding-right:26px}
+  [dir="rtl"] .cus .chk{left:auto;right:0}
+  [dir="rtl"] .cus .chk{margin-right:0;margin-left:8px}
   [dir="rtl"] .how li{padding:0 56px 22px 0}
   [dir="rtl"] .how li:before{left:auto;right:0}
   [dir="rtl"] .how li:not(:last-child):after{left:auto;right:18px}
@@ -229,6 +259,20 @@
 </div>
 <ul class="plain"><li>Pas de compte, pas de connexion.</li><li>Pas d'analyse d'audience, pas de publicité, pas de SDK de suivi.</li><li>Pas de serveur à nous — il n'y a nulle part où téléverser.</li><li>Construit uniquement sur les frameworks Apple sur l'appareil : Speech, Translation, Vision, AVFoundation.</li><li>Supprimez une conversation, ou toutes, à tout moment. Supprimez l'app — l'historique part avec elle.</li></ul>
 <p><a href="/privacy.html#fr">Lire la politique de confidentialité complète →</a></p>
+
+<h2 id="why-fr">Là où Prau va plus loin</h2>
+<p class="sub">Pas un énième traducteur universel. Une seule mission : une conversation qui fonctionne sans réseau et ne quitte jamais votre téléphone.</p>
+<div class="cmp">
+  <div class="crow chead"><div class="clabel"></div><div class="cthem">Leaders du marché*</div><div class="cus">Prau</div></div>
+  <div class="crow"><div class="clabel">Sans internet</div><div class="cthem" data-h="Leaders du marché*">Le hors-ligne est une option payante : texte dans des dizaines de langues, voix dans une poignée.</div><div class="cus" data-h="Prau"><span class="chk" aria-hidden="true">✓</span>Le hors-ligne est le produit : 19 langues, voix et texte, toujours.</div></div><div class="crow"><div class="clabel">Où va votre voix</div><div class="cthem" data-h="Leaders du marché*">Voix et photos sont traitées sur des serveurs ; l'étiquette de confidentialité mentionne du suivi.</div><div class="cus" data-h="Prau"><span class="chk" aria-hidden="true">✓</span>Rien ne quitte votre iPhone. Ni serveur, ni compte, ni suivi.</div></div><div class="crow"><div class="clabel">Parler, pas taper <span class="badge v11">1.1</span></div><div class="cthem" data-h="Leaders du marché*">Traduction voix-à-voix basique.</div><div class="cus" data-h="Prau"><span class="chk" aria-hidden="true">✓</span>Face à face sur écran partagé, écouteurs où chacun entend sa langue, mode Stream pour cours et télévision.</div></div><div class="crow"><div class="clabel">Après la conversation</div><div class="cthem" data-h="Leaders du marché*"><span class="dash" aria-label="—">—</span></div><div class="cus" data-h="Prau"><span class="chk" aria-hidden="true">✓</span>Un résumé de toute la conversation, rédigé par Apple Intelligence sur le téléphone.</div></div><div class="crow"><div class="clabel">Mains libres <span class="badge v11">1.1</span></div><div class="cthem" data-h="Leaders du marché*"><span class="dash" aria-label="—">—</span></div><div class="cus" data-h="Prau"><span class="chk" aria-hidden="true">✓</span>Lancez une conversation avec Siri ou le bouton Action.</div></div><div class="crow"><div class="clabel">Taille de l'app</div><div class="cthem" data-h="Leaders du marché*">Jusqu'à 270 Mo.</div><div class="cus" data-h="Prau"><span class="chk" aria-hidden="true">✓</span>8,9 Mo.</div></div><div class="crow"><div class="clabel">Ce que vous payez</div><div class="cthem" data-h="Leaders du marché*">Abonnements hebdomadaires ; l'option hors-ligne coûte environ 80–100 € par an.</div><div class="cus" data-h="Prau"><span class="chk" aria-hidden="true">✓</span>Un seul prix pour tout, une option à vie, et historique, recherche et export gratuits pour toujours.</div></div>
+</div>
+<p class="note cfoot">* D'après les fiches App Store et les sites des principales apps de traduction payantes, septembre 2026.</p>
+<div class="next">
+  <h3>Conçu pour durer</h3>
+  <p>Prau est fait pour une chose : une conversation possible là où il n'y a pas de réseau, et qui reste sur votre téléphone. Chaque version avance dans ce sens.</p>
+  <p class="nextv">La version 1.1 — mode Stream avec sous-titres en direct pour cours et télévision, Siri et le bouton Action — est en cours de validation sur l'App Store, et la suite est en préparation.</p>
+  <p class="nextw">Idées, bugs, souhaits : écrivez-nous, l'adresse est en bas de page ; nous répondons personnellement. Actualités : @getprau sur X.</p>
+</div>
 
 <h2>Prau Pro</h2>
 <p class="sub">Essayez tout gratuitement pendant 3 jours. Puis choisissez.</p>

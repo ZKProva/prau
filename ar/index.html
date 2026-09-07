@@ -162,6 +162,36 @@
     .row .phone{max-width:210px;justify-self:center}
   }
   @media (max-width:560px){.two{grid-template-columns:1fr}main{padding:16px 16px 56px}}
+
+  /* compare */
+  .cmp{display:flex;flex-direction:column;gap:8px;margin-top:6px}
+  .crow{display:grid;grid-template-columns:1.1fr 1.3fr 1.6fr;gap:14px;align-items:start;background:var(--panel);border:1px solid var(--stroke);border-radius:18px;padding:16px 20px}
+  .crow.chead{background:transparent;border:0;padding:4px 20px 0;color:var(--muted);font:600 12px/1 var(--sans);letter-spacing:.12em;text-transform:uppercase}
+  .crow.chead .cus{color:var(--gold)}
+  .clabel{font-weight:700;color:var(--text);font-size:16px}
+  .cthem{color:var(--muted);font-size:15.5px}
+  .cthem .dash{display:inline-block;color:#4A525C;font-size:20px;line-height:1}
+  .cus{color:var(--text);font-size:15.5px;position:relative;padding-left:26px}
+  .cus .chk{position:absolute;left:0;top:1px;width:18px;height:18px;border-radius:50%;background:rgba(126,217,160,.15);color:var(--green);font:700 12px/18px var(--sans);text-align:center}
+  .badge.v11{background:#26211A;color:var(--gold);border:1px solid #4A3E29;margin-left:6px}
+  .cfoot{margin-top:12px;font-size:13.5px;max-width:760px}
+  .next{margin-top:26px;background:linear-gradient(180deg,#1A1712,var(--panel));border:1px solid #4A3E29;border-radius:22px;padding:24px 28px;max-width:860px}
+  .next h3{color:var(--gold);font-family:var(--serif);font-weight:600;font-size:24px;margin:0 0 8px}
+  .next p{margin:0 0 10px;color:var(--soft)}
+  .next .nextv{color:var(--text)}
+  .next .nextw{margin:0;color:var(--muted);font-size:15px}
+  @media (max-width:760px){
+    .crow{grid-template-columns:1fr;gap:8px;padding:16px 18px}
+    .crow.chead{display:none}
+    .clabel{margin-bottom:2px}
+    .cthem::before{content:attr(data-h);display:block;color:#5C6570;font:600 11px/1 var(--sans);letter-spacing:.1em;text-transform:uppercase;margin-bottom:4px}
+    .cus{padding-left:0}
+    .cus .chk{position:static;display:inline-block;margin-right:8px;vertical-align:-3px}
+    .cus::before{content:attr(data-h);display:block;color:var(--gold);font:600 11px/1 var(--sans);letter-spacing:.1em;text-transform:uppercase;margin-bottom:4px}
+  }
+  [dir="rtl"] .cus{padding-left:0;padding-right:26px}
+  [dir="rtl"] .cus .chk{left:auto;right:0}
+  [dir="rtl"] .cus .chk{margin-right:0;margin-left:8px}
   [dir="rtl"] .how li{padding:0 56px 22px 0}
   [dir="rtl"] .how li:before{left:auto;right:0}
   [dir="rtl"] .how li:not(:last-child):after{left:auto;right:18px}
@@ -229,6 +259,20 @@
 </div>
 <ul class="plain"><li>لا حسابات ولا تسجيل دخول.</li><li>لا تحليلات ولا إعلانات ولا أدوات تتبّع.</li><li>لا خوادم لدينا — لا يوجد مكان يُرفَع إليه شيء.</li><li>مبني فقط على أُطر Apple العاملة على الجهاز: Speech وTranslation وVision وAVFoundation.</li><li>احذف محادثة أو كلها متى شئت. احذف التطبيق — يذهب السجل معه.</li></ul>
 <p><a href="/privacy.html#ar">اقرأ سياسة الخصوصية كاملة →</a></p>
+
+<h2 id="why-ar">أين يذهب Prau أبعد</h2>
+<p class="sub">ليس مترجمًا آخر لكل شيء. مهمة واحدة: محادثة تعمل بلا شبكة ولا تغادر هاتفك أبدًا.</p>
+<div class="cmp">
+  <div class="crow chead"><div class="clabel"></div><div class="cthem">رواد السوق*</div><div class="cus">Prau</div></div>
+  <div class="crow"><div class="clabel">بدون إنترنت</div><div class="cthem" data-h="رواد السوق*">العمل دون اتصال إضافة مدفوعة: نص بعشرات اللغات، وصوت بلغات قليلة.</div><div class="cus" data-h="Prau"><span class="chk" aria-hidden="true">✓</span>العمل دون اتصال هو المنتج نفسه: 19 لغة، صوت ونص، دائمًا.</div></div><div class="crow"><div class="clabel">إلى أين يذهب صوتك</div><div class="cthem" data-h="رواد السوق*">يُعالَج الصوت والصور على خوادم؛ ويذكر ملصق الخصوصية التتبع.</div><div class="cus" data-h="Prau"><span class="chk" aria-hidden="true">✓</span>لا شيء يغادر iPhone. لا خادم، لا حساب، لا تتبع.</div></div><div class="crow"><div class="clabel">حديث لا كتابة <span class="badge v11">1.1</span></div><div class="cthem" data-h="رواد السوق*">ترجمة صوت إلى صوت أساسية.</div><div class="cus" data-h="Prau"><span class="chk" aria-hidden="true">✓</span>وجهًا لوجه بشاشة مقسومة، سماعات يسمع فيها كل طرف لغته، ووضع Stream للمحاضرات والتلفاز.</div></div><div class="crow"><div class="clabel">بعد المحادثة</div><div class="cthem" data-h="رواد السوق*"><span class="dash" aria-label="—">—</span></div><div class="cus" data-h="Prau"><span class="chk" aria-hidden="true">✓</span>ملخص للمحادثة كاملة يكتبه Apple Intelligence على الهاتف.</div></div><div class="crow"><div class="clabel">دون استخدام اليدين <span class="badge v11">1.1</span></div><div class="cthem" data-h="رواد السوق*"><span class="dash" aria-label="—">—</span></div><div class="cus" data-h="Prau"><span class="chk" aria-hidden="true">✓</span>ابدأ محادثة عبر Siri أو زر الإجراء.</div></div><div class="crow"><div class="clabel">حجم التطبيق</div><div class="cthem" data-h="رواد السوق*">حتى 270 ميغابايت.</div><div class="cus" data-h="Prau"><span class="chk" aria-hidden="true">✓</span>8.9 ميغابايت.</div></div><div class="crow"><div class="clabel">مقابل ماذا تدفع</div><div class="cthem" data-h="رواد السوق*">اشتراكات أسبوعية؛ وإضافة العمل دون اتصال تكلف نحو 80–100 يورو سنويًا.</div><div class="cus" data-h="Prau"><span class="chk" aria-hidden="true">✓</span>سعر واحد لكل شيء، وخيار مدى الحياة، والسجل والبحث والتصدير مجانًا للأبد.</div></div>
+</div>
+<p class="note cfoot">* استنادًا إلى صفحات App Store ومواقع تطبيقات الترجمة المدفوعة الرائدة، سبتمبر 2026.</p>
+<div class="next">
+  <h3>مصمم ليدوم</h3>
+  <p>يُصنع Prau لهدف واحد: أن تكون المحادثة ممكنة حيث لا شبكة، وأن تبقى على هاتفك. كل إصدار خطوة في هذا الاتجاه.</p>
+  <p class="nextv">الإصدار 1.1 — وضع Stream بترجمة حية للمحاضرات والتلفاز، إضافة إلى Siri وزر الإجراء — قيد المراجعة الآن في App Store، والمزيد قادم.</p>
+  <p class="nextw">أفكار، أخطاء، رغبات: راسلنا، العنوان أسفل الصفحة؛ نرد شخصيًا. التحديثات: @getprau على X.</p>
+</div>
 
 <h2>Prau Pro</h2>
 <p class="sub">جرّب كل شيء مجانًا 3 أيام، ثم اختر ما يناسبك.</p>

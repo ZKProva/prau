@@ -162,6 +162,36 @@
     .row .phone{max-width:210px;justify-self:center}
   }
   @media (max-width:560px){.two{grid-template-columns:1fr}main{padding:16px 16px 56px}}
+
+  /* compare */
+  .cmp{display:flex;flex-direction:column;gap:8px;margin-top:6px}
+  .crow{display:grid;grid-template-columns:1.1fr 1.3fr 1.6fr;gap:14px;align-items:start;background:var(--panel);border:1px solid var(--stroke);border-radius:18px;padding:16px 20px}
+  .crow.chead{background:transparent;border:0;padding:4px 20px 0;color:var(--muted);font:600 12px/1 var(--sans);letter-spacing:.12em;text-transform:uppercase}
+  .crow.chead .cus{color:var(--gold)}
+  .clabel{font-weight:700;color:var(--text);font-size:16px}
+  .cthem{color:var(--muted);font-size:15.5px}
+  .cthem .dash{display:inline-block;color:#4A525C;font-size:20px;line-height:1}
+  .cus{color:var(--text);font-size:15.5px;position:relative;padding-left:26px}
+  .cus .chk{position:absolute;left:0;top:1px;width:18px;height:18px;border-radius:50%;background:rgba(126,217,160,.15);color:var(--green);font:700 12px/18px var(--sans);text-align:center}
+  .badge.v11{background:#26211A;color:var(--gold);border:1px solid #4A3E29;margin-left:6px}
+  .cfoot{margin-top:12px;font-size:13.5px;max-width:760px}
+  .next{margin-top:26px;background:linear-gradient(180deg,#1A1712,var(--panel));border:1px solid #4A3E29;border-radius:22px;padding:24px 28px;max-width:860px}
+  .next h3{color:var(--gold);font-family:var(--serif);font-weight:600;font-size:24px;margin:0 0 8px}
+  .next p{margin:0 0 10px;color:var(--soft)}
+  .next .nextv{color:var(--text)}
+  .next .nextw{margin:0;color:var(--muted);font-size:15px}
+  @media (max-width:760px){
+    .crow{grid-template-columns:1fr;gap:8px;padding:16px 18px}
+    .crow.chead{display:none}
+    .clabel{margin-bottom:2px}
+    .cthem::before{content:attr(data-h);display:block;color:#5C6570;font:600 11px/1 var(--sans);letter-spacing:.1em;text-transform:uppercase;margin-bottom:4px}
+    .cus{padding-left:0}
+    .cus .chk{position:static;display:inline-block;margin-right:8px;vertical-align:-3px}
+    .cus::before{content:attr(data-h);display:block;color:var(--gold);font:600 11px/1 var(--sans);letter-spacing:.1em;text-transform:uppercase;margin-bottom:4px}
+  }
+  [dir="rtl"] .cus{padding-left:0;padding-right:26px}
+  [dir="rtl"] .cus .chk{left:auto;right:0}
+  [dir="rtl"] .cus .chk{margin-right:0;margin-left:8px}
   [dir="rtl"] .how li{padding:0 56px 22px 0}
   [dir="rtl"] .how li:before{left:auto;right:0}
   [dir="rtl"] .how li:not(:last-child):after{left:auto;right:18px}
@@ -229,6 +259,20 @@
 </div>
 <ul class="plain"><li>沒有帳號，無需登入。</li><li>沒有分析、沒有廣告、沒有追蹤 SDK。</li><li>我們沒有自己的伺服器——根本無處可傳。</li><li>只使用 Apple 的裝置端框架：Speech、Translation、Vision、AVFoundation。</li><li>隨時刪除一段或全部對話。刪除 App，紀錄隨之消失。</li></ul>
 <p><a href="/privacy.html#zh-hant">閱讀完整隱私權政策 →</a></p>
+
+<h2 id="why-zh-hant">Prau 走得更遠的地方</h2>
+<p class="sub">不是又一款「什麼都能翻」的應用程式。只做一件事：沒有網路也能進行的對話，而且永遠不離開你的手機。</p>
+<div class="cmp">
+  <div class="crow chead"><div class="clabel"></div><div class="cthem">市場領導者*</div><div class="cus">Prau</div></div>
+  <div class="crow"><div class="clabel">無需連線</div><div class="cthem" data-h="市場領導者*">離線是付費附加功能：文字支援數十種語言，語音只有寥寥幾種。</div><div class="cus" data-h="Prau"><span class="chk" aria-hidden="true">✓</span>離線就是產品本身：19 種語言，語音與文字，隨時可用。</div></div><div class="crow"><div class="clabel">你的聲音去了哪裡</div><div class="cthem" data-h="市場領導者*">語音和照片在伺服器上處理；隱私權標籤列出了追蹤。</div><div class="cus" data-h="Prau"><span class="chk" aria-hidden="true">✓</span>一切都不會離開你的 iPhone。沒有伺服器，沒有帳號，沒有追蹤。</div></div><div class="crow"><div class="clabel">說話，而不是打字 <span class="badge v11">1.1</span></div><div class="cthem" data-h="市場領導者*">基本的語音對語音翻譯。</div><div class="cus" data-h="Prau"><span class="chk" aria-hidden="true">✓</span>面對面分割畫面，耳機模式下雙方各聽自己的語言，Stream 模式用於講座和電視。</div></div><div class="crow"><div class="clabel">對話之後</div><div class="cthem" data-h="市場領導者*"><span class="dash" aria-label="—">—</span></div><div class="cus" data-h="Prau"><span class="chk" aria-hidden="true">✓</span>由 Apple Intelligence 在手機上寫出的整段對話摘要。</div></div><div class="crow"><div class="clabel">免持 <span class="badge v11">1.1</span></div><div class="cthem" data-h="市場領導者*"><span class="dash" aria-label="—">—</span></div><div class="cus" data-h="Prau"><span class="chk" aria-hidden="true">✓</span>透過 Siri 或動作按鈕開始對話。</div></div><div class="crow"><div class="clabel">App 大小</div><div class="cthem" data-h="市場領導者*">最多 270 MB。</div><div class="cus" data-h="Prau"><span class="chk" aria-hidden="true">✓</span>8.9 MB。</div></div><div class="crow"><div class="clabel">你付費買到什麼</div><div class="cthem" data-h="市場領導者*">按週訂閱；離線附加功能每年約 80–100 歐元。</div><div class="cus" data-h="Prau"><span class="chk" aria-hidden="true">✓</span>一個價格包含全部功能，可選終身版；歷史、搜尋和匯出永久免費。</div></div>
+</div>
+<p class="note cfoot">* 依據主要付費翻譯 App 的 App Store 頁面與官網，2026 年 9 月。</p>
+<div class="next">
+  <h3>為長遠而打造</h3>
+  <p>Prau 只為一件事而做：讓對話在沒有網路的地方也能進行，並留在你的手機上。每個版本都朝這個方向推進。</p>
+  <p class="nextv">1.1 版——為講座和電視提供即時字幕的 Stream 模式，以及 Siri 和動作按鈕——正在 App Store 審核中，更多功能開發中。</p>
+  <p class="nextw">想法、問題、願望：寫信給我們，地址在頁面底部；我們會親自回覆。動態：X 上的 @getprau。</p>
+</div>
 
 <h2>Prau Pro</h2>
 <p class="sub">免費試用全部功能 3 天，然後選擇適合你的方案。</p>

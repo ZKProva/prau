@@ -8,6 +8,7 @@ sys.path.insert(0, HERE)
 exec(open(os.path.join(HERE, "strings_base.py"), encoding="utf-8").read())   # даёт L, APPSTORE, MAIL
 from strings_new import X
 from strings_intl import INTL_L, INTL_X
+from strings_compare import CMP
 L.update(INTL_L); X.update(INTL_X)
 
 SITE = "https://getprau.com/"
@@ -30,6 +31,34 @@ def phone(name, alt, cls=""):
 def bubbles(conv):
     return "".join(f'<div class="bub {"a" if i%2==0 else "b"}"><span class="flag" aria-hidden="true">{f}</span>{e(t)}</div>'
                    for i,(f,t) in enumerate(conv))
+
+CMP_SOON_ROWS = (2, 4)   # строки со Stream и Siri — помечены «1.1», пока версия не вышла. После релиза: CMP_SOON_ROWS = ()
+CMP_SOON_LABEL = "1.1"
+
+def compare_block(code):
+    """Секция «Где Prau идёт дальше»: сравнение с лидерами рынка (без имён) + курс продукта."""
+    c = CMP.get(code) or CMP["en"]
+    rows = ""
+    for i, (label, them, us) in enumerate(c["rows"]):
+        them_html = f'<span class="dash" aria-label="—">—</span>' if not them else e(them)
+        soon = f' <span class="badge v11">{CMP_SOON_LABEL}</span>' if i in CMP_SOON_ROWS else ""
+        rows += (f'<div class="crow"><div class="clabel">{e(label)}{soon}</div>'
+                 f'<div class="cthem" data-h="{e(c["col_l"])}">{them_html}</div>'
+                 f'<div class="cus" data-h="{e(c["col_p"])}"><span class="chk" aria-hidden="true">✓</span>{e(us)}</div></div>')
+    return f'''
+<h2 id="why-{code}">{e(c["h"])}</h2>
+<p class="sub">{e(c["sub"])}</p>
+<div class="cmp">
+  <div class="crow chead"><div class="clabel"></div><div class="cthem">{e(c["col_l"])}</div><div class="cus">{e(c["col_p"])}</div></div>
+  {rows}
+</div>
+<p class="note cfoot">{e(c["foot"])}</p>
+<div class="next">
+  <h3>{e(c["next_h"])}</h3>
+  <p>{e(c["next_p"])}</p>
+  <p class="nextv">{e(c["next_"])}</p>
+  <p class="nextw">{e(c["write"])}</p>
+</div>'''
 
 def section(code, d, x, active):
     lines = d["hero_h1"].split("\n")
@@ -120,6 +149,7 @@ def section(code, d, x, active):
 </div>
 <ul class="plain">{pbul}</ul>
 <p><a href="/privacy.html#{code}">{e(d["priv_link"])} →</a></p>
+{compare_block(code)}
 
 <h2>{e(d["pro_h"])}</h2>
 <p class="sub">{e(d["pro_lead"])}</p>
@@ -259,6 +289,36 @@ CSS = """
     .row .phone{max-width:210px;justify-self:center}
   }
   @media (max-width:560px){.two{grid-template-columns:1fr}main{padding:16px 16px 56px}}
+
+  /* compare */
+  .cmp{display:flex;flex-direction:column;gap:8px;margin-top:6px}
+  .crow{display:grid;grid-template-columns:1.1fr 1.3fr 1.6fr;gap:14px;align-items:start;background:var(--panel);border:1px solid var(--stroke);border-radius:18px;padding:16px 20px}
+  .crow.chead{background:transparent;border:0;padding:4px 20px 0;color:var(--muted);font:600 12px/1 var(--sans);letter-spacing:.12em;text-transform:uppercase}
+  .crow.chead .cus{color:var(--gold)}
+  .clabel{font-weight:700;color:var(--text);font-size:16px}
+  .cthem{color:var(--muted);font-size:15.5px}
+  .cthem .dash{display:inline-block;color:#4A525C;font-size:20px;line-height:1}
+  .cus{color:var(--text);font-size:15.5px;position:relative;padding-left:26px}
+  .cus .chk{position:absolute;left:0;top:1px;width:18px;height:18px;border-radius:50%;background:rgba(126,217,160,.15);color:var(--green);font:700 12px/18px var(--sans);text-align:center}
+  .badge.v11{background:#26211A;color:var(--gold);border:1px solid #4A3E29;margin-left:6px}
+  .cfoot{margin-top:12px;font-size:13.5px;max-width:760px}
+  .next{margin-top:26px;background:linear-gradient(180deg,#1A1712,var(--panel));border:1px solid #4A3E29;border-radius:22px;padding:24px 28px;max-width:860px}
+  .next h3{color:var(--gold);font-family:var(--serif);font-weight:600;font-size:24px;margin:0 0 8px}
+  .next p{margin:0 0 10px;color:var(--soft)}
+  .next .nextv{color:var(--text)}
+  .next .nextw{margin:0;color:var(--muted);font-size:15px}
+  @media (max-width:760px){
+    .crow{grid-template-columns:1fr;gap:8px;padding:16px 18px}
+    .crow.chead{display:none}
+    .clabel{margin-bottom:2px}
+    .cthem::before{content:attr(data-h);display:block;color:#5C6570;font:600 11px/1 var(--sans);letter-spacing:.1em;text-transform:uppercase;margin-bottom:4px}
+    .cus{padding-left:0}
+    .cus .chk{position:static;display:inline-block;margin-right:8px;vertical-align:-3px}
+    .cus::before{content:attr(data-h);display:block;color:var(--gold);font:600 11px/1 var(--sans);letter-spacing:.1em;text-transform:uppercase;margin-bottom:4px}
+  }
+  [dir="rtl"] .cus{padding-left:0;padding-right:26px}
+  [dir="rtl"] .cus .chk{left:auto;right:0}
+  [dir="rtl"] .cus .chk{margin-right:0;margin-left:8px}
   [dir="rtl"] .how li{padding:0 56px 22px 0}
   [dir="rtl"] .how li:before{left:auto;right:0}
   [dir="rtl"] .how li:not(:last-child):after{left:auto;right:18px}

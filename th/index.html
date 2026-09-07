@@ -162,6 +162,36 @@
     .row .phone{max-width:210px;justify-self:center}
   }
   @media (max-width:560px){.two{grid-template-columns:1fr}main{padding:16px 16px 56px}}
+
+  /* compare */
+  .cmp{display:flex;flex-direction:column;gap:8px;margin-top:6px}
+  .crow{display:grid;grid-template-columns:1.1fr 1.3fr 1.6fr;gap:14px;align-items:start;background:var(--panel);border:1px solid var(--stroke);border-radius:18px;padding:16px 20px}
+  .crow.chead{background:transparent;border:0;padding:4px 20px 0;color:var(--muted);font:600 12px/1 var(--sans);letter-spacing:.12em;text-transform:uppercase}
+  .crow.chead .cus{color:var(--gold)}
+  .clabel{font-weight:700;color:var(--text);font-size:16px}
+  .cthem{color:var(--muted);font-size:15.5px}
+  .cthem .dash{display:inline-block;color:#4A525C;font-size:20px;line-height:1}
+  .cus{color:var(--text);font-size:15.5px;position:relative;padding-left:26px}
+  .cus .chk{position:absolute;left:0;top:1px;width:18px;height:18px;border-radius:50%;background:rgba(126,217,160,.15);color:var(--green);font:700 12px/18px var(--sans);text-align:center}
+  .badge.v11{background:#26211A;color:var(--gold);border:1px solid #4A3E29;margin-left:6px}
+  .cfoot{margin-top:12px;font-size:13.5px;max-width:760px}
+  .next{margin-top:26px;background:linear-gradient(180deg,#1A1712,var(--panel));border:1px solid #4A3E29;border-radius:22px;padding:24px 28px;max-width:860px}
+  .next h3{color:var(--gold);font-family:var(--serif);font-weight:600;font-size:24px;margin:0 0 8px}
+  .next p{margin:0 0 10px;color:var(--soft)}
+  .next .nextv{color:var(--text)}
+  .next .nextw{margin:0;color:var(--muted);font-size:15px}
+  @media (max-width:760px){
+    .crow{grid-template-columns:1fr;gap:8px;padding:16px 18px}
+    .crow.chead{display:none}
+    .clabel{margin-bottom:2px}
+    .cthem::before{content:attr(data-h);display:block;color:#5C6570;font:600 11px/1 var(--sans);letter-spacing:.1em;text-transform:uppercase;margin-bottom:4px}
+    .cus{padding-left:0}
+    .cus .chk{position:static;display:inline-block;margin-right:8px;vertical-align:-3px}
+    .cus::before{content:attr(data-h);display:block;color:var(--gold);font:600 11px/1 var(--sans);letter-spacing:.1em;text-transform:uppercase;margin-bottom:4px}
+  }
+  [dir="rtl"] .cus{padding-left:0;padding-right:26px}
+  [dir="rtl"] .cus .chk{left:auto;right:0}
+  [dir="rtl"] .cus .chk{margin-right:0;margin-left:8px}
   [dir="rtl"] .how li{padding:0 56px 22px 0}
   [dir="rtl"] .how li:before{left:auto;right:0}
   [dir="rtl"] .how li:not(:last-child):after{left:auto;right:18px}
@@ -229,6 +259,20 @@
 </div>
 <ul class="plain"><li>ไม่มีบัญชี ไม่ต้องลงชื่อเข้าใช้</li><li>ไม่มีการวิเคราะห์ ไม่มีโฆษณา ไม่มี SDK ติดตาม</li><li>เราไม่มีเซิร์ฟเวอร์ของตัวเอง — ไม่มีที่ให้อัปโหลดตั้งแต่แรก</li><li>สร้างด้วยเฟรมเวิร์กบนเครื่องของ Apple เท่านั้น: Speech, Translation, Vision, AVFoundation</li><li>ลบบทสนทนาหนึ่งรายการหรือทั้งหมดได้ทุกเมื่อ ลบแอป — ประวัติก็หายไปด้วย</li></ul>
 <p><a href="/privacy.html#th">อ่านนโยบายความเป็นส่วนตัวฉบับเต็ม →</a></p>
+
+<h2 id="why-th">จุดที่ Prau ไปได้ไกลกว่า</h2>
+<p class="sub">ไม่ใช่แอปแปลสารพัดอีกตัว มีหน้าที่เดียว: บทสนทนาที่ใช้ได้โดยไม่มีเครือข่าย และไม่มีวันออกจากโทรศัพท์ของคุณ</p>
+<div class="cmp">
+  <div class="crow chead"><div class="clabel"></div><div class="cthem">ผู้นำตลาด*</div><div class="cus">Prau</div></div>
+  <div class="crow"><div class="clabel">ไม่ต้องใช้อินเทอร์เน็ต</div><div class="cthem" data-h="ผู้นำตลาด*">ออฟไลน์เป็นส่วนเสริมแบบเสียเงิน: ข้อความหลายสิบภาษา เสียงแค่ไม่กี่ภาษา</div><div class="cus" data-h="Prau"><span class="chk" aria-hidden="true">✓</span>ออฟไลน์คือตัวผลิตภัณฑ์เอง: 19 ภาษา ทั้งเสียงและข้อความ ตลอดเวลา</div></div><div class="crow"><div class="clabel">เสียงของคุณไปที่ไหน</div><div class="cthem" data-h="ผู้นำตลาด*">เสียงและรูปภาพถูกประมวลผลบนเซิร์ฟเวอร์; ป้ายความเป็นส่วนตัวระบุว่ามีการติดตาม</div><div class="cus" data-h="Prau"><span class="chk" aria-hidden="true">✓</span>ไม่มีอะไรออกจาก iPhone ของคุณ ไม่มีเซิร์ฟเวอร์ ไม่มีบัญชี ไม่มีการติดตาม</div></div><div class="crow"><div class="clabel">พูด ไม่ใช่พิมพ์ <span class="badge v11">1.1</span></div><div class="cthem" data-h="ผู้นำตลาด*">แปลเสียงเป็นเสียงแบบพื้นฐาน</div><div class="cus" data-h="Prau"><span class="chk" aria-hidden="true">✓</span>โหมดเผชิญหน้าแบ่งครึ่งจอ โหมดหูฟังที่ต่างฝ่ายได้ยินภาษาของตัวเอง โหมด Stream สำหรับการบรรยายและทีวี</div></div><div class="crow"><div class="clabel">หลังจบการสนทนา</div><div class="cthem" data-h="ผู้นำตลาด*"><span class="dash" aria-label="—">—</span></div><div class="cus" data-h="Prau"><span class="chk" aria-hidden="true">✓</span>สรุปบทสนทนาทั้งหมด เขียนโดย Apple Intelligence บนเครื่อง</div></div><div class="crow"><div class="clabel">ไม่ต้องใช้มือ <span class="badge v11">1.1</span></div><div class="cthem" data-h="ผู้นำตลาด*"><span class="dash" aria-label="—">—</span></div><div class="cus" data-h="Prau"><span class="chk" aria-hidden="true">✓</span>เริ่มบทสนทนาด้วย Siri หรือปุ่มแอ็กชัน</div></div><div class="crow"><div class="clabel">ขนาดแอป</div><div class="cthem" data-h="ผู้นำตลาด*">สูงสุด 270 MB</div><div class="cus" data-h="Prau"><span class="chk" aria-hidden="true">✓</span>8.9 MB</div></div><div class="crow"><div class="clabel">คุณจ่ายเพื่ออะไร</div><div class="cthem" data-h="ผู้นำตลาด*">สมัครรายสัปดาห์; ส่วนเสริมออฟไลน์ราว 80–100 ยูโรต่อปี</div><div class="cus" data-h="Prau"><span class="chk" aria-hidden="true">✓</span>ราคาเดียวได้ทุกอย่าง มีตัวเลือกตลอดชีพ ส่วนประวัติ การค้นหา และการส่งออกฟรีตลอดไป</div></div>
+</div>
+<p class="note cfoot">* อ้างอิงจากหน้า App Store และเว็บไซต์ของแอปแปลภาษาแบบเสียเงินชั้นนำ กันยายน 2026</p>
+<div class="next">
+  <h3>สร้างมาเพื่อใช้ยาว</h3>
+  <p>Prau ถูกสร้างเพื่อสิ่งเดียว: ให้การสนทนาเกิดขึ้นได้ในที่ที่ไม่มีสัญญาณ และอยู่แค่ในโทรศัพท์ของคุณ ทุกเวอร์ชันเดินไปในทิศทางนี้</p>
+  <p class="nextv">เวอร์ชัน 1.1 — โหมด Stream พร้อมคำบรรยายสดสำหรับการบรรยายและทีวี รวมถึง Siri และปุ่มแอ็กชัน — กำลังอยู่ระหว่างการตรวจสอบของ App Store และยังมีอีกที่กำลังทำ</p>
+  <p class="nextw">ไอเดีย ข้อผิดพลาด ความต้องการ: เขียนถึงเรา ที่อยู่อยู่ท้ายหน้า เราตอบเอง ข่าวสาร: @getprau บน X</p>
+</div>
 
 <h2>Prau Pro</h2>
 <p class="sub">ลองทุกอย่างฟรี 3 วัน แล้วเลือกแบบที่เหมาะกับคุณ</p>

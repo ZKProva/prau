@@ -162,6 +162,36 @@
     .row .phone{max-width:210px;justify-self:center}
   }
   @media (max-width:560px){.two{grid-template-columns:1fr}main{padding:16px 16px 56px}}
+
+  /* compare */
+  .cmp{display:flex;flex-direction:column;gap:8px;margin-top:6px}
+  .crow{display:grid;grid-template-columns:1.1fr 1.3fr 1.6fr;gap:14px;align-items:start;background:var(--panel);border:1px solid var(--stroke);border-radius:18px;padding:16px 20px}
+  .crow.chead{background:transparent;border:0;padding:4px 20px 0;color:var(--muted);font:600 12px/1 var(--sans);letter-spacing:.12em;text-transform:uppercase}
+  .crow.chead .cus{color:var(--gold)}
+  .clabel{font-weight:700;color:var(--text);font-size:16px}
+  .cthem{color:var(--muted);font-size:15.5px}
+  .cthem .dash{display:inline-block;color:#4A525C;font-size:20px;line-height:1}
+  .cus{color:var(--text);font-size:15.5px;position:relative;padding-left:26px}
+  .cus .chk{position:absolute;left:0;top:1px;width:18px;height:18px;border-radius:50%;background:rgba(126,217,160,.15);color:var(--green);font:700 12px/18px var(--sans);text-align:center}
+  .badge.v11{background:#26211A;color:var(--gold);border:1px solid #4A3E29;margin-left:6px}
+  .cfoot{margin-top:12px;font-size:13.5px;max-width:760px}
+  .next{margin-top:26px;background:linear-gradient(180deg,#1A1712,var(--panel));border:1px solid #4A3E29;border-radius:22px;padding:24px 28px;max-width:860px}
+  .next h3{color:var(--gold);font-family:var(--serif);font-weight:600;font-size:24px;margin:0 0 8px}
+  .next p{margin:0 0 10px;color:var(--soft)}
+  .next .nextv{color:var(--text)}
+  .next .nextw{margin:0;color:var(--muted);font-size:15px}
+  @media (max-width:760px){
+    .crow{grid-template-columns:1fr;gap:8px;padding:16px 18px}
+    .crow.chead{display:none}
+    .clabel{margin-bottom:2px}
+    .cthem::before{content:attr(data-h);display:block;color:#5C6570;font:600 11px/1 var(--sans);letter-spacing:.1em;text-transform:uppercase;margin-bottom:4px}
+    .cus{padding-left:0}
+    .cus .chk{position:static;display:inline-block;margin-right:8px;vertical-align:-3px}
+    .cus::before{content:attr(data-h);display:block;color:var(--gold);font:600 11px/1 var(--sans);letter-spacing:.1em;text-transform:uppercase;margin-bottom:4px}
+  }
+  [dir="rtl"] .cus{padding-left:0;padding-right:26px}
+  [dir="rtl"] .cus .chk{left:auto;right:0}
+  [dir="rtl"] .cus .chk{margin-right:0;margin-left:8px}
   [dir="rtl"] .how li{padding:0 56px 22px 0}
   [dir="rtl"] .how li:before{left:auto;right:0}
   [dir="rtl"] .how li:not(:last-child):after{left:auto;right:18px}
@@ -229,6 +259,20 @@
 </div>
 <ul class="plain"><li>Geen accounts, geen inloggen.</li><li>Geen analytics, geen advertenties, geen tracking-SDK's.</li><li>Geen eigen servers — er is nergens om naartoe te uploaden.</li><li>Gebouwd op uitsluitend Apples on-device-frameworks: Speech, Translation, Vision, AVFoundation.</li><li>Verwijder een gesprek, of alle gesprekken, wanneer je maar wilt. Verwijder de app — de geschiedenis gaat mee.</li></ul>
 <p><a href="/privacy.html#nl">Lees het volledige privacybeleid →</a></p>
+
+<h2 id="why-nl">Waar Prau verder gaat</h2>
+<p class="sub">Geen zoveelste alles-vertaler. Eén taak: een gesprek dat zonder netwerk werkt en je telefoon nooit verlaat.</p>
+<div class="cmp">
+  <div class="crow chead"><div class="clabel"></div><div class="cthem">Marktleiders*</div><div class="cus">Prau</div></div>
+  <div class="crow"><div class="clabel">Zonder internet</div><div class="cthem" data-h="Marktleiders*">Offline is een betaalde extra: tekst in tientallen talen, spraak in een handvol.</div><div class="cus" data-h="Prau"><span class="chk" aria-hidden="true">✓</span>Offline ís het product: 19 talen, spraak en tekst, altijd.</div></div><div class="crow"><div class="clabel">Waar je stem naartoe gaat</div><div class="cthem" data-h="Marktleiders*">Stem en foto's worden op servers verwerkt; het privacylabel vermeldt tracking.</div><div class="cus" data-h="Prau"><span class="chk" aria-hidden="true">✓</span>Niets verlaat je iPhone. Geen server, geen account, geen tracking.</div></div><div class="crow"><div class="clabel">Praten, niet typen <span class="badge v11">1.1</span></div><div class="cthem" data-h="Marktleiders*">Eenvoudige spraak-naar-spraak-vertaling.</div><div class="cus" data-h="Prau"><span class="chk" aria-hidden="true">✓</span>Face-to-face met gesplitst scherm, koptelefoon waarbij elke kant zijn eigen taal hoort, Stream-modus voor colleges en tv.</div></div><div class="crow"><div class="clabel">Na het gesprek</div><div class="cthem" data-h="Marktleiders*"><span class="dash" aria-label="—">—</span></div><div class="cus" data-h="Prau"><span class="chk" aria-hidden="true">✓</span>Een samenvatting van het hele gesprek, geschreven door Apple Intelligence op de telefoon.</div></div><div class="crow"><div class="clabel">Handsfree <span class="badge v11">1.1</span></div><div class="cthem" data-h="Marktleiders*"><span class="dash" aria-label="—">—</span></div><div class="cus" data-h="Prau"><span class="chk" aria-hidden="true">✓</span>Start een gesprek met Siri of de actieknop.</div></div><div class="crow"><div class="clabel">App-grootte</div><div class="cthem" data-h="Marktleiders*">Tot 270 MB.</div><div class="cus" data-h="Prau"><span class="chk" aria-hidden="true">✓</span>8,9 MB.</div></div><div class="crow"><div class="clabel">Waarvoor je betaalt</div><div class="cthem" data-h="Marktleiders*">Weekabonnementen; de offline-extra kost zo'n € 80–100 per jaar.</div><div class="cus" data-h="Prau"><span class="chk" aria-hidden="true">✓</span>Eén prijs voor alles, een levenslange optie, en geschiedenis, zoeken en export voor altijd gratis.</div></div>
+</div>
+<p class="note cfoot">* Op basis van de App Store-pagina's en websites van de toonaangevende betaalde vertaal-apps, september 2026.</p>
+<div class="next">
+  <h3>Gebouwd voor de lange termijn</h3>
+  <p>Prau is gemaakt voor één ding: een gesprek dat werkt waar geen netwerk is en op je telefoon blijft. Elke versie brengt dat verder.</p>
+  <p class="nextv">Versie 1.1 — Stream-modus met live ondertitels voor colleges en tv, plus Siri en de actieknop — is nu in beoordeling bij de App Store, en er komt meer.</p>
+  <p class="nextw">Ideeën, fouten, wensen: schrijf ons, het adres staat onderaan deze pagina; we antwoorden persoonlijk. Updates: @getprau op X.</p>
+</div>
 
 <h2>Prau Pro</h2>
 <p class="sub">Probeer alles 3 dagen gratis. Kies daarna wat bij je past.</p>
