@@ -34,7 +34,7 @@ CMP["en"] = dict(
  foot="* Based on the App Store listings and websites of the leading paid translator apps, September 2026.",
  next_h="Built for the long run",
  next_p="Prau is made for one thing: a conversation that works where there is no network and stays on your phone. Every release moves that forward.",
- next_="Version 1.1 — Stream mode with live subtitles for lectures and TV, plus Siri and the Action Button — is in App Store review now, and more is in the works.",
+ next_="Version 1.1 — Stream mode with live subtitles for lectures and TV, plus Siri and the Action Button — is out now, and the next release is already in the works.",
  write="Ideas, bugs, wishes — write to us, the address is at the bottom of this page; we answer personally. Updates: @getprau on X.",
 )
 
@@ -68,7 +68,7 @@ CMP["ru"] = dict(
  foot="* По данным страниц в App Store и сайтов ведущих платных приложений-переводчиков, сентябрь 2026.",
  next_h="Сделано надолго",
  next_p="Prau делается для одного: чтобы разговор был возможен там, где нет сети, и не уходил никуда с телефона. Каждый релиз — шаг в эту сторону.",
- next_="Версия 1.1 — режим «Поток» с живыми субтитрами для лекций и ТВ, Siri и кнопка действия — уже на проверке в App Store, и это не всё.",
+ next_="Версия 1.1 — режим «Поток» с живыми субтитрами для лекций и ТВ, Siri и кнопка действия — уже в App Store, и следующий релиз уже в работе.",
  write="Идеи, ошибки, пожелания — пишите нам, адрес внизу страницы; отвечаем лично. Обновления: @getprau в X.",
 )
 
@@ -102,7 +102,7 @@ CMP["uk"] = dict(
  foot="* За даними сторінок в App Store і сайтів провідних платних застосунків-перекладачів, вересень 2026.",
  next_h="Зроблено надовго",
  next_p="Prau робиться для одного: щоб розмова була можлива там, де немає мережі, і не йшла нікуди з телефону. Кожен реліз — крок у цей бік.",
- next_="Версія 1.1 — режим «Потік» із живими субтитрами для лекцій і ТБ, Siri та кнопка дії — уже на перевірці в App Store, і це не все.",
+ next_="Версія 1.1 — режим «Потік» із живими субтитрами для лекцій і ТБ, Siri та кнопка дії — вже в App Store, і наступний реліз уже в роботі.",
  write="Ідеї, помилки, побажання — пишіть нам, адреса внизу сторінки; відповідаємо особисто. Оновлення: @getprau в X.",
 )
 
@@ -136,7 +136,7 @@ CMP["fr"] = dict(
  foot="* D'après les fiches App Store et les sites des principales apps de traduction payantes, septembre 2026.",
  next_h="Conçu pour durer",
  next_p="Prau est fait pour une chose : une conversation possible là où il n'y a pas de réseau, et qui reste sur votre téléphone. Chaque version avance dans ce sens.",
- next_="La version 1.1 — mode Stream avec sous-titres en direct pour cours et télévision, Siri et le bouton Action — est en cours de validation sur l'App Store, et la suite est en préparation.",
+ next_="La version 1.1 — mode Stream avec sous-titres en direct pour cours et télévision, Siri et le bouton Action — est disponible sur l'App Store, et la suite est déjà en préparation.",
  write="Idées, bugs, souhaits : écrivez-nous, l'adresse est en bas de page ; nous répondons personnellement. Actualités : @getprau sur X.",
 )
 
@@ -170,7 +170,7 @@ CMP["es"] = dict(
  foot="* Según las fichas de App Store y los sitios web de las principales apps de traducción de pago, septiembre de 2026.",
  next_h="Hecho para durar",
  next_p="Prau se hace para una cosa: que la conversación sea posible donde no hay red y se quede en tu teléfono. Cada versión avanza en esa dirección.",
- next_="La versión 1.1 — modo Stream con subtítulos en directo para clases y TV, Siri y el botón de acción — ya está en revisión en el App Store, y hay más en camino.",
+ next_="La versión 1.1 — modo Stream con subtítulos en directo para clases y TV, Siri y el botón de acción — ya está en el App Store, y la siguiente ya está en camino.",
  write="Ideas, errores, deseos: escríbenos, la dirección está al pie de la página; respondemos personalmente. Novedades: @getprau en X.",
 )
 
@@ -204,7 +204,7 @@ CMP["de"] = dict(
  foot="* Nach den App-Store-Einträgen und Websites der führenden kostenpflichtigen Übersetzer-Apps, September 2026.",
  next_h="Auf Dauer gebaut",
  next_p="Prau wird für eine Sache gemacht: ein Gespräch, das dort funktioniert, wo es kein Netz gibt, und auf deinem Telefon bleibt. Jede Version bringt das weiter.",
- next_="Version 1.1 — Stream-Modus mit Live-Untertiteln für Vorträge und TV, dazu Siri und Aktionstaste — ist gerade in der App-Store-Prüfung, und weiteres ist in Arbeit.",
+ next_="Version 1.1 — Stream-Modus mit Live-Untertiteln für Vorträge und TV, dazu Siri und Aktionstaste — ist jetzt im App Store, und die nächste Version ist bereits in Arbeit.",
  write="Ideen, Fehler, Wünsche: schreib uns, die Adresse steht unten auf dieser Seite; wir antworten persönlich. Neuigkeiten: @getprau auf X.",
 )
 
@@ -238,7 +238,7 @@ CMP["nl"] = dict(
  foot="* Op basis van de App Store-pagina's en websites van de toonaangevende betaalde vertaal-apps, september 2026.",
  next_h="Gebouwd voor de lange termijn",
  next_p="Prau is gemaakt voor één ding: een gesprek dat werkt waar geen netwerk is en op je telefoon blijft. Elke versie brengt dat verder.",
- next_="Versie 1.1 — Stream-modus met live ondertitels voor colleges en tv, plus Siri en de actieknop — is nu in beoordeling bij de App Store, en er komt meer.",
+ next_="Versie 1.1 — Stream-modus met live ondertitels voor colleges en tv, plus Siri en de actieknop — staat nu in de App Store, en de volgende versie is al in de maak.",
  write="Ideeën, fouten, wensen: schrijf ons, het adres staat onderaan deze pagina; we antwoorden persoonlijk. Updates: @getprau op X.",
 )
 
@@ -272,7 +272,7 @@ CMP["it"] = dict(
  foot="* In base alle schede App Store e ai siti delle principali app di traduzione a pagamento, settembre 2026.",
  next_h="Fatto per durare",
  next_p="Prau è fatto per una cosa: una conversazione possibile dove non c'è rete e che resta sul tuo telefono. Ogni versione va in quella direzione.",
- next_="La versione 1.1 — modalità Stream con sottotitoli in tempo reale per lezioni e TV, più Siri e tasto Azione — è in revisione sull'App Store, e altro è in lavorazione.",
+ next_="La versione 1.1 — modalità Stream con sottotitoli in tempo reale per lezioni e TV, più Siri e tasto Azione — è disponibile sull'App Store, e la prossima è già in lavorazione.",
  write="Idee, errori, richieste: scrivici, l'indirizzo è in fondo alla pagina; rispondiamo personalmente. Novità: @getprau su X.",
 )
 
@@ -306,7 +306,7 @@ CMP["pt"] = dict(
  foot="* Com base nas páginas da App Store e nos sites dos principais apps de tradução pagos, setembro de 2026.",
  next_h="Feito para durar",
  next_p="O Prau é feito para uma coisa: uma conversa possível onde não há rede e que fica no seu telefone. Cada versão avança nessa direção.",
- next_="A versão 1.1 — modo Stream com legendas ao vivo para aulas e TV, mais Siri e botão de Ação — já está em revisão na App Store, e tem mais a caminho.",
+ next_="A versão 1.1 — modo Stream com legendas ao vivo para aulas e TV, mais Siri e botão de Ação — já está na App Store, e a próxima já está a caminho.",
  write="Ideias, erros, pedidos: escreva para nós, o endereço está no fim da página; respondemos pessoalmente. Novidades: @getprau no X.",
 )
 
@@ -340,7 +340,7 @@ CMP["pl"] = dict(
  foot="* Na podstawie stron w App Store i witryn wiodących płatnych aplikacji do tłumaczenia, wrzesień 2026.",
  next_h="Zbudowane na lata",
  next_p="Prau powstaje w jednym celu: żeby rozmowa była możliwa tam, gdzie nie ma sieci, i zostawała na Twoim telefonie. Każda wersja to krok w tę stronę.",
- next_="Wersja 1.1 — tryb Stream z napisami na żywo do wykładów i TV, do tego Siri i przycisk czynności — jest już w przeglądzie App Store, a to nie wszystko.",
+ next_="Wersja 1.1 — tryb Stream z napisami na żywo do wykładów i TV, do tego Siri i przycisk czynności — jest już w App Store, a kolejna jest już w przygotowaniu.",
  write="Pomysły, błędy, życzenia: napisz do nas, adres jest na dole strony; odpowiadamy osobiście. Nowości: @getprau na X.",
 )
 
@@ -374,7 +374,7 @@ CMP["tr"] = dict(
  foot="* Önde gelen ücretli çeviri uygulamalarının App Store sayfalarına ve web sitelerine göre, Eylül 2026.",
  next_h="Uzun vadeli tasarlandı",
  next_p="Prau tek bir şey için yapılıyor: ağın olmadığı yerde konuşmanın mümkün olması ve telefonunda kalması. Her sürüm bunu bir adım ileri taşır.",
- next_="Sürüm 1.1 — dersler ve TV için canlı altyazılı Stream modu, ayrıca Siri ve İşlem düğmesi — şu anda App Store incelemesinde ve devamı geliyor.",
+ next_="Sürüm 1.1 — dersler ve TV için canlı altyazılı Stream modu, ayrıca Siri ve İşlem düğmesi — artık App Store'da, sıradaki sürüm de hazırlanıyor.",
  write="Fikirler, hatalar, istekler: bize yazın, adres sayfanın altında; kişisel olarak yanıtlıyoruz. Haberler: X'te @getprau.",
 )
 
@@ -408,7 +408,7 @@ CMP["ar"] = dict(
  foot="* استنادًا إلى صفحات App Store ومواقع تطبيقات الترجمة المدفوعة الرائدة، سبتمبر 2026.",
  next_h="مصمم ليدوم",
  next_p="يُصنع Prau لهدف واحد: أن تكون المحادثة ممكنة حيث لا شبكة، وأن تبقى على هاتفك. كل إصدار خطوة في هذا الاتجاه.",
- next_="الإصدار 1.1 — وضع Stream بترجمة حية للمحاضرات والتلفاز، إضافة إلى Siri وزر الإجراء — قيد المراجعة الآن في App Store، والمزيد قادم.",
+ next_="الإصدار 1.1 — وضع Stream مع ترجمة فورية للمحاضرات والتلفاز، إضافة إلى Siri وزر الإجراء — متاح الآن في App Store، والإصدار التالي قيد العمل.",
  write="أفكار، أخطاء، رغبات: راسلنا، العنوان أسفل الصفحة؛ نرد شخصيًا. التحديثات: @getprau على X.",
 )
 
@@ -442,7 +442,7 @@ CMP["zh"] = dict(
  foot="* 依据主流付费翻译应用的 App Store 页面及官网，2026 年 9 月。",
  next_h="为长远而打造",
  next_p="Prau 只为一件事而做：让对话在没有网络的地方也能进行，并且留在你的手机上。每个版本都朝这个方向推进。",
- next_="1.1 版——为讲座和电视提供实时字幕的 Stream 模式，以及 Siri 和操作按钮——正在 App Store 审核中，更多功能正在开发。",
+ next_="1.1 版——为讲座和电视提供实时字幕的 Stream 模式，以及 Siri 和操作按钮——现已上架 App Store，下一版本正在开发中。",
  write="想法、问题、心愿：写信给我们，地址在页面底部；我们会亲自回复。动态：X 上的 @getprau。",
 )
 
@@ -476,7 +476,7 @@ CMP["zh-hant"] = dict(
  foot="* 依據主要付費翻譯 App 的 App Store 頁面與官網，2026 年 9 月。",
  next_h="為長遠而打造",
  next_p="Prau 只為一件事而做：讓對話在沒有網路的地方也能進行，並留在你的手機上。每個版本都朝這個方向推進。",
- next_="1.1 版——為講座和電視提供即時字幕的 Stream 模式，以及 Siri 和動作按鈕——正在 App Store 審核中，更多功能開發中。",
+ next_="1.1 版——為講座和電視提供即時字幕的 Stream 模式，以及 Siri 和動作按鈕——現已上架 App Store，下一版本正在開發中。",
  write="想法、問題、願望：寫信給我們，地址在頁面底部；我們會親自回覆。動態：X 上的 @getprau。",
 )
 
@@ -510,7 +510,7 @@ CMP["ja"] = dict(
  foot="* 主要な有料翻訳アプリの App Store ページと公式サイトに基づく（2026年9月）。",
  next_h="長く使えるように",
  next_p="Prau の目的は一つ。電波のない場所でも会話ができ、その会話が端末に残ること。どのバージョンも、その方向へ進みます。",
- next_="バージョン 1.1 ── 講義やテレビにライブ字幕を出す Stream モード、そして Siri とアクションボタン ── は現在 App Store 審査中で、さらに開発が続いています。",
+ next_="バージョン 1.1 — 講義やテレビにライブ字幕を出す Stream モード、そして Siri とアクションボタン — は App Store で公開中です。次のリリースも準備中です。",
  write="アイデア、不具合、要望はページ下部のアドレスまで。私たち自身が返信します。最新情報は X の @getprau で。",
 )
 
@@ -544,7 +544,7 @@ CMP["ko"] = dict(
  foot="* 주요 유료 번역 앱의 App Store 페이지와 웹사이트 기준, 2026년 9월.",
  next_h="오래 쓰도록 만들었습니다",
  next_p="Prau는 한 가지를 위해 만듭니다. 네트워크가 없는 곳에서도 대화가 되고, 그 대화가 휴대폰에 남는 것. 모든 버전이 그 방향으로 나아갑니다.",
- next_="버전 1.1 — 강의와 TV를 위한 실시간 자막 Stream 모드, 그리고 Siri와 동작 버튼 — 은 지금 App Store 심사 중이며, 다음 기능도 준비 중입니다.",
+ next_="버전 1.1 — 강의와 TV를 위한 실시간 자막 Stream 모드, 그리고 Siri와 동작 버튼 — 은 지금 App Store에서 만나볼 수 있으며, 다음 버전도 준비 중입니다.",
  write="아이디어, 오류, 바라는 점은 페이지 하단 주소로 보내 주세요. 직접 답합니다. 소식: X의 @getprau.",
 )
 
@@ -578,7 +578,7 @@ CMP["id"] = dict(
  foot="* Berdasarkan halaman App Store dan situs web aplikasi penerjemah berbayar terkemuka, September 2026.",
  next_h="Dibuat untuk jangka panjang",
  next_p="Prau dibuat untuk satu hal: percakapan yang bisa terjadi di tempat tanpa jaringan dan tetap tinggal di ponselmu. Setiap versi melangkah ke arah itu.",
- next_="Versi 1.1 — mode Stream dengan subtitel langsung untuk kuliah dan TV, plus Siri dan tombol Tindakan — kini dalam peninjauan App Store, dan masih ada lagi.",
+ next_="Versi 1.1 — mode Stream dengan subtitel langsung untuk kuliah dan TV, plus Siri dan tombol Tindakan — kini tersedia di App Store, dan versi berikutnya sudah dalam pengerjaan.",
  write="Ide, bug, keinginan: tulis ke kami, alamatnya ada di bagian bawah halaman; kami membalas secara pribadi. Kabar terbaru: @getprau di X.",
 )
 
@@ -612,7 +612,7 @@ CMP["th"] = dict(
  foot="* อ้างอิงจากหน้า App Store และเว็บไซต์ของแอปแปลภาษาแบบเสียเงินชั้นนำ กันยายน 2026",
  next_h="สร้างมาเพื่อใช้ยาว",
  next_p="Prau ถูกสร้างเพื่อสิ่งเดียว: ให้การสนทนาเกิดขึ้นได้ในที่ที่ไม่มีสัญญาณ และอยู่แค่ในโทรศัพท์ของคุณ ทุกเวอร์ชันเดินไปในทิศทางนี้",
- next_="เวอร์ชัน 1.1 — โหมด Stream พร้อมคำบรรยายสดสำหรับการบรรยายและทีวี รวมถึง Siri และปุ่มแอ็กชัน — กำลังอยู่ระหว่างการตรวจสอบของ App Store และยังมีอีกที่กำลังทำ",
+ next_="เวอร์ชัน 1.1 — โหมด Stream พร้อมคำบรรยายสดสำหรับการบรรยายและทีวี รวมถึง Siri และปุ่มแอ็กชัน — พร้อมให้ใช้งานแล้วบน App Store และเวอร์ชันถัดไปกำลังพัฒนาอยู่",
  write="ไอเดีย ข้อผิดพลาด ความต้องการ: เขียนถึงเรา ที่อยู่อยู่ท้ายหน้า เราตอบเอง ข่าวสาร: @getprau บน X",
 )
 
@@ -646,7 +646,7 @@ CMP["vi"] = dict(
  foot="* Dựa trên trang App Store và website của các ứng dụng dịch trả phí hàng đầu, tháng 9/2026.",
  next_h="Được xây dựng để đi đường dài",
  next_p="Prau được làm vì một điều: cuộc trò chuyện có thể diễn ra nơi không có mạng và ở lại trên điện thoại của bạn. Mỗi phiên bản đều tiến thêm theo hướng đó.",
- next_="Phiên bản 1.1 — chế độ Stream với phụ đề trực tiếp cho bài giảng và TV, cùng Siri và nút Tác vụ — đang được App Store xét duyệt, và còn nhiều điều nữa đang làm.",
+ next_="Phiên bản 1.1 — chế độ Stream với phụ đề trực tiếp cho bài giảng và TV, cùng Siri và nút Tác vụ — đã có trên App Store, và bản tiếp theo đang được thực hiện.",
  write="Ý tưởng, lỗi, mong muốn: hãy viết cho chúng tôi, địa chỉ ở cuối trang; chúng tôi trả lời trực tiếp. Cập nhật: @getprau trên X.",
 )
 

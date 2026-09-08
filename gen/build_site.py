@@ -53,7 +53,7 @@ def pro_for(code, d):
     base = (PRICE_NOTE.get(code) or PRICE_NOTE["en"])[kind]
     return pro, note, base
 
-CMP_SOON_ROWS = (2, 4)   # строки со Stream и Siri — помечены «1.1», пока версия не вышла. После релиза: CMP_SOON_ROWS = ()
+CMP_SOON_ROWS = ()   # строки со Stream и Siri — помечены «1.1», пока версия не вышла. После релиза: CMP_SOON_ROWS = ()
 CMP_SOON_LABEL = "1.1"
 
 def compare_block(code):
