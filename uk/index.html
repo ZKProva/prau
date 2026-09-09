@@ -143,6 +143,11 @@
   .pn{font-weight:700;font-size:18px}
   .pp{font-family:var(--serif);color:var(--gold);font-size:30px;margin:4px 0 8px;letter-spacing:-.01em}
   .plan p{margin:0;color:var(--muted);font-size:15px}
+  .plan .pextra{margin:-4px 0 8px;color:var(--soft);font-size:14.5px}
+  .orgp{max-width:760px}
+  nav a.lang.orgs{color:var(--gold);border-color:#4A3E29}
+  .orgpage h1{font-size:clamp(32px,4.4vw,52px);margin-top:24px}
+  .orgpage .lead,.orgpage ul.plain{max-width:760px}
   .base{margin:14px 0 0;color:var(--soft);font-size:15.5px}
   .free{margin-top:10px;font-weight:600}
   .cta2{margin-top:22px}
@@ -207,7 +212,7 @@
 <main>
 <header>
   <a class="home" href="/"><img src="/icon-64.png" alt="" width="34" height="34">Prau</a>
-  <nav id="langs" aria-label="Language"><a class="lang" href="/">English</a><a class="lang" href="/ru/">Русский</a><a class="lang" href="/uk/" aria-current="true">Українська</a><a class="lang" href="/fr/">Français</a><a class="lang" href="/es/">Español</a><a class="lang" href="/de/">Deutsch</a><a class="lang" href="/nl/">Nederlands</a><a class="lang" href="/it/">Italiano</a><a class="lang" href="/pt/">Português</a><a class="lang" href="/pl/">Polski</a><a class="lang" href="/tr/">Türkçe</a><a class="lang" href="/ar/">العربية</a><a class="lang" href="/zh/">简体中文</a><a class="lang" href="/zh-hant/">繁體中文</a><a class="lang" href="/ja/">日本語</a><a class="lang" href="/ko/">한국어</a><a class="lang" href="/id/">Bahasa Indonesia</a><a class="lang" href="/th/">ไทย</a><a class="lang" href="/vi/">Tiếng Việt</a></nav>
+  <nav id="langs" aria-label="Language"><a class="lang" href="/">English</a><a class="lang" href="/ru/">Русский</a><a class="lang" href="/uk/" aria-current="true">Українська</a><a class="lang" href="/fr/">Français</a><a class="lang" href="/es/">Español</a><a class="lang" href="/de/">Deutsch</a><a class="lang" href="/nl/">Nederlands</a><a class="lang" href="/it/">Italiano</a><a class="lang" href="/pt/">Português</a><a class="lang" href="/pl/">Polski</a><a class="lang" href="/tr/">Türkçe</a><a class="lang" href="/ar/">العربية</a><a class="lang" href="/zh/">简体中文</a><a class="lang" href="/zh-hant/">繁體中文</a><a class="lang" href="/ja/">日本語</a><a class="lang" href="/ko/">한국어</a><a class="lang" href="/id/">Bahasa Indonesia</a><a class="lang" href="/th/">ไทย</a><a class="lang" href="/vi/">Tiếng Việt</a><a class="lang orgs" href="/uk/#organizations-uk">Організаціям</a></nav>
   <a class="navcta" href="https://apps.apple.com/app/id6801931802">App Store</a>
 </header>
 
@@ -277,8 +282,8 @@
 
 <h2>Prau Pro</h2>
 <p class="sub">Спробуйте все безкоштовно 3 дні. Потім оберіть зручне.</p>
-<div class="plans"><div class="plan"><div class="pn">Місяць</div><div class="pp">9,99 $ / місяць</div><p>3 дні безкоштовно, потім щомісяця. Скасування будь-коли.</p></div><div class="plan hi"><span class="badge best">Найвигідніше</span><div class="pn">Рік</div><div class="pp">34,99 $ / рік</div><p>3 дні безкоштовно, потім раз на рік. Найвигідніше.</p></div><div class="plan"><div class="pn">Назавжди</div><div class="pp">59,99 $ один раз</div><p>Разова покупка, ваша назавжди.</p></div></div>
-<p class="base">Базові ціни для США. Точна ціна для вашої країни, з урахуванням місцевих податків, показана в App Store.</p>
+<div class="plans"><div class="plan"><div class="pn">Місяць</div><div class="pp">9,99 $ / місяць</div><p>3 дні безкоштовно, потім щомісяця. Скасування будь-коли.</p></div><div class="plan hi"><span class="badge best">Найвигідніше</span><div class="pn">Рік</div><div class="pp">34,99 $ / рік</div><p class="pextra">2,92 $ / місяць при оплаті за рік</p><p>3 дні безкоштовно, потім раз на рік. Найвигідніше.</p></div><div class="plan"><div class="pn">Назавжди</div><div class="pp">59,99 $ один раз</div><p class="pextra">≈ 1,7 роки за ціною річної — назавжди</p><p>Разова покупка, ваша назавжди.</p></div></div>
+<p class="base">Базові ціни для США. Точна ціна для вашої країни, з урахуванням місцевих податків, показана в App Store. Ціни App Store встановлює для кожної країни окремо — відкрийте Prau в App Store, щоб побачити свою.</p>
 <p class="free">Історія, пошук та експорт у TXT/PDF безкоштовні для всіх, завжди.</p>
 <p class="note">Ціни в доларах США; локальна ціна показана в App Store. Підписка подовжується автоматично, якщо не скасувати її щонайменше за 24 години до кінця поточного періоду. Керування та скасування — у налаштуваннях облікового запису Apple. Відновлення покупок: вітрина → Відновити або Налаштування → Відновити покупки.</p>
 <p class="cta cta2"><a class="btn" href="https://apps.apple.com/app/id6801931802"><span class="apple" aria-hidden="true"></span>Завантажити в App Store</a><span class="ctan">3 дні безкоштовно · iOS 18 і новіше</span></p>
@@ -286,8 +291,12 @@
 <h2 id="support-uk">Підтримка</h2>
 <div class="faq"><details><summary>У мови перекреслений мікрофон</summary><p>Голосовому введенню потрібна офлайн-модель диктування, яку iOS встановлює для цієї мови. Відкрийте Параметри → Загальні → Клавіатура → Мови диктування: якщо мова у списку, iOS уже завантажує модель у фоні (зазвичай протягом дня, краще на Wi-Fi та на зарядці). Якщо її немає — додайте клавіатуру цієї мови один раз, диктування ввімкнеться саме. Доти переклад тексту й фото працює повністю.</p></details><details><summary>З'являється системне вікно «Обов'язкові завантаження»</summary><p>Це Apple Translation просить мовні пакети. Натисніть стрілку біля кожної мови — завантаження не почнеться, доки не натиснути. Після цього переклад працює офлайн назавжди.</p></details><details><summary>Переклад повільний або перекладач не відповідає</summary><p>Це відбувається на боці iOS, зазвичай одразу після встановлення пакета, і минає за хвилину. Якщо повторюється — перезавантажте iPhone.</p></details><details><summary>Я заплатив, але Pro не активний</summary><p>Відкрийте вітрину або Налаштування й натисніть «Відновити покупки». Покупки прив'язані до облікового запису Apple і відновлюються на будь-якому вашому iPhone. Якщо не допомогло — напишіть нам із чеком App Store.</p></details><details><summary>Як скасувати підписку?</summary><p>Параметри iPhone → ваше ім'я → Підписки → Prau. Після скасування Pro залишається до кінця оплаченого періоду.</p></details><details><summary>Які iPhone підтримуються?</summary><p>Будь-який iPhone з iOS 18 і новіше. Для короткого змісту додатково потрібні Apple Intelligence (iPhone 15 Pro і новіші) та підтримувана мова системи.</p></details></div>
 
+
+<h2 id="organizations-uk">Гуманітарним організаціям</h2>
+<p class="orgp">Prau готова робити свій внесок у благодійність, надаючи суттєву знижку неприбутковим організаціям, які допомагають біженцям, мігрантам і пацієнтам, що ще не говорять місцевою мовою. Усе працює на телефоні й без інтернету: розмови, фото документів і медичних паперів його не залишають — на вашому боці нічого зберігати, передавати чи захищати, а перекладач працює там, де мережі немає зовсім. Ліцензії — річні коди за рахунком. Пишіть: <a href="mailto:hello@getprau.com">hello@getprau.com</a>.</p>
+
 <h2>Зв'язатися</h2>
-<p>Питання, помилки, ідеї — пишіть на <a href="mailto:alexpan77705@gmail.com">alexpan77705@gmail.com</a>. Відповідаємо особисто, зазвичай протягом дня.</p>
+<p>Питання, помилки, ідеї — пишіть на <a href="mailto:support@getprau.com">support@getprau.com</a>. Відповідаємо особисто, зазвичай протягом дня.</p>
 
 <footer>
   <a href="/privacy.html#uk">Політика конфіденційності</a> ·

@@ -143,6 +143,11 @@
   .pn{font-weight:700;font-size:18px}
   .pp{font-family:var(--serif);color:var(--gold);font-size:30px;margin:4px 0 8px;letter-spacing:-.01em}
   .plan p{margin:0;color:var(--muted);font-size:15px}
+  .plan .pextra{margin:-4px 0 8px;color:var(--soft);font-size:14.5px}
+  .orgp{max-width:760px}
+  nav a.lang.orgs{color:var(--gold);border-color:#4A3E29}
+  .orgpage h1{font-size:clamp(32px,4.4vw,52px);margin-top:24px}
+  .orgpage .lead,.orgpage ul.plain{max-width:760px}
   .base{margin:14px 0 0;color:var(--soft);font-size:15.5px}
   .free{margin-top:10px;font-weight:600}
   .cta2{margin-top:22px}
@@ -207,7 +212,7 @@
 <main>
 <header>
   <a class="home" href="/"><img src="/icon-64.png" alt="" width="34" height="34">Prau</a>
-  <nav id="langs" aria-label="Language"><a class="lang" href="/">English</a><a class="lang" href="/ru/">Русский</a><a class="lang" href="/uk/">Українська</a><a class="lang" href="/fr/">Français</a><a class="lang" href="/es/">Español</a><a class="lang" href="/de/">Deutsch</a><a class="lang" href="/nl/" aria-current="true">Nederlands</a><a class="lang" href="/it/">Italiano</a><a class="lang" href="/pt/">Português</a><a class="lang" href="/pl/">Polski</a><a class="lang" href="/tr/">Türkçe</a><a class="lang" href="/ar/">العربية</a><a class="lang" href="/zh/">简体中文</a><a class="lang" href="/zh-hant/">繁體中文</a><a class="lang" href="/ja/">日本語</a><a class="lang" href="/ko/">한국어</a><a class="lang" href="/id/">Bahasa Indonesia</a><a class="lang" href="/th/">ไทย</a><a class="lang" href="/vi/">Tiếng Việt</a></nav>
+  <nav id="langs" aria-label="Language"><a class="lang" href="/">English</a><a class="lang" href="/ru/">Русский</a><a class="lang" href="/uk/">Українська</a><a class="lang" href="/fr/">Français</a><a class="lang" href="/es/">Español</a><a class="lang" href="/de/">Deutsch</a><a class="lang" href="/nl/" aria-current="true">Nederlands</a><a class="lang" href="/it/">Italiano</a><a class="lang" href="/pt/">Português</a><a class="lang" href="/pl/">Polski</a><a class="lang" href="/tr/">Türkçe</a><a class="lang" href="/ar/">العربية</a><a class="lang" href="/zh/">简体中文</a><a class="lang" href="/zh-hant/">繁體中文</a><a class="lang" href="/ja/">日本語</a><a class="lang" href="/ko/">한국어</a><a class="lang" href="/id/">Bahasa Indonesia</a><a class="lang" href="/th/">ไทย</a><a class="lang" href="/vi/">Tiếng Việt</a><a class="lang orgs" href="/nl/#organizations-nl">Voor organisaties</a></nav>
   <a class="navcta" href="https://apps.apple.com/app/id6801931802">App Store</a>
 </header>
 
@@ -277,8 +282,8 @@
 
 <h2>Prau Pro</h2>
 <p class="sub">Probeer alles 3 dagen gratis. Kies daarna wat bij je past.</p>
-<div class="plans"><div class="plan"><div class="pn">Maandelijks</div><div class="pp">€ 9,99 / maand</div><p>3 dagen gratis, daarna maandelijks. Altijd opzegbaar.</p></div><div class="plan hi"><span class="badge best">Voordeligst</span><div class="pn">Jaarlijks</div><div class="pp">€ 39,99 / jaar</div><p>3 dagen gratis, daarna jaarlijks. Voordeligst.</p></div><div class="plan"><div class="pn">Lifetime</div><div class="pp">€ 69,99 eenmalig</div><p>Eenmalige aankoop, voor altijd van jou.</p></div></div>
-<p class="base">Prijzen voor de eurozone, inclusief btw. Je exacte prijs staat in de App Store.</p>
+<div class="plans"><div class="plan"><div class="pn">Maandelijks</div><div class="pp">€ 9,99 / maand</div><p>3 dagen gratis, daarna maandelijks. Altijd opzegbaar.</p></div><div class="plan hi"><span class="badge best">Voordeligst</span><div class="pn">Jaarlijks</div><div class="pp">€ 39,99 / jaar</div><p class="pextra">€ 3,33 / maand, jaarlijks gefactureerd</p><p>3 dagen gratis, daarna jaarlijks. Voordeligst.</p></div><div class="plan"><div class="pn">Lifetime</div><div class="pp">€ 69,99 eenmalig</div><p class="pextra">≈ 1,8 jaar Jaarlijks, voor altijd</p><p>Eenmalige aankoop, voor altijd van jou.</p></div></div>
+<p class="base">Prijzen voor de eurozone, inclusief btw. Je exacte prijs staat in de App Store. Prijzen worden per land bepaald door de App Store — open Prau in de App Store om de uwe te zien.</p>
 <p class="free">Geschiedenis, zoeken en exporteren naar TXT/PDF zijn gratis voor iedereen, altijd.</p>
 <p class="note">Abonnementen verlengen automatisch tenzij je minstens 24 uur voor het einde van de lopende periode opzegt. Beheren of opzeggen doe je in de instellingen van je Apple Account. Aankopen herstellen: betaalscherm → Herstel, of Instellingen → Aankopen herstellen.</p>
 <p class="cta cta2"><a class="btn" href="https://apps.apple.com/app/id6801931802"><span class="apple" aria-hidden="true"></span>Download in de App Store</a><span class="ctan">3 dagen gratis proberen · iOS 18 of nieuwer</span></p>
@@ -286,8 +291,12 @@
 <h2 id="support-nl">Ondersteuning</h2>
 <div class="faq"><details><summary>De microfoon is doorgestreept bij een taal</summary><p>Spraakinvoer heeft het offline dicteermodel nodig dat iOS voor die taal installeert. Open Instellingen → Algemeen → Toetsenbord → Dicteertalen: staat de taal in de lijst, dan downloadt iOS het model al op de achtergrond (meestal binnen een dag, het snelst op wifi tijdens het opladen). Staat de taal er niet bij, voeg dan eenmalig het toetsenbord voor die taal toe — dicteren gaat vanzelf aan. Tot die tijd werken tekst- en fotovertaling volledig.</p></details><details><summary>Het systeemvenster ‘Vereiste downloads’ verschijnt</summary><p>Dat is Apples Translation-framework dat om de taalpakketten vraagt. Tik op de pijl naast elke taal; de download start pas als je tikt. Daarna werkt vertalen voorgoed offline.</p></details><details><summary>Vertalen is traag of de vertaler reageert niet</summary><p>Dit gebeurt aan de iOS-kant, meestal vlak nadat een taalpakket is geïnstalleerd, en verdwijnt binnen een minuut. Blijft het gebeuren, herstart dan de iPhone.</p></details><details><summary>Ik heb betaald, maar Pro is niet actief</summary><p>Open het betaalscherm of Instellingen en tik op Aankopen herstellen. Aankopen zijn gekoppeld aan je Apple Account en worden dus op elk van je iPhones hersteld. Lukt het nog steeds niet, schrijf ons dan met het App Store-aankoopbewijs.</p></details><details><summary>Hoe zeg ik het abonnement op?</summary><p>iPhone-instellingen → je naam → Abonnementen → Prau. Na opzeggen blijft Pro actief tot het einde van de betaalde periode.</p></details><details><summary>Welke iPhones worden ondersteund?</summary><p>Elke iPhone met iOS 18 of nieuwer. Gesprekssamenvattingen vereisen daarnaast Apple Intelligence (iPhone 15 Pro en nieuwer) en een ondersteunde systeemtaal.</p></details></div>
 
+
+<h2 id="organizations-nl">Voor humanitaire organisaties</h2>
+<p class="orgp">Prau draagt bij aan goede doelen met een aanzienlijke korting voor non-profitorganisaties die vluchtelingen, migranten en patiënten helpen die de lokale taal nog niet spreken. Alles werkt op de telefoon en zonder internet: gesprekken, foto's van documenten en medische papieren verlaten hem nooit — u hoeft niets op te slaan, door te geven of te beveiligen, en de vertaler werkt ook waar helemaal geen netwerk is. Licenties zijn jaarcodes op factuur. Schrijf naar <a href="mailto:hello@getprau.com">hello@getprau.com</a>.</p>
+
 <h2>Neem contact op</h2>
-<p>Vragen, bugs, ideeën — schrijf naar <a href="mailto:alexpan77705@gmail.com">alexpan77705@gmail.com</a>. We antwoorden persoonlijk, meestal binnen een dag.</p>
+<p>Vragen, bugs, ideeën — schrijf naar <a href="mailto:support@getprau.com">support@getprau.com</a>. We antwoorden persoonlijk, meestal binnen een dag.</p>
 
 <footer>
   <a href="/privacy.html#nl">Privacybeleid</a> ·

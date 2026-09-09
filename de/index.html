@@ -143,6 +143,11 @@
   .pn{font-weight:700;font-size:18px}
   .pp{font-family:var(--serif);color:var(--gold);font-size:30px;margin:4px 0 8px;letter-spacing:-.01em}
   .plan p{margin:0;color:var(--muted);font-size:15px}
+  .plan .pextra{margin:-4px 0 8px;color:var(--soft);font-size:14.5px}
+  .orgp{max-width:760px}
+  nav a.lang.orgs{color:var(--gold);border-color:#4A3E29}
+  .orgpage h1{font-size:clamp(32px,4.4vw,52px);margin-top:24px}
+  .orgpage .lead,.orgpage ul.plain{max-width:760px}
   .base{margin:14px 0 0;color:var(--soft);font-size:15.5px}
   .free{margin-top:10px;font-weight:600}
   .cta2{margin-top:22px}
@@ -207,7 +212,7 @@
 <main>
 <header>
   <a class="home" href="/"><img src="/icon-64.png" alt="" width="34" height="34">Prau</a>
-  <nav id="langs" aria-label="Language"><a class="lang" href="/">English</a><a class="lang" href="/ru/">Русский</a><a class="lang" href="/uk/">Українська</a><a class="lang" href="/fr/">Français</a><a class="lang" href="/es/">Español</a><a class="lang" href="/de/" aria-current="true">Deutsch</a><a class="lang" href="/nl/">Nederlands</a><a class="lang" href="/it/">Italiano</a><a class="lang" href="/pt/">Português</a><a class="lang" href="/pl/">Polski</a><a class="lang" href="/tr/">Türkçe</a><a class="lang" href="/ar/">العربية</a><a class="lang" href="/zh/">简体中文</a><a class="lang" href="/zh-hant/">繁體中文</a><a class="lang" href="/ja/">日本語</a><a class="lang" href="/ko/">한국어</a><a class="lang" href="/id/">Bahasa Indonesia</a><a class="lang" href="/th/">ไทย</a><a class="lang" href="/vi/">Tiếng Việt</a></nav>
+  <nav id="langs" aria-label="Language"><a class="lang" href="/">English</a><a class="lang" href="/ru/">Русский</a><a class="lang" href="/uk/">Українська</a><a class="lang" href="/fr/">Français</a><a class="lang" href="/es/">Español</a><a class="lang" href="/de/" aria-current="true">Deutsch</a><a class="lang" href="/nl/">Nederlands</a><a class="lang" href="/it/">Italiano</a><a class="lang" href="/pt/">Português</a><a class="lang" href="/pl/">Polski</a><a class="lang" href="/tr/">Türkçe</a><a class="lang" href="/ar/">العربية</a><a class="lang" href="/zh/">简体中文</a><a class="lang" href="/zh-hant/">繁體中文</a><a class="lang" href="/ja/">日本語</a><a class="lang" href="/ko/">한국어</a><a class="lang" href="/id/">Bahasa Indonesia</a><a class="lang" href="/th/">ไทย</a><a class="lang" href="/vi/">Tiếng Việt</a><a class="lang orgs" href="/de/organizations/">Für Organisationen</a></nav>
   <a class="navcta" href="https://apps.apple.com/app/id6801931802">App Store</a>
 </header>
 
@@ -277,8 +282,8 @@
 
 <h2>Prau Pro</h2>
 <p class="sub">3 Tage alles kostenlos testen. Danach wählen.</p>
-<div class="plans"><div class="plan"><div class="pn">Monatlich</div><div class="pp">9,99 € / Monat</div><p>3 Tage kostenlos, dann monatlich. Jederzeit kündbar.</p></div><div class="plan hi"><span class="badge best">Am günstigsten</span><div class="pn">Jährlich</div><div class="pp">39,99 € / Jahr</div><p>3 Tage kostenlos, dann jährlich. Am günstigsten.</p></div><div class="plan"><div class="pn">Lebenslang</div><div class="pp">69,99 € einmalig</div><p>Einmalkauf, für immer deins.</p></div></div>
-<p class="base">Preise für die Eurozone, inkl. MwSt. Dein genauer Preis wird im App Store angezeigt.</p>
+<div class="plans"><div class="plan"><div class="pn">Monatlich</div><div class="pp">9,99 € / Monat</div><p>3 Tage kostenlos, dann monatlich. Jederzeit kündbar.</p></div><div class="plan hi"><span class="badge best">Am günstigsten</span><div class="pn">Jährlich</div><div class="pp">39,99 € / Jahr</div><p class="pextra">3,33 € / Monat bei jährlicher Zahlung</p><p>3 Tage kostenlos, dann jährlich. Am günstigsten.</p></div><div class="plan"><div class="pn">Lebenslang</div><div class="pp">69,99 € einmalig</div><p class="pextra">≈ 1,8 Jahre Jahresabo, für immer</p><p>Einmalkauf, für immer deins.</p></div></div>
+<p class="base">Preise für die Eurozone, inkl. MwSt. Dein genauer Preis wird im App Store angezeigt. Die Preise legt der App Store pro Land fest — öffne Prau im App Store, um deinen zu sehen.</p>
 <p class="free">Verlauf, Suche und TXT/PDF-Export sind für alle kostenlos, immer.</p>
 <p class="note">Das Abo verlängert sich automatisch, wenn es nicht mindestens 24 Stunden vor Ende des laufenden Zeitraums gekündigt wird. Verwalten oder kündigen in den Einstellungen deines Apple-Accounts. Käufe wiederherstellen: Paywall → Wiederherstellen oder Einstellungen → Käufe wiederherstellen.</p>
 <p class="cta cta2"><a class="btn" href="https://apps.apple.com/app/id6801931802"><span class="apple" aria-hidden="true"></span>Im App Store laden</a><span class="ctan">3 Tage kostenlos testen · iOS 18 oder neuer</span></p>
@@ -286,8 +291,12 @@
 <h2 id="support-de">Support</h2>
 <div class="faq"><details><summary>Das Mikrofon ist bei einer Sprache durchgestrichen</summary><p>Spracheingabe braucht das Offline-Diktiermodell, das iOS für diese Sprache installiert. Öffne Einstellungen → Allgemein → Tastatur → Diktiersprachen: Steht die Sprache dort, lädt iOS das Modell bereits im Hintergrund (meist innerhalb eines Tages, am besten im WLAN beim Laden). Steht sie nicht dort, füge einmal die Tastatur dieser Sprache hinzu – das Diktieren schaltet sich von selbst ein. Bis dahin funktionieren Text- und Fotoübersetzung vollständig.</p></details><details><summary>Das Systemfenster „Erforderliche Downloads“ erscheint</summary><p>Das ist Apples Translation-Framework, das die Sprachpakete anfordert. Tippe auf den Pfeil neben jeder Sprache; der Download startet erst dann. Danach funktioniert die Übersetzung für immer offline.</p></details><details><summary>Die Übersetzung ist langsam oder der Übersetzer antwortet nicht</summary><p>Das passiert auf iOS-Seite, meist direkt nach der Installation eines Pakets, und klärt sich innerhalb einer Minute. Wenn es anhält, iPhone neu starten.</p></details><details><summary>Ich habe bezahlt, aber Pro ist nicht aktiv</summary><p>Öffne die Paywall oder die Einstellungen und tippe auf Käufe wiederherstellen. Käufe sind an deinen Apple-Account gebunden und werden auf jedem deiner iPhones wiederhergestellt. Wenn es weiter fehlschlägt, schreib uns mit dem App-Store-Beleg.</p></details><details><summary>Wie kündige ich das Abo?</summary><p>iPhone-Einstellungen → dein Name → Abonnements → Prau. Nach der Kündigung bleibt Pro bis zum Ende des bezahlten Zeitraums.</p></details><details><summary>Welche iPhones werden unterstützt?</summary><p>Jedes iPhone mit iOS 18 oder neuer. Zusammenfassungen brauchen zusätzlich Apple Intelligence (iPhone 15 Pro und neuer) und eine unterstützte Systemsprache.</p></details></div>
 
+
+<h2 id="organizations-de">Für humanitäre Organisationen</h2>
+<p class="orgp">Prau leistet seinen Beitrag zur Wohltätigkeit mit einem erheblichen Rabatt für gemeinnützige Organisationen, die Geflüchtete, Migranten und Patienten unterstützen, die die Landessprache noch nicht sprechen. Alles läuft auf dem Telefon und ohne Internet: Gespräche, Fotos von Dokumenten und Arztunterlagen verlassen es nie — auf Ihrer Seite gibt es nichts zu speichern, weiterzugeben oder zu schützen, und der Übersetzer funktioniert auch dort, wo es gar kein Netz gibt. Lizenzen sind Jahrescodes auf Rechnung. Schreiben Sie an <a href="mailto:hello@getprau.com">hello@getprau.com</a>. <a href="/de/organizations/">So funktioniert es →</a></p>
+
 <h2>Kontakt</h2>
-<p>Fragen, Fehler, Ideen – schreib an <a href="mailto:alexpan77705@gmail.com">alexpan77705@gmail.com</a>. Wir antworten persönlich, meist innerhalb eines Tages.</p>
+<p>Fragen, Fehler, Ideen – schreib an <a href="mailto:support@getprau.com">support@getprau.com</a>. Wir antworten persönlich, meist innerhalb eines Tages.</p>
 
 <footer>
   <a href="/privacy.html#de">Datenschutzerklärung</a> ·

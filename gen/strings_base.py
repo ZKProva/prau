@@ -3,7 +3,7 @@
 import html, json
 
 APPSTORE = "https://apps.apple.com/app/id6801931802"
-MAIL = "alexpan77705@gmail.com"
+MAIL = "support@getprau.com"   # 09.09: почта на домене
 
 L = {}
 

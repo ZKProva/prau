@@ -9,7 +9,9 @@ exec(open(os.path.join(HERE, "strings_base.py"), encoding="utf-8").read())   # �
 from strings_new import X
 from strings_intl import INTL_L, INTL_X
 from strings_compare import CMP, PRICE_NOTE
+from strings_orgs import ORG, ORG_MAIL, SUPPORT_MAIL, ORG_PAGE_LOCALES   # 09.09
 L.update(INTL_L); X.update(INTL_X)
+MAIL = SUPPORT_MAIL   # 09.09: почта на домене вместо gmail (Cloudflare Email Routing)
 
 SITE = "https://getprau.com/"
 order = ["en","ru","uk","fr","es","de","nl","it","pt","pl","tr","ar","zh","zh-hant","ja","ko","id","th","vi"]
@@ -52,6 +54,47 @@ def pro_for(code, d):
         if 0 < i < 120: note = note[i+2:]
     base = (PRICE_NOTE.get(code) or PRICE_NOTE["en"])[kind]
     return pro, note, base
+
+import re
+
+def _num(s):
+    """Первое число в строке цены ('34,99 $ / год' → 34.99, ',' если в тексте запятая)."""
+    m = re.search(r"\d+[.,]\d+", s)
+    if not m: return None, "."
+    t = m.group(0); sep = "," if "," in t else "."
+    return float(t.replace(",", ".")), sep
+
+def _fmt(v, sep):
+    return f"{v:.1f}".replace(".", sep)      # 1.71 → 1.7, 1.75 → 1.8
+
+def plan_extra(code, i, pro_list):
+    """09.09: мультипликатор под ценой — Yearly в месяцах, Lifetime в годах Yearly.
+    Считается из строк цены той же страницы (USD или EUR), руками ничего не пишется."""
+    o = ORG.get(code) or ORG["en"]
+    yv, sep = _num(pro_list[1][1])
+    if yv is None: return ""
+    if i == 1:
+        head = pro_list[1][1].split("/")[0].strip()          # «34,99 $» / «$34.99» / «US$ 34,99»
+        m = re.search(r"\d+[.,]\d+", head)
+        per = head[:m.start()] + f"{yv/12:.2f}".replace(".", sep) + head[m.end():]
+        return f'<p class="pextra">{e(o["pm"].format(p=per))}</p>'
+    if i == 2:
+        lv, _ = _num(pro_list[2][1])
+        if lv is None: return ""
+        return f'<p class="pextra">{e(o["lt"].format(n=_fmt(lv/yv, sep)))}</p>'
+    return ""
+
+def org_href(code):
+    return "/organizations/" if code == "en" else "/" + code + "/organizations/"
+
+def org_block(code):
+    """09.09: раздел «Гуманитарным организациям» — перед «Связаться» (бриф v7 §11 п.6)."""
+    o = ORG.get(code) or ORG["en"]
+    more = ""
+    if code in ORG_PAGE_LOCALES and o.get("more"):
+        more = f' <a href="{org_href(code)}">{e(o["more"])}</a>'
+    return (f'\n<h2 id="organizations-{code}">{e(o["h"])}</h2>\n'
+            f'<p class="orgp">{e(o["p"])} {e(o["write"])} <a href="mailto:{ORG_MAIL}">{ORG_MAIL}</a>.{more}</p>')
 
 CMP_SOON_ROWS = ()   # строки со Stream и Siri — помечены «1.1», пока версия не вышла. После релиза: CMP_SOON_ROWS = ()
 CMP_SOON_LABEL = "1.1"
@@ -119,7 +162,7 @@ def section(code, d, x, active):
     pro_list, pro_note, pro_base = pro_for(code, d)
     for i,(n,p,t) in enumerate(pro_list):
         best = f'<span class="badge best">{e(x["best_badge"])}</span>' if i==1 else ""
-        pro += f'<div class="plan{" hi" if i==1 else ""}">{best}<div class="pn">{e(n)}</div><div class="pp">{e(p)}</div><p>{e(t)}</p></div>'
+        pro += f'<div class="plan{" hi" if i==1 else ""}">{best}<div class="pn">{e(n)}</div><div class="pp">{e(p)}</div>{plan_extra(code, i, pro_list)}<p>{e(t)}</p></div>'
     faq = "".join(f'<details><summary>{e(q)}</summary><p>{e(a_)}</p></details>' for q,a_ in d["faq"])
     return f'''
 <section data-lang="{code}"{' class="active"' if active else ''}>
@@ -176,13 +219,15 @@ def section(code, d, x, active):
 <h2>{e(d["pro_h"])}</h2>
 <p class="sub">{e(d["pro_lead"])}</p>
 <div class="plans">{pro}</div>
-<p class="base">{e(pro_base)}</p>
+<p class="base">{e(pro_base)} {e((ORG.get(code) or ORG["en"])["price_country"])}</p>
 <p class="free">{e(d["pro_free"])}</p>
 <p class="note">{e(pro_note)}</p>
 {cta_block(code, d, "2")}
 
 <h2 id="support-{code}">{e(d["faq_h"])}</h2>
 <div class="faq">{faq}</div>
+
+{org_block(code)}
 
 <h2>{e(d["contact_h"])}</h2>
 <p>{e(d["contact_p"])} <a href="mailto:{MAIL}">{MAIL}</a>. {e(d["contact_note"])}</p>
@@ -293,6 +338,11 @@ CSS = """
   .pn{font-weight:700;font-size:18px}
   .pp{font-family:var(--serif);color:var(--gold);font-size:30px;margin:4px 0 8px;letter-spacing:-.01em}
   .plan p{margin:0;color:var(--muted);font-size:15px}
+  .plan .pextra{margin:-4px 0 8px;color:var(--soft);font-size:14.5px}
+  .orgp{max-width:760px}
+  nav a.lang.orgs{color:var(--gold);border-color:#4A3E29}
+  .orgpage h1{font-size:clamp(32px,4.4vw,52px);margin-top:24px}
+  .orgpage .lead,.orgpage ul.plain{max-width:760px}
   .base{margin:14px 0 0;color:var(--soft);font-size:15.5px}
   .free{margin-top:10px;font-weight:600}
   .cta2{margin-top:22px}
@@ -392,6 +442,10 @@ def nav_for(active):
     for c in order:
         cur = ' aria-current="true"' if c == active else ''
         out.append('<a class="lang" href="' + href_for(c) + '"' + cur + '>' + names[c] + '</a>')
+    # 09.09: чип «Организациям» рядом с языками — виден на первом экране, ведёт к разделу
+    o = ORG.get(active) or ORG["en"]
+    target = org_href(active) if active in ORG_PAGE_LOCALES else href_for(active) + "#organizations-" + active
+    out.append('<a class="lang orgs" href="' + target + '">' + e(o["chip"]) + '</a>')
     return "".join(out)
 
 
@@ -505,6 +559,57 @@ def page(code):
 """
 
 
+def org_page(code):
+    """09.09: отдельная страница /organizations/ — адрес для писем фондам и для поисковиков."""
+    d = L[code]; o = ORG[code]
+    canon = SITE.rstrip("/") + org_href(code)
+    alts = "\n".join('<link rel="alternate" hreflang="' + hl(c) + '" href="' + SITE.rstrip("/") + org_href(c) + '">'
+                      for c in ORG_PAGE_LOCALES) + '\n<link rel="alternate" hreflang="x-default" href="' + SITE + 'organizations/">'
+    nav = nav_for(code)
+    how = "".join(f'<li><b>{e(t)}</b><p>{e(p)}</p></li>' for t, p in o["how"])
+    need = "".join(f"<li>{e(s)}</li>" for s in o["need"])
+    body = (f'\n<section data-lang="{code}" class="active orgpage">\n'
+            f'<h1>{e(o["h"])}</h1>\n'
+            f'<p class="lead">{e(o["p"])}</p>\n'
+            f'<p class="big">{e(o["write"])} <a href="mailto:{ORG_MAIL}">{ORG_MAIL}</a></p>\n'
+            f'<h2>{e(o["how_h"])}</h2>\n<ol class="how">{how}</ol>\n'
+            f'<h2>{e(o["need_h"])}</h2>\n<ul class="plain">{need}</ul>\n'
+            f'<p><a href="{href_for(code)}">← Prau</a></p>\n'
+            f'<footer>\n  <a href="/privacy.html#{code}">{e(d["footer_privacy"])}</a> ·\n'
+            f'  <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/">{e(d["footer_terms"])}</a> ·\n'
+            f'  <span>{e(d["footer_rights"])}</span>\n</footer>\n</section>')
+    return f"""<!doctype html>
+<html lang="{hl(code)}"{' dir="rtl"' if code in RTL else ''}>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>{e(o["page_title"])}</title>
+<meta name="description" content="{e(o["page_meta"])}">
+<link rel="canonical" href="{canon}">
+{alts}
+<meta property="og:type" content="website">
+<meta property="og:url" content="{canon}">
+<meta property="og:locale" content="{hl(code)}">
+<meta property="og:title" content="{e(o["page_title"])}">
+<meta property="og:description" content="{e(o["page_meta"])}">
+<meta property="og:image" content="{SITE}og.png">
+<meta name="theme-color" content="#0B0C0E">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<style>{CSS}</style>
+</head>
+<body>
+<main>
+<header>
+  <a class="home" href="/"><img src="/icon-64.png" alt="" width="34" height="34">Prau</a>
+  <nav id="langs" aria-label="Language">{nav}</nav>
+</header>
+{body}
+</main>
+</body>
+</html>
+"""
+
 import datetime
 OUT = os.path.dirname(HERE)   # пишем сразу в корень репозитория, без ручного cp
 total = 0
@@ -521,6 +626,14 @@ for code in order:
     total += len(html_out)
     print(code, len(html_out), "bytes")
 
+for code in ORG_PAGE_LOCALES:
+    folder = os.path.join(OUT, "organizations") if code == "en" else os.path.join(OUT, code, "organizations")
+    if not os.path.isdir(folder):
+        os.makedirs(folder)
+    html_out = org_page(code)
+    open(os.path.join(folder, "index.html"), "w", encoding="utf-8").write(html_out)
+    print(code, "organizations", len(html_out), "bytes")
+
 today = datetime.date.today().isoformat()
 rows = []
 for code in order:
@@ -528,6 +641,10 @@ for code in order:
                 "</loc>\n    <lastmod>" + today +
                 "</lastmod>\n    <changefreq>weekly</changefreq>\n    <priority>" +
                 ("1.0" if code == "en" else "0.8") + "</priority>\n  </url>")
+for code in ORG_PAGE_LOCALES:
+    rows.append("  <url>\n    <loc>" + SITE.rstrip("/") + org_href(code) +
+                "</loc>\n    <lastmod>" + today +
+                "</lastmod>\n    <changefreq>monthly</changefreq>\n    <priority>0.6</priority>\n  </url>")
 rows.append("  <url>\n    <loc>" + SITE + "privacy.html</loc>\n    <lastmod>" + today +
             "</lastmod>\n    <changefreq>monthly</changefreq>\n    <priority>0.3</priority>\n  </url>")
 sm = ('<?xml version="1.0" encoding="UTF-8"?>\n'

@@ -143,6 +143,11 @@
   .pn{font-weight:700;font-size:18px}
   .pp{font-family:var(--serif);color:var(--gold);font-size:30px;margin:4px 0 8px;letter-spacing:-.01em}
   .plan p{margin:0;color:var(--muted);font-size:15px}
+  .plan .pextra{margin:-4px 0 8px;color:var(--soft);font-size:14.5px}
+  .orgp{max-width:760px}
+  nav a.lang.orgs{color:var(--gold);border-color:#4A3E29}
+  .orgpage h1{font-size:clamp(32px,4.4vw,52px);margin-top:24px}
+  .orgpage .lead,.orgpage ul.plain{max-width:760px}
   .base{margin:14px 0 0;color:var(--soft);font-size:15.5px}
   .free{margin-top:10px;font-weight:600}
   .cta2{margin-top:22px}
@@ -207,7 +212,7 @@
 <main>
 <header>
   <a class="home" href="/"><img src="/icon-64.png" alt="" width="34" height="34">Prau</a>
-  <nav id="langs" aria-label="Language"><a class="lang" href="/">English</a><a class="lang" href="/ru/">Русский</a><a class="lang" href="/uk/">Українська</a><a class="lang" href="/fr/">Français</a><a class="lang" href="/es/">Español</a><a class="lang" href="/de/">Deutsch</a><a class="lang" href="/nl/">Nederlands</a><a class="lang" href="/it/">Italiano</a><a class="lang" href="/pt/">Português</a><a class="lang" href="/pl/">Polski</a><a class="lang" href="/tr/">Türkçe</a><a class="lang" href="/ar/" aria-current="true">العربية</a><a class="lang" href="/zh/">简体中文</a><a class="lang" href="/zh-hant/">繁體中文</a><a class="lang" href="/ja/">日本語</a><a class="lang" href="/ko/">한국어</a><a class="lang" href="/id/">Bahasa Indonesia</a><a class="lang" href="/th/">ไทย</a><a class="lang" href="/vi/">Tiếng Việt</a></nav>
+  <nav id="langs" aria-label="Language"><a class="lang" href="/">English</a><a class="lang" href="/ru/">Русский</a><a class="lang" href="/uk/">Українська</a><a class="lang" href="/fr/">Français</a><a class="lang" href="/es/">Español</a><a class="lang" href="/de/">Deutsch</a><a class="lang" href="/nl/">Nederlands</a><a class="lang" href="/it/">Italiano</a><a class="lang" href="/pt/">Português</a><a class="lang" href="/pl/">Polski</a><a class="lang" href="/tr/">Türkçe</a><a class="lang" href="/ar/" aria-current="true">العربية</a><a class="lang" href="/zh/">简体中文</a><a class="lang" href="/zh-hant/">繁體中文</a><a class="lang" href="/ja/">日本語</a><a class="lang" href="/ko/">한국어</a><a class="lang" href="/id/">Bahasa Indonesia</a><a class="lang" href="/th/">ไทย</a><a class="lang" href="/vi/">Tiếng Việt</a><a class="lang orgs" href="/ar/organizations/">للمنظمات</a></nav>
   <a class="navcta" href="https://apps.apple.com/app/id6801931802">App Store</a>
 </header>
 
@@ -277,8 +282,8 @@
 
 <h2>Prau Pro</h2>
 <p class="sub">جرّب كل شيء مجانًا 3 أيام، ثم اختر ما يناسبك.</p>
-<div class="plans"><div class="plan"><div class="pn">شهري</div><div class="pp">‏9.99 $ / شهر</div><p>3 أيام مجانًا ثم شهريًا. ألغِ متى شئت.</p></div><div class="plan hi"><span class="badge best">الأوفر</span><div class="pn">سنوي</div><div class="pp">‏34.99 $ / سنة</div><p>3 أيام مجانًا ثم سنويًا. الخيار الأوفر.</p></div><div class="plan"><div class="pn">مدى الحياة</div><div class="pp">‏59.99 $ مرة واحدة</div><p>دفعة واحدة، ويبقى لك للأبد.</p></div></div>
-<p class="base">الأسعار الأساسية للولايات المتحدة. سعرك الدقيق، شاملاً الضرائب المحلية، يظهر في App Store.</p>
+<div class="plans"><div class="plan"><div class="pn">شهري</div><div class="pp">‏9.99 $ / شهر</div><p>3 أيام مجانًا ثم شهريًا. ألغِ متى شئت.</p></div><div class="plan hi"><span class="badge best">الأوفر</span><div class="pn">سنوي</div><div class="pp">‏34.99 $ / سنة</div><p class="pextra">‏2.92 $ / شهر، يُدفع سنويًا</p><p>3 أيام مجانًا ثم سنويًا. الخيار الأوفر.</p></div><div class="plan"><div class="pn">مدى الحياة</div><div class="pp">‏59.99 $ مرة واحدة</div><p class="pextra">≈ 1.7 سنة من الاشتراك السنوي، ملكك للأبد</p><p>دفعة واحدة، ويبقى لك للأبد.</p></div></div>
+<p class="base">الأسعار الأساسية للولايات المتحدة. سعرك الدقيق، شاملاً الضرائب المحلية، يظهر في App Store. يحدد App Store الأسعار لكل بلد على حدة — افتح Prau في App Store لترى سعرك.</p>
 <p class="free">السجل والبحث والتصدير إلى TXT/PDF مجانية للجميع، دائمًا.</p>
 <p class="note">الأسعار بالدولار الأمريكي؛ يظهر سعرك المحلي في App Store. تتجدد الاشتراكات تلقائيًا ما لم تُلغَ قبل نهاية الفترة الحالية بـ 24 ساعة على الأقل. أدرها أو ألغِها من إعدادات حساب Apple. استعادة المشتريات: شاشة الشراء ← استعادة، أو الإعدادات ← استعادة المشتريات.</p>
 <p class="cta cta2"><a class="btn" href="https://apps.apple.com/app/id6801931802"><span class="apple" aria-hidden="true"></span>حمِّل من App Store</a><span class="ctan">تجربة مجانية 3 أيام · iOS 18 أو أحدث</span></p>
@@ -286,8 +291,12 @@
 <h2 id="support-ar">الدعم</h2>
 <div class="faq"><details><summary>الميكروفون مشطوب لإحدى اللغات</summary><p>يحتاج الإدخال الصوتي إلى نموذج الإملاء دون اتصال الذي يثبّته iOS لتلك اللغة. افتح الإعدادات ← عام ← لوحة المفاتيح ← لغات الإملاء: إن كانت اللغة مدرجة فـ iOS ينزّل النموذج في الخلفية (عادة خلال يوم، والأسرع على Wi-Fi أثناء الشحن). وإن لم تكن مدرجة، أضِف لوحة مفاتيح تلك اللغة مرة واحدة — يعمل الإملاء تلقائيًا. وحتى ذلك الحين تعمل ترجمة النص والصور كاملةً.</p></details><details><summary>تظهر نافذة النظام «التنزيلات المطلوبة»</summary><p>هذه أداة الترجمة من Apple تطلب حزم اللغات. اضغط السهم بجوار كل لغة؛ لا يبدأ التنزيل قبل ضغطك. وبعد اكتماله تعمل الترجمة دون اتصال إلى الأبد.</p></details><details><summary>الترجمة بطيئة أو المترجم لا يستجيب</summary><p>يحدث هذا من جانب iOS، عادةً بُعيد تثبيت حزمة لغة، ويزول خلال دقيقة. إن تكرر، أعد تشغيل iPhone.</p></details><details><summary>دفعت لكن Pro غير مفعّل</summary><p>افتح شاشة الشراء أو الإعدادات واضغط «استعادة المشتريات». المشتريات مرتبطة بحساب Apple، فتُستعاد على أي iPhone لك. إن استمرت المشكلة راسلنا مع إيصال App Store.</p></details><details><summary>كيف ألغي الاشتراك؟</summary><p>إعدادات iPhone ← اسمك ← الاشتراكات ← Prau. الإلغاء يُبقي Pro حتى نهاية الفترة المدفوعة.</p></details><details><summary>ما أجهزة iPhone المدعومة؟</summary><p>أي iPhone يعمل بـ iOS 18 أو أحدث. تحتاج ملخصات المحادثات إضافةً إلى Apple Intelligence ‏(iPhone 15 Pro وأحدث) ولغة نظام مدعومة.</p></details></div>
 
+
+<h2 id="organizations-ar">للمنظمات الإنسانية</h2>
+<p class="orgp">تلتزم Prau بالإسهام في العمل الخيري عبر خصم كبير للمنظمات غير الربحية التي تساعد اللاجئين والمهاجرين والمرضى الذين لا يتحدثون اللغة المحلية بعد. كل شيء يعمل على الهاتف ومن دون إنترنت: المحادثات وصور المستندات والأوراق الطبية لا تغادره أبدًا — فلا شيء عليكم تخزينه أو مشاركته أو حمايته، ويعمل المترجم حيث لا توجد شبكة على الإطلاق. التراخيص عبارة عن رموز سنوية بفاتورة. راسلونا على <a href="mailto:hello@getprau.com">hello@getprau.com</a>. <a href="/ar/organizations/">كيف يعمل ←</a></p>
+
 <h2>تواصل معنا</h2>
-<p>أسئلة أو أخطاء أو أفكار — راسلنا على <a href="mailto:alexpan77705@gmail.com">alexpan77705@gmail.com</a>. نجيب شخصيًا، عادةً خلال يوم.</p>
+<p>أسئلة أو أخطاء أو أفكار — راسلنا على <a href="mailto:support@getprau.com">support@getprau.com</a>. نجيب شخصيًا، عادةً خلال يوم.</p>
 
 <footer>
   <a href="/privacy.html#ar">سياسة الخصوصية</a> ·

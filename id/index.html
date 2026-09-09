@@ -143,6 +143,11 @@
   .pn{font-weight:700;font-size:18px}
   .pp{font-family:var(--serif);color:var(--gold);font-size:30px;margin:4px 0 8px;letter-spacing:-.01em}
   .plan p{margin:0;color:var(--muted);font-size:15px}
+  .plan .pextra{margin:-4px 0 8px;color:var(--soft);font-size:14.5px}
+  .orgp{max-width:760px}
+  nav a.lang.orgs{color:var(--gold);border-color:#4A3E29}
+  .orgpage h1{font-size:clamp(32px,4.4vw,52px);margin-top:24px}
+  .orgpage .lead,.orgpage ul.plain{max-width:760px}
   .base{margin:14px 0 0;color:var(--soft);font-size:15.5px}
   .free{margin-top:10px;font-weight:600}
   .cta2{margin-top:22px}
@@ -207,7 +212,7 @@
 <main>
 <header>
   <a class="home" href="/"><img src="/icon-64.png" alt="" width="34" height="34">Prau</a>
-  <nav id="langs" aria-label="Language"><a class="lang" href="/">English</a><a class="lang" href="/ru/">Русский</a><a class="lang" href="/uk/">Українська</a><a class="lang" href="/fr/">Français</a><a class="lang" href="/es/">Español</a><a class="lang" href="/de/">Deutsch</a><a class="lang" href="/nl/">Nederlands</a><a class="lang" href="/it/">Italiano</a><a class="lang" href="/pt/">Português</a><a class="lang" href="/pl/">Polski</a><a class="lang" href="/tr/">Türkçe</a><a class="lang" href="/ar/">العربية</a><a class="lang" href="/zh/">简体中文</a><a class="lang" href="/zh-hant/">繁體中文</a><a class="lang" href="/ja/">日本語</a><a class="lang" href="/ko/">한국어</a><a class="lang" href="/id/" aria-current="true">Bahasa Indonesia</a><a class="lang" href="/th/">ไทย</a><a class="lang" href="/vi/">Tiếng Việt</a></nav>
+  <nav id="langs" aria-label="Language"><a class="lang" href="/">English</a><a class="lang" href="/ru/">Русский</a><a class="lang" href="/uk/">Українська</a><a class="lang" href="/fr/">Français</a><a class="lang" href="/es/">Español</a><a class="lang" href="/de/">Deutsch</a><a class="lang" href="/nl/">Nederlands</a><a class="lang" href="/it/">Italiano</a><a class="lang" href="/pt/">Português</a><a class="lang" href="/pl/">Polski</a><a class="lang" href="/tr/">Türkçe</a><a class="lang" href="/ar/">العربية</a><a class="lang" href="/zh/">简体中文</a><a class="lang" href="/zh-hant/">繁體中文</a><a class="lang" href="/ja/">日本語</a><a class="lang" href="/ko/">한국어</a><a class="lang" href="/id/" aria-current="true">Bahasa Indonesia</a><a class="lang" href="/th/">ไทย</a><a class="lang" href="/vi/">Tiếng Việt</a><a class="lang orgs" href="/id/#organizations-id">Untuk organisasi</a></nav>
   <a class="navcta" href="https://apps.apple.com/app/id6801931802">App Store</a>
 </header>
 
@@ -277,8 +282,8 @@
 
 <h2>Prau Pro</h2>
 <p class="sub">Coba semuanya gratis 3 hari. Lalu pilih yang cocok.</p>
-<div class="plans"><div class="plan"><div class="pn">Bulanan</div><div class="pp">$9.99 / bulan</div><p>3 hari gratis, lalu bulanan. Batalkan kapan saja.</p></div><div class="plan hi"><span class="badge best">Paling hemat</span><div class="pn">Tahunan</div><div class="pp">$34.99 / tahun</div><p>3 hari gratis, lalu tahunan. Paling hemat.</p></div><div class="plan"><div class="pn">Seumur hidup</div><div class="pp">$59.99 sekali</div><p>Sekali bayar, milik Anda selamanya.</p></div></div>
-<p class="base">Harga dasar untuk Amerika Serikat. Harga pastimu, termasuk pajak setempat, ditampilkan di App Store.</p>
+<div class="plans"><div class="plan"><div class="pn">Bulanan</div><div class="pp">$9.99 / bulan</div><p>3 hari gratis, lalu bulanan. Batalkan kapan saja.</p></div><div class="plan hi"><span class="badge best">Paling hemat</span><div class="pn">Tahunan</div><div class="pp">$34.99 / tahun</div><p class="pextra">$2.92 / bulan, ditagih tahunan</p><p>3 hari gratis, lalu tahunan. Paling hemat.</p></div><div class="plan"><div class="pn">Seumur hidup</div><div class="pp">$59.99 sekali</div><p class="pextra">≈ 1.7 tahun paket Tahunan, milik Anda selamanya</p><p>Sekali bayar, milik Anda selamanya.</p></div></div>
+<p class="base">Harga dasar untuk Amerika Serikat. Harga pastimu, termasuk pajak setempat, ditampilkan di App Store. Harga ditetapkan App Store per negara — buka Prau di App Store untuk melihat harga Anda.</p>
 <p class="free">Riwayat, pencarian, dan ekspor TXT/PDF gratis untuk semua orang, selamanya.</p>
 <p class="note">Harga dalam USD; harga lokal Anda tampil di App Store. Langganan diperpanjang otomatis kecuali dibatalkan setidaknya 24 jam sebelum akhir periode berjalan. Kelola atau batalkan di pengaturan Akun Apple. Pulihkan pembelian: paywall → Pulihkan, atau Pengaturan → Pulihkan pembelian.</p>
 <p class="cta cta2"><a class="btn" href="https://apps.apple.com/app/id6801931802"><span class="apple" aria-hidden="true"></span>Unduh di App Store</a><span class="ctan">Uji coba gratis 3 hari · iOS 18 atau lebih baru</span></p>
@@ -286,8 +291,12 @@
 <h2 id="support-id">Dukungan</h2>
 <div class="faq"><details><summary>Mikrofon tercoret untuk suatu bahasa</summary><p>Input suara butuh model dikte offline yang dipasang iOS untuk bahasa itu. Buka Pengaturan → Umum → Keyboard → Bahasa Dikte: jika bahasanya ada di daftar, iOS sedang mengunduh modelnya di latar belakang (biasanya dalam sehari, tercepat saat Wi-Fi dan mengisi daya). Jika tidak ada, tambahkan keyboard bahasa itu sekali — dikte menyala sendiri. Sementara itu, terjemahan teks dan foto tetap berfungsi penuh.</p></details><details><summary>Muncul lembar sistem “Unduhan yang Diperlukan”</summary><p>Itu framework Terjemahan Apple yang meminta paket bahasa. Ketuk panah di samping tiap bahasa; unduhan tidak dimulai sebelum Anda mengetuk. Setelah selesai, terjemahan berfungsi offline selamanya.</p></details><details><summary>Terjemahan lambat atau penerjemah tidak merespons</summary><p>Ini terjadi di sisi iOS, biasanya tepat setelah paket bahasa dipasang, dan hilang dalam semenit. Jika terus terjadi, mulai ulang iPhone.</p></details><details><summary>Saya sudah bayar, tapi Pro tidak aktif</summary><p>Buka paywall atau Pengaturan dan ketuk Pulihkan pembelian. Pembelian terikat ke Akun Apple Anda, jadi bisa dipulihkan di iPhone Anda yang mana pun. Jika masih gagal, tulis ke kami dengan struk App Store.</p></details><details><summary>Bagaimana membatalkan langganan?</summary><p>Pengaturan iPhone → nama Anda → Langganan → Prau. Membatalkan tetap menyisakan Pro sampai akhir periode berbayar.</p></details><details><summary>iPhone apa saja yang didukung?</summary><p>Semua iPhone dengan iOS 18 atau lebih baru. Ringkasan percakapan juga butuh Apple Intelligence (iPhone 15 Pro ke atas) dan bahasa sistem yang didukung.</p></details></div>
 
+
+<h2 id="organizations-id">Untuk organisasi kemanusiaan</h2>
+<p class="orgp">Prau berkomitmen berkontribusi pada kegiatan amal dengan memberikan diskon besar bagi organisasi nirlaba yang membantu pengungsi, migran, dan pasien yang belum bisa berbahasa setempat. Semuanya berjalan di ponsel, tanpa internet: percakapan, foto dokumen, dan berkas medis tidak pernah meninggalkannya — tidak ada yang perlu Anda simpan, bagikan, atau lindungi, dan penerjemah tetap bekerja di tempat yang sama sekali tanpa jaringan. Lisensi berupa kode satu tahun dengan faktur. Tulis ke <a href="mailto:hello@getprau.com">hello@getprau.com</a>.</p>
+
 <h2>Hubungi kami</h2>
-<p>Pertanyaan, bug, ide — tulis ke <a href="mailto:alexpan77705@gmail.com">alexpan77705@gmail.com</a>. Kami membalas langsung, biasanya dalam sehari.</p>
+<p>Pertanyaan, bug, ide — tulis ke <a href="mailto:support@getprau.com">support@getprau.com</a>. Kami membalas langsung, biasanya dalam sehari.</p>
 
 <footer>
   <a href="/privacy.html#id">Kebijakan Privasi</a> ·
