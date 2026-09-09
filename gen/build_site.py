@@ -77,7 +77,10 @@ def plan_extra(code, i, pro_list):
         head = pro_list[1][1].split("/")[0].strip()          # «34,99 $» / «$34.99» / «US$ 34,99»
         m = re.search(r"\d+[.,]\d+", head)
         per = head[:m.start()] + f"{yv/12:.2f}".replace(".", sep) + head[m.end():]
-        return f'<p class="pextra">{e(o["pm"].format(p=per))}</p>'
+        # 09.09: скидка против помесячной оплаты — считается, не пишется (34,99 vs 9,99×12 → −71 %)
+        mv, _ = _num(pro_list[0][1])
+        save = f'<b class="save">−{round((1 - yv/(mv*12))*100)}%</b> · ' if mv else ""
+        return f'<p class="pextra">{save}{e(o["pm"].format(p=per))}</p>'
     if i == 2:
         lv, _ = _num(pro_list[2][1])
         if lv is None: return ""
@@ -339,9 +342,11 @@ CSS = """
   .pp{font-family:var(--serif);color:var(--gold);font-size:30px;margin:4px 0 8px;letter-spacing:-.01em}
   .plan p{margin:0;color:var(--muted);font-size:15px}
   .plan .pextra{margin:-4px 0 8px;color:var(--soft);font-size:14.5px}
+  .plan .save{color:var(--gold);font-size:17px;font-weight:700}
   .orgp{max-width:760px}
   nav a.lang.orgs{color:var(--gold);border-color:#4A3E29}
   .orgpage h1{font-size:clamp(32px,4.4vw,52px);margin-top:24px}
+  .contrib{background:#1A1712;border:1px solid #4A3E29;border-radius:14px;padding:14px 18px;color:var(--gold);font-weight:700;font-size:19px;max-width:760px;margin:0 0 18px}
   .orgpage .lead,.orgpage ul.plain{max-width:760px}
   .base{margin:14px 0 0;color:var(--soft);font-size:15.5px}
   .free{margin-top:10px;font-weight:600}
@@ -571,6 +576,7 @@ def org_page(code):
     body = (f'\n<section data-lang="{code}" class="active orgpage">\n'
             f'<h1>{e(o["h"])}</h1>\n'
             f'<p class="lead">{e(o["p"])}</p>\n'
+            f'<p class="contrib">{e(o["contrib"])}</p>\n'
             f'<p class="big">{e(o["write"])} <a href="mailto:{ORG_MAIL}">{ORG_MAIL}</a></p>\n'
             f'<h2>{e(o["how_h"])}</h2>\n<ol class="how">{how}</ol>\n'
             f'<h2>{e(o["need_h"])}</h2>\n<ul class="plain">{need}</ul>\n'
