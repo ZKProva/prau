@@ -10,6 +10,9 @@ from strings_new import X
 from strings_intl import INTL_L, INTL_X
 from strings_compare import CMP, PRICE_NOTE
 from strings_orgs import ORG, ORG_MAIL, SUPPORT_MAIL, ORG_PAGE_LOCALES   # 09.09
+# 11.09: раздел «Гуманитарным организациям» снят с сайта. Тексты и код
+# оставлены — вернуть можно одной правкой этого флага на True.
+ORG_ENABLED = False
 L.update(INTL_L); X.update(INTL_X)
 MAIL = SUPPORT_MAIL   # 09.09: почта на домене вместо gmail (Cloudflare Email Routing)
 
@@ -92,6 +95,7 @@ def org_href(code):
 
 def org_block(code):
     """09.09: раздел «Гуманитарным организациям» — перед «Связаться» (бриф v7 §11 п.6)."""
+    if not ORG_ENABLED: return ""   # 11.09
     o = ORG.get(code) or ORG["en"]
     more = ""
     if code in ORG_PAGE_LOCALES and o.get("more"):
@@ -447,10 +451,11 @@ def nav_for(active):
     for c in order:
         cur = ' aria-current="true"' if c == active else ''
         out.append('<a class="lang" href="' + href_for(c) + '"' + cur + '>' + names[c] + '</a>')
-    # 09.09: чип «Организациям» рядом с языками — виден на первом экране, ведёт к разделу
-    o = ORG.get(active) or ORG["en"]
-    target = org_href(active) if active in ORG_PAGE_LOCALES else href_for(active) + "#organizations-" + active
-    out.append('<a class="lang orgs" href="' + target + '">' + e(o["chip"]) + '</a>')
+    # 09.09: чип «Организациям» рядом с языками. 11.09: скрыт вместе с разделом.
+    if ORG_ENABLED:
+        o = ORG.get(active) or ORG["en"]
+        target = org_href(active) if active in ORG_PAGE_LOCALES else href_for(active) + "#organizations-" + active
+        out.append('<a class="lang orgs" href="' + target + '">' + e(o["chip"]) + '</a>')
     return "".join(out)
 
 
@@ -632,7 +637,7 @@ for code in order:
     total += len(html_out)
     print(code, len(html_out), "bytes")
 
-for code in ORG_PAGE_LOCALES:
+for code in (ORG_PAGE_LOCALES if ORG_ENABLED else ()):   # 11.09
     folder = os.path.join(OUT, "organizations") if code == "en" else os.path.join(OUT, code, "organizations")
     if not os.path.isdir(folder):
         os.makedirs(folder)
@@ -647,7 +652,7 @@ for code in order:
                 "</loc>\n    <lastmod>" + today +
                 "</lastmod>\n    <changefreq>weekly</changefreq>\n    <priority>" +
                 ("1.0" if code == "en" else "0.8") + "</priority>\n  </url>")
-for code in ORG_PAGE_LOCALES:
+for code in (ORG_PAGE_LOCALES if ORG_ENABLED else ()):   # 11.09
     rows.append("  <url>\n    <loc>" + SITE.rstrip("/") + org_href(code) +
                 "</loc>\n    <lastmod>" + today +
                 "</lastmod>\n    <changefreq>monthly</changefreq>\n    <priority>0.6</priority>\n  </url>")
