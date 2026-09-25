@@ -9,6 +9,7 @@ exec(open(os.path.join(HERE, "strings_base.py"), encoding="utf-8").read())   # �
 from strings_new import X
 from strings_intl import INTL_L, INTL_X
 from strings_compare import CMP, PRICE_NOTE
+from strings_stream import S as STREAM
 from strings_orgs import ORG, ORG_MAIL, SUPPORT_MAIL, ORG_PAGE_LOCALES   # 09.09
 # 11.09: раздел «Гуманитарным организациям» снят с сайта. Тексты и код
 # оставлены — вернуть можно одной правкой этого флага на True.
@@ -133,6 +134,15 @@ def compare_block(code):
   <p class="nextw">{e(c["write"])}</p>
 </div>'''
 
+def stream_block(code):
+    """25.09: раздел «Stream / Поток» — живые субтитры, преимущества и сценарии."""
+    s = STREAM.get(code) or STREAM["en"]
+    li = "".join(f'<li><b>{e(t)}</b>{e(p)}</li>' for t, p in s["bul"])
+    uses = "".join(f'<span>{e(u)}</span>' for u in s["uses"])
+    return (f'\n<h2 id="stream-{code}">{e(s["h"])}</h2>\n<p class="sub">{e(s["sub"])}</p>\n'
+            f'<div class="row flip streamrow"><div class="rtext"><ul class="sfeat">{li}</ul>'
+            f'<p class="uses">{uses}</p></div>{phone("stream", s["alt"])}</div>')
+
 def section(code, d, x, active):
     lines = d["hero_h1"].split("\n")
     h1 = e(lines[0]) + "<br><span class=\"g\">" + e(lines[1]) + "</span>"
@@ -213,6 +223,7 @@ def section(code, d, x, active):
 <p class="sub">{e(x["see_sub"])}</p>
 <div class="rows">{rows}</div>
 <div class="grid">{cards}</div>
+{stream_block(code)}
 
 <h2 id="setup-{code}">{e(x["setup_h"])}</h2>
 <p class="sub">{e(x["setup_sub"])}</p>
@@ -304,6 +315,11 @@ CSS = """
   h2{font-family:var(--serif);font-weight:600;font-size:clamp(28px,3.4vw,40px);line-height:1.1;letter-spacing:-.01em;margin:64px 0 8px;color:var(--gold)}
   h3{font-size:19px;margin:0 0 6px;font-weight:700}
   .sub{color:var(--muted);margin:0 0 20px;font-size:17px;max-width:680px}
+  .sfeat{list-style:none;padding:0;margin:0}
+  .sfeat li{margin:0 0 16px;color:var(--soft)}
+  .sfeat b{display:block;color:var(--text);font-size:18px;margin-bottom:2px}
+  .uses{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0 0}
+  .uses span{border:1px solid #4A3E29;color:var(--gold);border-radius:999px;padding:5px 13px;font-size:14px}
   p,li{color:#D8DDE3}
   a{color:var(--gold)}
   .how{counter-reset:s;list-style:none;padding:0;margin:0}

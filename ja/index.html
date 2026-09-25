@@ -100,6 +100,11 @@
   h2{font-family:var(--serif);font-weight:600;font-size:clamp(28px,3.4vw,40px);line-height:1.1;letter-spacing:-.01em;margin:64px 0 8px;color:var(--gold)}
   h3{font-size:19px;margin:0 0 6px;font-weight:700}
   .sub{color:var(--muted);margin:0 0 20px;font-size:17px;max-width:680px}
+  .sfeat{list-style:none;padding:0;margin:0}
+  .sfeat li{margin:0 0 16px;color:var(--soft)}
+  .sfeat b{display:block;color:var(--text);font-size:18px;margin-bottom:2px}
+  .uses{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0 0}
+  .uses span{border:1px solid #4A3E29;color:var(--gold);border-radius:999px;padding:5px 13px;font-size:14px}
   p,li{color:#D8DDE3}
   a{color:var(--gold)}
   .how{counter-reset:s;list-style:none;padding:0;margin:0}
@@ -270,6 +275,10 @@
 <p class="sub">以下の画面はすべて、今日iPhoneで動いているPrau 1.0そのものです。</p>
 <div class="rows"><div class="row"><div class="rtext"><div class="ico" aria-hidden="true">🎧</div><h3>翻訳をイヤホンに</h3><p>AirPodsなどのイヤホンを接続。自分の言語への翻訳は耳元で静かに再生され、相手にはスピーカーから相手の言語が流れます。</p></div><figure class="phone "><picture><source srcset="/img/settings.webp" type="image/webp"><img src="/img/settings.png" alt="設定：自分の言語、話す速さ、翻訳の声、言語" width="640" height="1288" loading="lazy" decoding="async"></picture></figure></div><div class="row flip"><div class="rtext"><div class="ico" aria-hidden="true">👥</div><h3>対面モード</h3><p>スマホを2人の間に置くだけ。画面が上下に分かれ、それぞれに正しい向き・自分の言語で表示され、交互に話せます。ホテルのフロント、薬局、タクシー、お店のために作りました。</p></div><figure class="phone "><picture><source srcset="/img/face.webp" type="image/webp"><img src="/img/face.png" alt="対面モード：画面が2分割され、それぞれ話者の方を向いた表示" width="640" height="1288" loading="lazy" decoding="async"></picture></figure></div><div class="row"><div class="rtext"><div class="ico" aria-hidden="true">🕘</div><h3>相手ごとに1つの会話——音声も写真もPDFもまとめて</h3><p>会話はすべてiPhoneに保存。右にスワイプして名前を変えられます——「リスボンのホテル」「大家さん」。開いて「この会話を続ける」をタップすれば、新しい音声・写真・PDFのページが同じスレッドに入ります。相手が1人なら記録も要約も書き出しも1つ。全体を検索でき、どの会話もTXTやPDFに書き出せます。カード内を長押しすれば単語やフレーズを選択してコピーできます。翻訳履歴・検索・書き出し・コピーにサブスクリプションは不要——今も、これからも。</p></div><figure class="phone "><picture><source srcset="/img/history.webp" type="image/webp"><img src="/img/history.png" alt="履歴：右スワイプで「名称変更」が表示された会話" width="640" height="1288" loading="lazy" decoding="async"></picture></figure></div><div class="row flip"><div class="rtext"><div class="ico" aria-hidden="true">✨</div><h3>iPhoneの上で書かれる要約</h3><p>Apple Intelligence対応のiPhoneなら、会話全体の短い要約を数行で。デバイス上で生成され、どこにも送信されません。</p></div><figure class="phone vidrow"><video src="/img/summary.mp4" poster="/img/summary-poster.jpg" width="480" height="1042" autoplay muted loop playsinline preload="metadata" aria-label="iPhone上のApple Intelligenceが書いた会話の要約"></video></figure></div><div class="row"><div class="rtext"><div class="ico" aria-hidden="true">📷</div><h3>写真とPDF</h3><p>メニュー、標識、書類にカメラを向けるか、PDFを読み込むだけ。テキストはデバイス上で認識・翻訳され、読みやすい段落に整形、PDFとして書き出せます。</p></div><figure class="phone "><picture><source srcset="/img/photo.webp" type="image/webp"><img src="/img/photo.png" alt="写真・PDFから翻訳：スキャン、ライブラリから選択、PDFを選択" width="640" height="1288" loading="lazy" decoding="async"></picture></figure></div></div>
 <div class="grid"><div class="card"><div class="ico" aria-hidden="true">🎙</div><h3>オフラインの音声会話</h3><p>音声認識・翻訳・読み上げはすべてiPhone上で動作。機内でも、山でも、SIMなしの海外でも、電波の悪い場所でも使えます。</p></div><div class="card"><div class="ico" aria-hidden="true">⌨️</div><h3>テキスト入力と読み上げ速度</h3><p>静かにしたい場面では話す代わりに入力を。相手が聞き取りにくければ読み上げを遅く。システムに複数の音声があれば声も選べます。</p></div></div>
+
+<h2 id="stream-ja">Stream：聞こえるものすべてにリアルタイム字幕</h2>
+<p class="sub">海外のテレビ、講義、ガイドツアー、駅のアナウンス——iPhone を音の方へ向けるだけで、話している間に自分の言語で訳文を読めます。</p>
+<div class="row flip streamrow"><div class="rtext"><ul class="sfeat"><li><b>操作は不要</b>Prau は聞き続け、字幕のように段落ごとに訳文を表示します。</li><li><b>オフライン、機内モードでも</b>認識も翻訳も iPhone の中で。美術館の地下でも、列車でも、SIM なしの海外でも。</li><li><b>イヤホンにそのまま</b>読むより聞きたいときは、訳文が AirPods で静かに流れます。</li><li><b>いつでも一時停止</b>ワンタップで聞き取りを止め、もう一度タップで再開。</li><li><b>設計からプライベート</b>音声は iPhone の外に出ません。サーバーも録音の送信もありません。</li></ul><p class="uses"><span>テレビ・ラジオ</span><span>講義</span><span>ガイドツアー</span><span>アナウンス</span><span>会議</span></p></div><figure class="phone "><picture><source srcset="/img/stream.webp" type="image/webp"><img src="/img/stream.png" alt="Prau の Stream：フランス語の美術館アナウンスをリアルタイムで英語字幕に" width="640" height="1288" loading="lazy" decoding="async"></picture></figure></div>
 
 <h2 id="setup-ja">旅の前に、一度だけ設定</h2>
 <p class="sub">Prauではなく、iOS側にある準備が2つだけあります。自宅のWi-Fiで済ませておけば——あとは電波ゼロでもすべて動きます。</p>

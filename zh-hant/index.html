@@ -100,6 +100,11 @@
   h2{font-family:var(--serif);font-weight:600;font-size:clamp(28px,3.4vw,40px);line-height:1.1;letter-spacing:-.01em;margin:64px 0 8px;color:var(--gold)}
   h3{font-size:19px;margin:0 0 6px;font-weight:700}
   .sub{color:var(--muted);margin:0 0 20px;font-size:17px;max-width:680px}
+  .sfeat{list-style:none;padding:0;margin:0}
+  .sfeat li{margin:0 0 16px;color:var(--soft)}
+  .sfeat b{display:block;color:var(--text);font-size:18px;margin-bottom:2px}
+  .uses{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0 0}
+  .uses span{border:1px solid #4A3E29;color:var(--gold);border-radius:999px;padding:5px 13px;font-size:14px}
   p,li{color:#D8DDE3}
   a{color:var(--gold)}
   .how{counter-reset:s;list-style:none;padding:0;margin:0}
@@ -270,6 +275,10 @@
 <p class="sub">下面的每個畫面都是今天在 iPhone 上執行的 Prau 1.0。</p>
 <div class="rows"><div class="row"><div class="rtext"><div class="ico" aria-hidden="true">🎧</div><h3>翻譯送進耳機</h3><p>連接 AirPods 或任何耳機。譯成你語言的內容輕聲在耳邊播放；對方從手機揚聲器聽到他的語言。</p></div><figure class="phone "><picture><source srcset="/img/settings.webp" type="image/webp"><img src="/img/settings.png" alt="設定：我的語言、語速、翻譯語音、語言" width="640" height="1288" loading="lazy" decoding="async"></picture></figure></div><div class="row flip"><div class="rtext"><div class="ico" aria-hidden="true">👥</div><h3>面對面模式</h3><p>把手機放在兩人中間。螢幕一分為二，各自正向顯示自己的語言，輪流說話。專為飯店櫃檯、藥局、計程車與商店設計。</p></div><figure class="phone "><picture><source srcset="/img/face.webp" type="image/webp"><img src="/img/face.png" alt="面對面模式：畫面一分為二，各朝向自己的說話者" width="640" height="1288" loading="lazy" decoding="async"></picture></figure></div><div class="row"><div class="rtext"><div class="ico" aria-hidden="true">🕘</div><h3>每個人一段對話——語音、照片與 PDF 都在一起</h3><p>每段對話都儲存在 iPhone 上。向右滑動即可重新命名——「里斯本的飯店」「房東」。開啟後點「繼續此對話」：新的語音、照片與 PDF 頁面都進入同一討論串——一個對象就是一份紀錄、一份摘要、一次匯出。可全域搜尋，可將任意對話匯出為 TXT 或 PDF。在任何卡片上長按即可選取並複製單字或片語。翻譯紀錄、搜尋、匯出與複製永遠不需要訂閱——現在不用，以後也不用。</p></div><figure class="phone "><picture><source srcset="/img/history.webp" type="image/webp"><img src="/img/history.png" alt="紀錄：一段對話，向右滑動顯示「重新命名」按鈕" width="640" height="1288" loading="lazy" decoding="async"></picture></figure></div><div class="row flip"><div class="rtext"><div class="ico" aria-hidden="true">✨</div><h3>在你的 iPhone 上寫成的摘要</h3><p>在支援 Apple Intelligence 的 iPhone 上，可取得整段對話的簡短摘要——幾行重點，在裝置上產生，絕不外傳。</p></div><figure class="phone vidrow"><video src="/img/summary.mp4" poster="/img/summary-poster.jpg" width="480" height="1042" autoplay muted loop playsinline preload="metadata" aria-label="由 iPhone 上的 Apple Intelligence 寫成的對話摘要"></video></figure></div><div class="row"><div class="rtext"><div class="ico" aria-hidden="true">📷</div><h3>照片與 PDF</h3><p>把相機對準菜單、路標或文件，或匯入 PDF。文字在裝置上辨識並翻譯，排成易讀的段落，可匯出為 PDF。</p></div><figure class="phone "><picture><source srcset="/img/photo.webp" type="image/webp"><img src="/img/photo.png" alt="從照片或 PDF 翻譯：掃描、從圖庫選擇、選擇 PDF" width="640" height="1288" loading="lazy" decoding="async"></picture></figure></div></div>
 <div class="grid"><div class="card"><div class="ico" aria-hidden="true">🎙</div><h3>離線語音對話</h3><p>語音辨識、翻譯與朗讀全部在 iPhone 上執行。在飛機上、山區、沒有 SIM 卡的國外，以及任何訊號不佳的地方都能用。</p></div><div class="card"><div class="ico" aria-hidden="true">⌨️</div><h3>文字輸入與語速</h3><p>需要安靜時可以打字代替說話。對方跟不上時可放慢譯文朗讀速度。系統提供多個語音時還能自選聲音。</p></div></div>
+
+<h2 id="stream-zh-hant">Stream：你聽到的一切，即時變成字幕</h2>
+<p class="sub">國外電視、講座、導覽、車站廣播——把 iPhone 對準聲音，邊聽邊用你的語言讀譯文。</p>
+<div class="row flip streamrow"><div class="rtext"><ul class="sfeat"><li><b>不必動手</b>Prau 持續聆聽，像字幕一樣一段一段顯示譯文。</li><li><b>離線可用，飛航模式也行</b>辨識與翻譯都在 iPhone 上完成——博物館地下室、火車上、在國外沒有 SIM 卡都行。</li><li><b>直接進耳機</b>想聽而不是看？譯文會在 AirPods 裡輕聲播放。</li><li><b>隨時暫停</b>輕點一下停止聆聽，再點一下繼續。</li><li><b>隱私從設計開始</b>聲音從不離開 iPhone。沒有伺服器，沒有錄音上傳。</li></ul><p class="uses"><span>電視與廣播</span><span>講座</span><span>導覽</span><span>廣播通知</span><span>會議</span></p></div><figure class="phone "><picture><source srcset="/img/stream.webp" type="image/webp"><img src="/img/stream.png" alt="Prau Stream：法語博物館廣播的即時英文字幕" width="640" height="1288" loading="lazy" decoding="async"></picture></figure></div>
 
 <h2 id="setup-zh-hant">出發前，一次設定好</h2>
 <p class="sub">有兩件事在 iOS 裡，而不在 Prau 裡。在家用 Wi-Fi 完成——之後一切不需要任何網路。</p>
