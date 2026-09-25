@@ -40,7 +40,7 @@ def bubbles(conv):
 # Страницы еврозоны показывают евро-тиры Apple (как на пейволле), остальные — базовые USD.
 # При смене цен в ASC править ОБЕ таблицы: USD в strings_base/strings_intl (pro), EUR здесь.
 EUR_LOCALES = {"de", "fr", "es", "it", "nl"}
-EUR_PRICES = {"9,99": "9,99", "34,99": "39,99", "59,99": "69,99"}
+EUR_PRICES = {"49,99": "59,99"}   # 25.09: USD 9,99/49,99/99,99 → EUR 9,99/59,99/99,99
 
 def pro_for(code, d):
     """Список тарифов и подпись под ними с учётом валюты страницы."""
@@ -67,8 +67,10 @@ def _num(s):
     t = m.group(0); sep = "," if "," in t else "."
     return float(t.replace(",", ".")), sep
 
-def _fmt(v, sep):
-    return f"{v:.1f}".replace(".", sep)      # 1.71 → 1.7, 1.75 → 1.8
+def _fmt(v, sep, code=""):
+    t = f"{v:.1f}"
+    if t.endswith(".0") and code not in ("pl", "ar"): t = t[:-2]   # 25.09: 2.0 → 2 (pl/ar: «2,0 roku» грамматичнее)
+    return t.replace(".", sep)      # 1.71 → 1.7, 1.75 → 1.8
 
 def plan_extra(code, i, pro_list):
     """09.09: мультипликатор под ценой — Yearly в месяцах, Lifetime в годах Yearly.
@@ -87,7 +89,7 @@ def plan_extra(code, i, pro_list):
     if i == 2:
         lv, _ = _num(pro_list[2][1])
         if lv is None: return ""
-        return f'<p class="pextra">{e(o["lt"].format(n=_fmt(lv/yv, sep)))}</p>'
+        return f'<p class="pextra">{e(o["lt"].format(n=_fmt(lv/yv, sep, code)))}</p>'
     return ""
 
 def org_href(code):
@@ -485,8 +487,8 @@ def jsonld(code, d, canon):
         "operatingSystem": "iOS 18",
         "offers": [
             {"@type": "Offer", "name": "Prau Pro Monthly",  "price": "9.99",  "priceCurrency": "USD", "url": APPSTORE},
-            {"@type": "Offer", "name": "Prau Pro Annual",   "price": "34.99", "priceCurrency": "USD", "url": APPSTORE},
-            {"@type": "Offer", "name": "Prau Pro Lifetime", "price": "59.99", "priceCurrency": "USD", "url": APPSTORE},
+            {"@type": "Offer", "name": "Prau Pro Annual",   "price": "49.99", "priceCurrency": "USD", "url": APPSTORE},
+            {"@type": "Offer", "name": "Prau Pro Lifetime", "price": "99.99", "priceCurrency": "USD", "url": APPSTORE},
         ],
         "publisher": {"@type": "Organization", "name": "Prau", "url": SITE},
     }
