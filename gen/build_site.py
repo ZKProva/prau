@@ -531,7 +531,14 @@ def jsonld(code, d, canon):
             {"@type": "Offer", "name": "Prau Pro Annual",   "price": "49.99", "priceCurrency": "USD", "url": APPSTORE},
             {"@type": "Offer", "name": "Prau Pro Lifetime", "price": "99.99", "priceCurrency": "USD", "url": APPSTORE},
         ],
-        "publisher": {"@type": "Organization", "name": "Prau", "url": SITE},
+        # 11.10: без image/logo агрегаторы и LLM подставляли свою родовую
+        # иконку переводчика. Квадрат 512 — тот же значок, что в App Store.
+        "image": SITE + "icon-512.png",
+        "logo": SITE + "icon-512.png",
+        "screenshot": SITE + "og.png",
+        "publisher": {"@type": "Organization", "name": "Prau", "url": SITE,
+                      "logo": {"@type": "ImageObject", "url": SITE + "icon-512.png",
+                               "width": 512, "height": 512}},
     }
     return '<script type="application/ld+json">' + json.dumps(data, ensure_ascii=False) + '</script>'
 
