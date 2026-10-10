@@ -36,6 +36,7 @@ LABELS = {"ru": "RU", "uk": "UA", "en": "EN", "nl": "NL", "fr": "FR", "de": "DE"
 
 T = {
     "ru": {
+        "share": "Покажите этот код другу — он наведёт камеру iPhone и получит тот же бонус.",
         "chem": "Химия вашей приватности.", "pr": "приватность", "au": "золото",
         "title": "Prau — офлайн-переводчик голоса",
         "from": "Рекомендует: {name}",
@@ -55,6 +56,7 @@ T = {
         "fallback": "Если App Store не открылся — нажмите сюда",
     },
     "uk": {
+        "share": "Покажіть цей код другові — він наведе камеру iPhone і отримає той самий бонус.",
         "chem": "Хімія вашої приватності.", "pr": "приватність", "au": "золото",
         "title": "Prau — офлайн-перекладач голосу",
         "from": "Рекомендує: {name}",
@@ -74,6 +76,7 @@ T = {
         "fallback": "Якщо App Store не відкрився — натисніть сюди",
     },
     "en": {
+        "share": "Show this code to a friend — they point their iPhone camera at it and get the same bonus.",
         "chem": "The chemistry of your privacy.", "pr": "privacy", "au": "gold",
         "title": "Prau — offline voice translator",
         "from": "Recommended by {name}",
@@ -93,6 +96,7 @@ T = {
         "fallback": "If the App Store did not open, tap here",
     },
     "nl": {
+        "share": "Laat deze code aan een vriend zien — hij richt zijn iPhone-camera erop en krijgt dezelfde bonus.",
         "chem": "De chemie van je privacy.", "pr": "privacy", "au": "goud",
         "title": "Prau — offline spraakvertaler",
         "from": "Aanbevolen door {name}",
@@ -112,6 +116,7 @@ T = {
         "fallback": "Opent de App Store niet? Tik hier",
     },
     "fr": {
+        "share": "Montrez ce code à un ami : il le scanne avec l'appareil photo de son iPhone et reçoit le même bonus.",
         "chem": "La chimie de votre vie privée.", "pr": "confidentialité", "au": "or",
         "title": "Prau — traducteur vocal hors ligne",
         "from": "Recommandé par {name}",
@@ -131,6 +136,7 @@ T = {
         "fallback": "Si l'App Store ne s'est pas ouvert, touchez ici",
     },
     "de": {
+        "share": "Zeig diesen Code einem Freund – er scannt ihn mit der iPhone-Kamera und bekommt denselben Bonus.",
         "chem": "Die Chemie deiner Privatsphäre.", "pr": "Privatsphäre", "au": "Gold",
         "title": "Prau — Offline-Sprachübersetzer",
         "from": "Empfohlen von {name}",
@@ -190,10 +196,13 @@ a.plan:active{transform:scale(.98)}
 a.plan.main .badge{background:var(--gold-ink);color:var(--gold)}
 .best{display:block;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;opacity:.7}
 .note{color:var(--muted);font-size:13px;text-align:center;margin:18px 0 0}
-.desk{display:none;text-align:center;margin-top:24px}
-.desk img{width:200px;height:200px;background:#fff;padding:10px;border-radius:12px}
+.qr{text-align:center;margin-top:28px;padding-top:22px;border-top:1px solid var(--line)}
+.qr img{width:200px;height:200px;background:#fff;padding:10px;border-radius:14px;display:block;margin:0 auto 10px}
+.qr p{color:var(--muted);font-size:13px;margin:0 auto;max-width:300px}
+.desk{display:none;text-align:center;margin:18px 0 0}
 body.notios .plans{display:none}
 body.notios .desk{display:block}
+body.notios .qr p.sh{display:none}
 .foot{text-align:center;margin-top:28px;font-size:13px}
 .foot a{color:var(--muted)}
 """
@@ -218,7 +227,7 @@ PAGE = """<!doctype html>
 <main>
 <nav>{nav}</nav>
 {sections}
-<div class="desk"><img src="qr.png" alt="QR"></div>
+<div class="qr"><img src="qr.png" alt="QR">{qrtext}</div>
 <p class="foot"><a href="/">getprau.com</a></p>
 </main>
 <script>
@@ -230,6 +239,8 @@ var have={langs};
 function show(l){{
   var s=document.querySelectorAll("section[data-lang]");
   for(var i=0;i<s.length;i++)s[i].hidden=s[i].getAttribute("data-lang")!==l;
+  var q=document.querySelectorAll("p.sh");
+  for(var x=0;x<q.length;x++)q[x].hidden=q[x].getAttribute("data-l")!==l;
   var b=document.querySelectorAll("nav button");
   for(var j=0;j<b.length;j++)b[j].className=b[j].getAttribute("data-lang")===l?"on":"";
   document.documentElement.lang=l;
@@ -344,6 +355,7 @@ def build_partner(row):
         lang=lang, title=d["title"], lead=d["lead"], from_=d["from"].format(name=name),
         og_image=OG_IMAGE, url=url, css=CSS, nav=nav, sections="\n".join(sections),
         langs="[" + ",".join('"' + c + '"' for c in LANGS) + "]",
+        qrtext="".join('<p class="sh" data-l="' + c + '"' + ('' if c == lang else ' hidden') + '>' + html.escape(T[c]["share"]) + '</p>' for c in LANGS),
     )
     write(os.path.join(base, "index.html"), page)
     qr_ok = make_qr(url, os.path.join(base, "qr.png"))
