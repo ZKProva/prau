@@ -10,6 +10,7 @@ from strings_new import X
 from strings_intl import INTL_L, INTL_X
 from strings_compare import CMP, PRICE_NOTE
 from strings_stream import S as STREAM
+from strings_siri import SIRI   # 11.10: Siri и кнопка действия
 from strings_orgs import ORG, ORG_MAIL, SUPPORT_MAIL, ORG_PAGE_LOCALES   # 09.09
 # 11.09: раздел «Гуманитарным организациям» снят с сайта. Тексты и код
 # оставлены — вернуть можно одной правкой этого флага на True.
@@ -139,9 +140,20 @@ def stream_block(code):
     s = STREAM.get(code) or STREAM["en"]
     li = "".join(f'<li><b>{e(t)}</b>{e(p)}</li>' for t, p in s["bul"])
     uses = "".join(f'<span>{e(u)}</span>' for u in s["uses"])
+    # 11.10: предупреждение о расстоянии до источника звука. Причина — отзывы
+    # на 2 звезды от людей, которые наводили телефон на экскурсовода через зал.
+    note = f'<p class="note">{e(s["note"])}</p>' if s.get("note") else ""
     return (f'\n<h2 id="stream-{code}">{e(s["h"])}</h2>\n<p class="sub">{e(s["sub"])}</p>\n'
             f'<div class="row flip streamrow"><div class="rtext"><ul class="sfeat">{li}</ul>'
-            f'<p class="uses">{uses}</p></div>{phone("stream", s["alt"])}</div>')
+            f'<p class="uses">{uses}</p>{note}</div>{phone("stream", s["alt"])}</div>')
+
+def siri_block(code):
+    """11.10: Siri-фразы и кнопка действия. Фразы — копия AppShortcuts.xcstrings."""
+    v = SIRI.get(code) or SIRI["en"]
+    rows = "".join(f'<li><b>{e(lab)}</b><code>{e(ph)}</code></li>' for lab, ph in v["say"])
+    note = f'<p class="note">{e(v["ennote"])}</p>' if v.get("ennote") else ""
+    return (f'\n<h2 id="siri-{code}">{e(v["h"])}</h2>\n<p class="sub">{e(v["sub"])}</p>\n'
+            f'<ul class="say">{rows}</ul>\n<p class="actionbtn">{e(v["btn"])}</p>\n{note}')
 
 def section(code, d, x, active):
     lines = d["hero_h1"].split("\n")
@@ -212,6 +224,10 @@ def section(code, d, x, active):
   <div class="col leaves"><h3>{e(d["leaves_h"])}</h3><ul>{leaves}</ul></div>
 </div>
 <ul class="plain">{pbul}</ul>
+
+<h3 class="nosrv">{e(d["nosrv_h"])}</h3>
+<p>{e(d["nosrv_p1"])}</p>
+<p>{e(d["nosrv_p2"])}</p>
 <p><a href="/privacy.html#{code}">{e(d["priv_link"])} →</a></p>
 {compare_block(code)}
 
@@ -224,6 +240,7 @@ def section(code, d, x, active):
 <div class="rows">{rows}</div>
 <div class="grid">{cards}</div>
 {stream_block(code)}
+{siri_block(code)}
 
 <h2 id="setup-{code}">{e(x["setup_h"])}</h2>
 <p class="sub">{e(x["setup_sub"])}</p>
@@ -240,6 +257,7 @@ def section(code, d, x, active):
 <p class="sub">{e(d["pro_lead"])}</p>
 <div class="plans">{pro}</div>
 <p class="base">{e(pro_base)} {e((ORG.get(code) or ORG["en"])["price_country"])}</p>
+<p class="paid">{e(d["pro_paid"])}</p>
 <p class="free">{e(d["pro_free"])}</p>
 <p class="note">{e(pro_note)}</p>
 {cta_block(code, d, "2")}
@@ -371,6 +389,13 @@ CSS = """
   .contrib{background:#1A1712;border:1px solid #4A3E29;border-radius:14px;padding:14px 18px;color:var(--gold);font-weight:700;font-size:19px;max-width:760px;margin:0 0 18px}
   .orgpage .lead,.orgpage ul.plain{max-width:760px}
   .base{margin:14px 0 0;color:var(--soft);font-size:15.5px}
+  .nosrv{margin:26px 0 8px;font-size:19px}
+  .say{list-style:none;padding:0;margin:18px 0 0;display:grid;gap:10px}
+  .say li{display:flex;flex-wrap:wrap;align-items:baseline;gap:10px}
+  .say b{min-width:140px;color:var(--soft);font-weight:500}
+  .say code{font:500 15.5px/1.4 ui-monospace,SFMono-Regular,Menlo,monospace;background:#15181C;border:1px solid #252A31;border-radius:7px;padding:4px 10px}
+  .actionbtn{margin-top:16px}
+  .paid{margin-top:14px;font-weight:600}
   .free{margin-top:10px;font-weight:600}
   .cta2{margin-top:22px}
   .faq details{border-bottom:1px solid var(--stroke);padding:12px 0}
@@ -434,12 +459,12 @@ LIVE = True   # False = приложение ещё не в App Store: кноп�
                # После одобрения Apple поставить True, пересобрать, запушить.
 
 SOON = {
- "en": ("Coming to the App Store", "Launching soon \u00b7 iOS 18 or later"),
- "ru": ("\u0421\u043a\u043e\u0440\u043e \u0432 App Store", "\u0417\u0430\u043f\u0443\u0441\u043a \u0441\u043e\u0432\u0441\u0435\u043c \u0441\u043a\u043e\u0440\u043e \u00b7 iOS 18 \u0438 \u043d\u043e\u0432\u0435\u0435"),
- "uk": ("\u041d\u0435\u0437\u0430\u0431\u0430\u0440\u043e\u043c \u0432 App Store", "\u0417\u0430\u043f\u0443\u0441\u043a \u043d\u0435\u0432\u0434\u043e\u0432\u0437\u0456 \u00b7 iOS 18 \u0456 \u043d\u043e\u0432\u0456\u0448\u0435"),
- "fr": ("Bient\u00f4t sur l'App Store", "Lancement imminent \u00b7 iOS 18 ou ult\u00e9rieur"),
- "es": ("Pr\u00f3ximamente en el App Store", "Lanzamiento muy pronto \u00b7 iOS 18 o posterior"),
- "de": ("Bald im App Store", "Start in K\u00fcrze \u00b7 iOS 18 oder neuer"),
+ "en": ("Coming to the App Store", "Launching soon \u00b7 iOS 26 or later"),
+ "ru": ("\u0421\u043a\u043e\u0440\u043e \u0432 App Store", "\u0417\u0430\u043f\u0443\u0441\u043a \u0441\u043e\u0432\u0441\u0435\u043c \u0441\u043a\u043e\u0440\u043e \u00b7 iOS 26 \u0438 \u043d\u043e\u0432\u0435\u0435"),
+ "uk": ("\u041d\u0435\u0437\u0430\u0431\u0430\u0440\u043e\u043c \u0432 App Store", "\u0417\u0430\u043f\u0443\u0441\u043a \u043d\u0435\u0432\u0434\u043e\u0432\u0437\u0456 \u00b7 iOS 26 \u0456 \u043d\u043e\u0432\u0456\u0448\u0435"),
+ "fr": ("Bient\u00f4t sur l'App Store", "Lancement imminent \u00b7 iOS 26 ou ult\u00e9rieur"),
+ "es": ("Pr\u00f3ximamente en el App Store", "Lanzamiento muy pronto \u00b7 iOS 26 o posterior"),
+ "de": ("Bald im App Store", "Start in K\u00fcrze \u00b7 iOS 26 oder neuer"),
 }
 
 
@@ -500,7 +525,7 @@ def jsonld(code, d, canon):
         "description": d["meta"],
         "inLanguage": hl(code),
         "applicationCategory": "TravelApplication",
-        "operatingSystem": "iOS 18",
+        "operatingSystem": "iOS 26",
         "offers": [
             {"@type": "Offer", "name": "Prau Pro Monthly",  "price": "9.99",  "priceCurrency": "USD", "url": APPSTORE},
             {"@type": "Offer", "name": "Prau Pro Annual",   "price": "49.99", "priceCurrency": "USD", "url": APPSTORE},

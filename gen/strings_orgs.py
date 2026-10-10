@@ -31,7 +31,7 @@ ORG = {
   ],
   "need_h": "What you need to know",
   "need": [
-   "iPhone with iOS 18 or later. Prau is not available on Android.",
+   "iPhone with iOS 26 or later. Prau is not available on Android.",
    "19 languages for voice, text, photos and PDFs — see the full list on the main page.",
    "Nothing is uploaded anywhere, so there is no data-processing agreement to sign: there is no data processing.",
    "Codes are valid for 12 months and can be renewed by invoice.",
@@ -57,7 +57,7 @@ ORG = {
   ],
   "need_h": "Что нужно знать",
   "need": [
-   "iPhone с iOS 18 и новее. На Android Prau нет.",
+   "iPhone с iOS 26 и новее. На Android Prau нет.",
    "19 языков для голоса, текста, фото и PDF — полный список на главной.",
    "Ничего никуда не загружается, поэтому соглашение об обработке данных подписывать не нужно: обработки данных нет.",
    "Коды действуют 12 месяцев и продлеваются по счёту.",
@@ -93,7 +93,7 @@ ORG = {
   ],
   "need_h": "À savoir",
   "need": [
-   "iPhone avec iOS 18 ou ultérieur. Prau n'existe pas sur Android.",
+   "iPhone avec iOS 26 ou ultérieur. Prau n'existe pas sur Android.",
    "19 langues pour la voix, le texte, les photos et les PDF — liste complète sur la page d'accueil.",
    "Rien n'est envoyé nulle part : aucun accord de traitement des données à signer, car il n'y a pas de traitement.",
    "Les codes sont valables 12 mois et se renouvellent sur facture.",
@@ -129,7 +129,7 @@ ORG = {
   ],
   "need_h": "Gut zu wissen",
   "need": [
-   "iPhone mit iOS 18 oder neuer. Für Android gibt es Prau nicht.",
+   "iPhone mit iOS 26 oder neuer. Für Android gibt es Prau nicht.",
    "19 Sprachen für Sprache, Text, Fotos und PDFs — vollständige Liste auf der Startseite.",
    "Es wird nichts hochgeladen, daher ist keine Auftragsverarbeitungsvereinbarung nötig: Es findet keine Datenverarbeitung statt.",
    "Codes gelten 12 Monate und werden auf Rechnung verlängert.",
@@ -205,7 +205,7 @@ ORG = {
   ],
   "need_h": "ما يجب معرفته",
   "need": [
-   "iPhone بنظام iOS 18 أو أحدث. Prau غير متوفر على Android.",
+   "iPhone بنظام iOS 26 أو أحدث. Prau غير متوفر على Android.",
    "19 لغة للصوت والنص والصور وملفات PDF — القائمة الكاملة في الصفحة الرئيسية.",
    "لا يُرفع أي شيء إلى أي مكان، لذا لا حاجة لتوقيع اتفاقية معالجة بيانات: لا توجد معالجة بيانات.",
    "الرموز صالحة 12 شهرًا وتُجدَّد بفاتورة.",
