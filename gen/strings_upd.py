@@ -241,3 +241,27 @@ U["vi"] = dict(
        "Chạm vào quả địa cầu trên màn hình chính và không cần đổi chiều nữa: Prau nghe ra bạn đang nói ngôn ngữ nào trong hai ngôn ngữ và dịch sang ngôn ngữ kia. Hai người chỉ cần nói lần lượt."),
  next_="Từ khi ra mắt vào tháng 8, Prau đã có hơn chục bản cập nhật: phụ đề ở chế độ Stream, Siri và nút Tác vụ, tóm tắt cuộc trò chuyện, tự nhận diện ngôn ngữ. Mỗi bản phát hành còn giúp nhận dạng và dịch nhanh hơn, chính xác hơn — và các tính năng tiếp theo đã đang được phát triển.",
 )
+
+# 14.11 (2): глобус — полноценный ряд со скриншотом (img/auto), alt по языкам.
+ALT_AUTO = {
+ "en": "The globe is on: English and French phrases from one conversation, each translated into the other language",
+ "ru": "Глобус включён: фразы на английском и французском из одного разговора, каждая переведена на другой язык",
+ "uk": "Глобус увімкнено: фрази англійською та французькою з однієї розмови, кожна перекладена іншою мовою",
+ "fr": "Globe activé : phrases en anglais et en français d’une même conversation, chacune traduite dans l’autre langue",
+ "es": "Globo activado: frases en inglés y en francés de una misma conversación, cada una traducida al otro idioma",
+ "de": "Globus aktiv: englische und französische Sätze aus einem Gespräch, jeweils in die andere Sprache übersetzt",
+ "nl": "Wereldbol aan: Engelse en Franse zinnen uit één gesprek, elk vertaald naar de andere taal",
+ "it": "Globo attivo: frasi in inglese e in francese della stessa conversazione, ognuna tradotta nell’altra lingua",
+ "pt": "Globo ativado: frases em inglês e em francês da mesma conversa, cada uma traduzida para o outro idioma",
+ "pl": "Globus włączony: zdania po angielsku i po francusku z jednej rozmowy, każde przetłumaczone na drugi język",
+ "tr": "Küre açık: aynı konuşmadan İngilizce ve Fransızca cümleler, her biri diğer dile çevrilmiş",
+ "ar": "الكرة الأرضية مفعّلة: عبارات بالإنجليزية والفرنسية من محادثة واحدة، كلٌّ منها مترجمة إلى اللغة الأخرى",
+ "zh": "地球图标已开启：同一段对话中的英语和法语句子，各自被翻译成另一种语言",
+ "zh-hant": "地球圖示已開啟：同一段對話中的英語和法語句子，各自被翻譯成另一種語言",
+ "ja": "地球儀オン：ひとつの会話の英語とフランス語のフレーズが、それぞれもう一方の言語に翻訳されている",
+ "ko": "지구본 켜짐: 한 대화 속 영어와 프랑스어 문장이 각각 다른 언어로 번역된 화면",
+ "id": "Ikon globe aktif: kalimat bahasa Inggris dan Prancis dari satu percakapan, masing-masing diterjemahkan ke bahasa lainnya",
+ "th": "เปิดลูกโลกแล้ว: ประโยคภาษาอังกฤษและฝรั่งเศสจากบทสนทนาเดียวกัน แต่ละประโยคแปลเป็นอีกภาษาหนึ่ง",
+ "vi": "Đã bật quả địa cầu: các câu tiếng Anh và tiếng Pháp trong cùng một cuộc trò chuyện, mỗi câu được dịch sang ngôn ngữ kia",
+}
+assert set(ALT_AUTO) == set(U)

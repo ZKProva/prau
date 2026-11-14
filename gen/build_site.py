@@ -17,13 +17,14 @@ from strings_orgs import ORG, ORG_MAIL, SUPPORT_MAIL, ORG_PAGE_LOCALES   # 09.09
 ORG_ENABLED = False
 L.update(INTL_L); X.update(INTL_X)
 # 14.11: голос качается в самом Prau, карточка автоопределения, «Сделано надолго» без «Version 1.1».
-from strings_upd import U
+from strings_upd import U, ALT_AUTO
 for _c, _u in U.items():
     _x, _d = X[_c], L[_c]
     _x["see_sub"] = _u["see_sub"]; _x["setup_sub"] = _u["setup_sub"]; _x["setup_tip"] = _u["tip"]
     _s = list(_x["setup"]); _s[1] = _u["voice"]; _x["setup"] = _s
     _f = list(_d["faq"]); _f[0] = (_f[0][0], _u["faq0"]); _d["faq"] = _f
     _d["auto_feat"] = _u["auto"]
+    _x["alts"] = dict(_x["alts"], auto=ALT_AUTO[_c])   # 14.11 (2): ряд глобуса
     CMP[_c]["next_"] = _u["next_"]
     # 14.11: аккаунт @getprau в X удалён — убираем «Обновления: @getprau в X» из строки write.
     _w = CMP[_c]["write"]
@@ -197,12 +198,13 @@ def section(code, d, x, active):
     # HISTORY_ROW: история — полноценный ряд, а не карточка
     rows = (row(f[2],"settings",False) + row(f[1],"face",True) +
         row(f[4],"history",False) +
-        row_video(f[5],"summary",True) + row(f[3],"photo",False))
+        row_video(f[5],"summary",True) + row(f[3],"photo",False) +
+        row(d["auto_feat"],"auto",True))   # 14.11 (2): глобус — ряд со скриншотом, а не карточка
     def card(feat, badge=None):
         ico,t,p = feat
         b = f'<span class="badge free">{e(badge)}</span>' if badge else ""
         return f'<div class="card"><div class="ico" aria-hidden="true">{ico}</div><h3>{e(t)}{b}</h3><p>{e(p)}</p></div>'
-    cards = card(f[0]) + card(d["auto_feat"]) + card(f[6])   # 14.11: автоопределение языка
+    cards = card(f[0]) + card(f[6])   # 14.11 (2): глобус переехал в ряды
     setup = "".join(f'<li><b>{e(t)}</b><p>{e(p)}</p></li>' for t,p in x["setup"])
     stays = "".join(f"<li>{e(s)}</li>" for s in d["stays"])
     leaves = "".join(f"<li>{e(s)}</li>" for s in d["leaves"])
