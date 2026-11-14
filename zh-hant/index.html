@@ -45,6 +45,11 @@
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <script>if(/\.github\.io$/.test(location.hostname)){location.replace("https://getprau.com/"+location.search+location.hash);}</script>
 <style>
+  .bfbar{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 14px;margin:6px 0 4px;padding:14px 18px;border-radius:14px;background:linear-gradient(90deg,#2a1f0f,#3a2a12);border:1px solid rgba(234,190,122,.45);color:#F3E3C3;text-decoration:none}
+  .bfbar[hidden]{display:none}
+  .bfbar b{color:#EABE7A;font-size:17px}
+  .bfbar span{font-size:15px;flex:1 1 260px}
+  .bfbar i{font-style:normal;font-weight:600;color:#EABE7A;white-space:nowrap}
   :root{--bg:#0B0C0E;--panel:#161B21;--panel2:#1B222A;--stroke:#262D36;--muted:#8A94A0;--gold:#EABE7A;--gold2:#F3D9A9;--text:#F2F4F7;--soft:#C9D0D8;--green:#7ED9A0;
         --serif:"New York","Iowan Old Style",ui-serif,Georgia,"Times New Roman",serif;
         --sans:-apple-system,BlinkMacSystemFont,"SF Pro Text",Inter,"Segoe UI",Roboto,sans-serif}
@@ -229,6 +234,8 @@
   <nav id="langs" aria-label="Language"><a class="lang" href="/">English</a><a class="lang" href="/ru/">Русский</a><a class="lang" href="/uk/">Українська</a><a class="lang" href="/fr/">Français</a><a class="lang" href="/es/">Español</a><a class="lang" href="/de/">Deutsch</a><a class="lang" href="/nl/">Nederlands</a><a class="lang" href="/it/">Italiano</a><a class="lang" href="/pt/">Português</a><a class="lang" href="/pl/">Polski</a><a class="lang" href="/tr/">Türkçe</a><a class="lang" href="/ar/">العربية</a><a class="lang" href="/zh/">简体中文</a><a class="lang" href="/zh-hant/" aria-current="true">繁體中文</a><a class="lang" href="/ja/">日本語</a><a class="lang" href="/ko/">한국어</a><a class="lang" href="/id/">Bahasa Indonesia</a><a class="lang" href="/th/">ไทย</a><a class="lang" href="/vi/">Tiếng Việt</a></nav>
   <a class="navcta" href="https://apps.apple.com/app/id6801931802">App Store</a>
 </header>
+<a class="bfbar" id="bfbar" hidden href="https://apps.apple.com/app/id6801931802" data-s="2026-11-22T22:00:00Z" data-e="2026-12-02T10:00:00Z"><b>黑色星期五：Prau 終身版 5 折</b><span>一次付款，Prau 永久屬於你。至 12 月 1 日止，在 Prau 的購買頁面。</span><i>App Store →</i></a>
+<script>(function(){var b=document.getElementById("bfbar"),n=Date.now();if(b&&n>=Date.parse(b.dataset.s)&&n<Date.parse(b.dataset.e))b.hidden=false;})();</script>
 
 <section data-lang="zh-hant" class="active">
 <div class="hero">

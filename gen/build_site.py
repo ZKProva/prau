@@ -18,6 +18,8 @@ ORG_ENABLED = False
 L.update(INTL_L); X.update(INTL_X)
 # 14.11: голос качается в самом Prau, карточка автоопределения, «Сделано надолго» без «Version 1.1».
 from strings_upd import U, ALT_AUTO
+from strings_bf import BF, BF_START, BF_END   # 15.11: баннер Чёрной пятницы
+assert set(BF) == set(U)
 for _c, _u in U.items():
     _x, _d = X[_c], L[_c]
     _x["see_sub"] = _u["see_sub"]; _x["setup_sub"] = _u["setup_sub"]; _x["setup_tip"] = _u["tip"]
@@ -298,6 +300,11 @@ def section(code, d, x, active):
 </section>'''
 
 CSS = """
+  .bfbar{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 14px;margin:6px 0 4px;padding:14px 18px;border-radius:14px;background:linear-gradient(90deg,#2a1f0f,#3a2a12);border:1px solid rgba(234,190,122,.45);color:#F3E3C3;text-decoration:none}
+  .bfbar[hidden]{display:none}
+  .bfbar b{color:#EABE7A;font-size:17px}
+  .bfbar span{font-size:15px;flex:1 1 260px}
+  .bfbar i{font-style:normal;font-weight:600;color:#EABE7A;white-space:nowrap}
   :root{--bg:#0B0C0E;--panel:#161B21;--panel2:#1B222A;--stroke:#262D36;--muted:#8A94A0;--gold:#EABE7A;--gold2:#F3D9A9;--text:#F2F4F7;--soft:#C9D0D8;--green:#7ED9A0;
         --serif:"New York","Iowan Old Style",ui-serif,Georgia,"Times New Roman",serif;
         --sans:-apple-system,BlinkMacSystemFont,"SF Pro Text",Inter,"Segoe UI",Roboto,sans-serif}
@@ -572,6 +579,12 @@ def page(code):
     smart_banner = '<meta name="apple-itunes-app" content="app-id=6801931802">' if LIVE else ""
     navcta = ('  <a class="navcta" href="' + APPSTORE + '">' + e(x["nav_cta"]) + '</a>') if LIVE else ""
     ld = jsonld(code, d, canon) if LIVE else ""
+    # 15.11: баннер Чёрной пятницы — скрыт, пока часы посетителя не в окне акции.
+    bf_t, bf_p = BF[code]
+    bfbar = (f'<a class="bfbar" id="bfbar" hidden href="{APPSTORE}" data-s="{BF_START}" data-e="{BF_END}">'
+             f'<b>{e(bf_t)}</b><span>{e(bf_p)}</span><i>{e(x["nav_cta"])} {"←" if code in RTL else "→"}</i></a>\n'
+             '<script>(function(){var b=document.getElementById("bfbar"),n=Date.now();'
+             'if(b&&n>=Date.parse(b.dataset.s)&&n<Date.parse(b.dataset.e))b.hidden=false;})();</script>')
     return f"""<!doctype html>
 <html lang="{hl(code)}"{' dir="rtl"' if code in RTL else ''}>
 <head>
@@ -608,6 +621,7 @@ def page(code):
   <nav id="langs" aria-label="Language">{nav}</nav>
 {navcta}
 </header>
+{bfbar}
 {body}
 </main>
 <script>
