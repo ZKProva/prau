@@ -18,7 +18,7 @@ ORG_ENABLED = False
 L.update(INTL_L); X.update(INTL_X)
 # 14.11: голос качается в самом Prau, карточка автоопределения, «Сделано надолго» без «Version 1.1».
 from strings_upd import U, ALT_AUTO
-from strings_bf import BF, BF_START, BF_END   # 15.11: баннер Чёрной пятницы
+from strings_bf import BF, BF_START, BF_END, BF_ON   # 15.11: баннер Чёрной пятницы
 assert set(BF) == set(U)
 for _c, _u in U.items():
     _x, _d = X[_c], L[_c]
@@ -585,6 +585,8 @@ def page(code):
              f'<b>{e(bf_t)}</b><span>{e(bf_p)}</span><i>{e(x["nav_cta"])} {"←" if code in RTL else "→"}</i></a>\n'
              '<script>(function(){var b=document.getElementById("bfbar"),n=Date.now();'
              'if(b&&n>=Date.parse(b.dataset.s)&&n<Date.parse(b.dataset.e))b.hidden=false;})();</script>')
+    if not BF_ON:   # 22.11.2026: Чёрная пятница отменена
+        bfbar = ""
     return f"""<!doctype html>
 <html lang="{hl(code)}"{' dir="rtl"' if code in RTL else ''}>
 <head>
