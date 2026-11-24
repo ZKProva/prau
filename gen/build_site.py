@@ -53,7 +53,10 @@ def e(s): return html.escape(s, quote=False)
 def phone(name, alt, cls=""):
     return (f'<figure class="phone {cls}"><picture>'
             f'<source srcset="/img/{name}.webp" type="image/webp">'
-            f'<img src="/img/{name}.png" alt="{e(alt)}" width="640" height="1288" loading="lazy" decoding="async">'
+            f'<img src="/img/{name}.png" alt="{e(alt)}" width="640" height="1288" '
+            # 24.11: первый экран (LCP) — грузить сразу и с высоким приоритетом, остальное лениво
+            + ('fetchpriority="high"' if "hero-phone" in cls else 'loading="lazy"')
+            + ' decoding="async">'
             f'</picture></figure>')
 
 def bubbles(conv):
@@ -595,6 +598,7 @@ def page(code):
 <title>{e(d["title"])}</title>
 <meta name="description" content="{e(d["meta"])}">
 <link rel="canonical" href="{canon}">
+<link rel="preload" as="image" href="/img/main.webp" type="image/webp" fetchpriority="high">
 {alts}
 <meta property="og:type" content="website">
 <meta property="og:url" content="{canon}">
